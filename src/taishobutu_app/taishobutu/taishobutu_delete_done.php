@@ -1,3 +1,20 @@
+<?php session_start();
+      session_regenerate_id(true);
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,
+          maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/header.css">
+
+
+    <title>防火対象物管理アプリ</title>
+</head>
+<body>
 <?php
 
 
@@ -6,9 +23,9 @@ try{
         
 
     //ヘッダーを読み込み
-    require_once '/home/ubuntu/public_html/taishobutu_app/common/header.php';
+    include("/var/www/html/taishobutu_app/common/header.php");
     //データベースに接続するファイルを呼び出す。
-    require_once '/home/ubuntu/public_html/taishobutu_app/common/db_connect.php';
+    require_once '/var/www/html/taishobutu_app/common/db_connect.php';
 
     $post = $_POST;
 

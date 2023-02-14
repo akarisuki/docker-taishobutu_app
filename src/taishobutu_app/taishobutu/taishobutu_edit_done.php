@@ -1,3 +1,20 @@
+<?php session_start();
+      session_regenerate_id(true);
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,
+          maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/header.css">
+
+
+    <title>防火対象物管理アプリ</title>
+</head>
+<body>
 <?php
 
 
@@ -6,9 +23,9 @@ try{
         
 
     //ヘッダーを読み込み
-    require_once '/home/ubuntu/public_html/taishobutu_app/common/header.php';
+    include("/var/www/html/taishobutu_app/common/header.php");
     //データベースに接続するファイルを呼び出す。
-    require_once '/home/ubuntu/public_html/taishobutu_app/common/db_connect.php';
+    require_once '/var/www/html/taishobutu_app/common/db_connect.php';
 
     $post = $_POST;
 
@@ -20,9 +37,9 @@ try{
 
     $taishobutu_tel = $post['taishobutu_tel'];
 
-    $concern_name = $post['concern_name'];
+    $owners_name = $post['owners_name'];
 
-    $concern_tel = $post['concern_tel'];
+    $owners_tel = $post['owners_tel'];
 
     $total_area = (double)$post['total_area'];
 
@@ -31,7 +48,7 @@ try{
     $sql = <<<EOD
     UPDATE taishobutu_main SET appendix = :appendix ,taishobutu_name = :taishobutu_name,
     taishobutu_address = :taishobutu_address , taishobutu_tel = :taishobutu_tel,
-    concern_name = :concern_name ,concern_tel = :concern_tel ,total_area = :total_area WHERE code= :code;
+    owners_name = :owners_name ,owners_tel = :owners_tel ,total_area = :total_area WHERE code= :code;
     EOD;
 
     $stmt = $db_host->prepare($sql);
@@ -39,14 +56,15 @@ try{
     $stmt->bindValue(':taishobutu_name', $taishobutu_name, PDO::PARAM_STR);
     $stmt->bindValue(':taishobutu_address', $taishobutu_address, PDO::PARAM_STR);
     $stmt->bindValue(':taishobutu_tel', $taishobutu_tel, PDO::PARAM_STR);
-    $stmt->bindValue(':concern_name', $concern_name, PDO::PARAM_STR);
-    $stmt->bindValue(':concern_tel', $concern_tel, PDO::PARAM_STR);
+    $stmt->bindValue(':owners_name', $owners_name, PDO::PARAM_STR);
+    $stmt->bindValue(':owners_tel', $owners_tel, PDO::PARAM_STR);
     $stmt->bindValue(':total_area', $total_area, PDO::PARAM_INT);
     $stmt->bindValue(':code', $code, PDO::PARAM_INT);
     $stmt->execute();
 
     $db_host = null;
     print '修正しました。';
+    print '<a href="taihobutu_index.php">対象物一覧に戻る<a>';
 
 } catch (PDOException $e){
   print'ただいま障害により大変ご迷惑をおかけしております。';

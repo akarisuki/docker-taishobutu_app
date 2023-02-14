@@ -1,12 +1,29 @@
+<?php session_start();
+      session_regenerate_id(true);
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,
+          maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/header.css">
+
+
+    <title>防火対象物管理アプリ</title>
+</head>
+<body>
 <?php
 
     
 
-require_once '/home/ubuntu/public_html/taishobutu_app/common/header.php';
+include("/var/www/html/taishobutu_app/common/header.php");
 
-require_once '/home/ubuntu/public_html/taishobutu_app/common/db_connect.php';
+require_once '/var/www/html/taishobutu_app/common/db_connect.php';
 
-require_once '/home/ubuntu/public_html/taishobutu_app/common/bettpiyo_array.php';
+require_once '/var/www/html/taishobutu_app/common/bettpiyo_array.php';
 
 $code = $_GET['code'];
 $sql = "SELECT * FROM taishobutu_main WHERE code = :code";
@@ -25,9 +42,9 @@ $taishobutu_address = $delete_data['taishobutu_address'];
 
 $taishobutu_tel = $delete_data['taishobutu_tel'];
 
-$concern_name = $delete_data['concern_name'];
+$owners_name = $delete_data['owners_name'];
 
-$concern_tel = $delete_data['concern_tel'];
+$owners_tel = $delete_data['owners_tel'];
 
 $total_area = (double)$delete_data['total_area'];
 
@@ -36,8 +53,8 @@ print '用途区分:'.$appendix_array[$appendix].'<br>';
 print '対象物名:'.$taishobutu_name.'<br>';
 print '対象物所在地:'.$taishobutu_address.'<br>';
 print '対象物連絡先:'.$taishobutu_tel.'<br>';
-print '関係者名:'.$concern_name.'<br>';
-print '関係者連絡先:'.$concern_tel.'<br>';          
+print '関係者名:'.$owners_name.'<br>';
+print '関係者連絡先:'.$owners_tel.'<br>';          
 print '延べ面積:'.$total_area.'<br>';
 print '<form method="post" action="taishobutu_delete_done.php">';
 print '<input type="hidden" name="code" value="'.$code.'">';
