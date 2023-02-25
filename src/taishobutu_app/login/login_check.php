@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
     try{
         
@@ -9,6 +10,18 @@ session_start();
 
         $staff_name = $post['name'];
         $staff_pass = $post['pass'];
+
+        $error = [];
+
+        
+        if (empty($staff_name)) {
+            $error[] = '職員名が入力されていません。';
+        }
+
+        if (empty($staff_pass)) {
+            $error[] = 'パスワードが入力されていません。';
+        }
+
         
 
         $hash_pass = password_hash($staff_pass,PASSWORD_DEFAULT);
@@ -18,39 +31,61 @@ session_start();
         $stmt->bindValue(':staff_name', $staff_name,PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        
-
-
-        if(!empty($result)) {
-            if(password_verify($staff_pass,$hash_pass)) {
-                
-                $_SESSION['login'] = 1;
-                $_SESSION['id'] = $result['code'];
-                $_SESSION['name'] = $result['staff_name'];
-                header('Location: ../taishobutu/taishobutu_index.php');
-                exit();
-                
-            } else {
-                print 'ユーザー名、またはパスワードが違います。';
-                print '<input type="button" onclick="history.back()" value="戻る">';
-            }
-
-        }else {
-            print 'ユーザー名、またはパスワードが違います。';
-            print '<input type="button" onclick="history.back()" value="戻る">';
+        if (!empty($result) && password_verify($staff_pass, $result['staff_pass'])) {
+            $_SESSION['login'] = 1;
+            $_SESSION['id'] = $result['code'];
+            $_SESSION['name'] = $result['staff_name'];
+            header('Location: ../taishobutu/taishobutu_index.php');
+            exit();
+        } else {
+            $error[] = 'ユーザー名、またはパスワードが違います。';
         }
     } catch (Exception $e) {
-        print 'ただいま障害により大変ご迷惑をおかけしております。';
+        $error_message = 'ただいま障害により大変ご迷惑をおかけしております。';
 
     }
 
 
-    
-
-    
-
 ?>
 
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/sass/login/login.css">
+    <title>防火対象物管理アプリ</title>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <form method="post" action="login_check.php">
+            <label for="name" class="required">職員名</label>
+            <input type="text" placeholder="消防太郎" name="name"><br />
+            <label for="password" class="required">パスワード</label>
+            <input type="password" placeholder="半角整数8文字以上で" name="pass"><br />
+            <div class="link">
+                <a href="./password_reset.php">パスワードを忘れた場合</a><br>
+                <a href="../sign_up/sign_up.php">登録していない場合はこちら</a><br>
+            </div>
+            <div class="rememberme">
+                <input type="checkbox" name="rememberme">ログイン情報を保持する。
+            </div>
+            <?php if (!empty($error)) : ?>
+                <ul class="error-message">
+                    <?php foreach ($error as $err) : ?>
+                        <li><?= $err ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <input type="submit" value="ログイン">
+        </form>
+    </div>
 </body>
+
 </html>
+
+
+

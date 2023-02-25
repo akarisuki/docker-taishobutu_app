@@ -1,0 +1,1 @@
+{"version":1,"defects":{"arithmeticTest::testAdd":4,"CalcTest::testAdd":4,"calcTest::testAdd":4,"SampleTest::test_add":4,"SampleTest::test_sub":4},"times":{"TaishobutuTest::testSomething":0.018,"arithmeticTest::testAdd":0.005,"CalcTest::testAdd":0.004,"calcTest::testAdd":0.004,"SampleTest::test_add":0.053,"SampleTest::test_sub":0}}
