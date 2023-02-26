@@ -26,16 +26,16 @@ class ComposerStaticInitdf9ae47b4a08411b2e09d97ba5c7935a
             'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Config\\' => 25,
         ),
-        'R' => 
-        array (
-            'Root\\Html\\' => 10,
-        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
             'PDepend\\' => 8,
+        ),
+        'H' => 
+        array (
+            'Html\\' => 5,
         ),
         'D' => 
         array (
@@ -78,10 +78,6 @@ class ComposerStaticInitdf9ae47b4a08411b2e09d97ba5c7935a
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
         ),
-        'Root\\Html\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -97,6 +93,10 @@ class ComposerStaticInitdf9ae47b4a08411b2e09d97ba5c7935a
         'PDepend\\' => 
         array (
             0 => __DIR__ . '/..' . '/pdepend/pdepend/src/main/php/PDepend',
+        ),
+        'Html\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

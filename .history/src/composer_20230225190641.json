@@ -15,7 +15,7 @@
 
   "autoload": {
     "psr-4": {
-       "Html\\": "src/" 
+       "Root\\Html\\": "src/" 
     } 
-  }
+}
 }

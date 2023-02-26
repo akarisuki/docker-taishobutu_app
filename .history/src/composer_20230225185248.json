@@ -1,5 +1,5 @@
 {
-  "name": "root/html",
+  "name": "Root/Html",
   "require-dev": {
       "squizlabs/php_codesniffer": "3.*",
       "phpmd/phpmd": "@stable",
@@ -14,8 +14,8 @@
   },
 
   "autoload": {
-    "psr-4": {
-       "Html\\": "src/" 
-    } 
+      "psr-4": {
+         "Root\\Html\\": "src/" 
+      } 
   }
 }
