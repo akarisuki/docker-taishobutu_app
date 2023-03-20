@@ -53,25 +53,30 @@ input[type="submit"]:hover {
     background-color: #3e8e41;
 }
 
-.link {
-  right: 200px;
-}
 
 .rememberme{
   position: absolute;
   bottom: 100px;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-.error-message {
+.error-message-name {
   color:  red;
   position: absolute;
-  bottom: 570px;
-  left: 70px;
+  bottom: 379px;
+  left: 59px;
+}
+
+.error-message-pass {
+  color:  red;
+  position: absolute;
+  bottom: 285px;
+  left: 59px;
+}
+
+.error-message-name-pass {
+  color:  red;
+  position: absolute;
+  bottom: 263px;
+  left: 59px;
 }

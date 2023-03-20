@@ -1,0 +1,50 @@
+@charset "UTF-8";
+body {
+  background-color: #6f6f6f;
+}
+
+.form-search {
+  box-sizing: border-box;
+  position: absolute;
+  width: 1920px;
+  height: 58px;
+  left: 0px;
+  top: 70px;
+  border: 1px solid #000000;
+}
+
+input[type=submit] {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: -27px;
+  right: 845px;
+  margin: 50px;
+}
+
+input[type=submit]:hover {
+  background-color: #9b9b9b;
+}
+
+input[type=button] {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: -27px;
+  right: 781px;
+  margin: 50px;
+}
+
+input[type=button]:hover {
+  background-color: #9b9b9b;
+}
+
+table {
+  padding-top: 200px; /* 適宜調整してください */
+}/*# sourceMappingURL=taishobutu.index.css.map */

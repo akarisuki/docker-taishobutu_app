@@ -20,7 +20,7 @@
     
 
 include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/db_connect.php';
+require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
 $code = $_GET['code'];
 $sql = "SELECT * FROM taishobutu_main WHERE code = :code";

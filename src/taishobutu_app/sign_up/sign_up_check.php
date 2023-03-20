@@ -1,8 +1,8 @@
 <?php
 
-try {
+use PHP_CodeSniffer\Tokenizers\PHP;
 
-    require_once '/var/www/html/taishobutu_app/common/db_connect.php';
+require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
 
     $post = $_POST;
@@ -20,32 +20,37 @@ try {
 
     $result = array_map('intval', $result);
 
-    $error = [];
+    $error_name = [];
+    $error_pass = [];
 
     if ($result['COUNT(*)'] >= 1) {
-        $error[] = 'この職員名は既に使用されています。';
+        $error_name['重複'] = 'この職員名は既に使用されています。';
     }
 
-    if ($staff_name === '') {
-        $error[] = '職員名が入力されていません。';
+    if (empty($staff_name)) {
+        $error_name['未入力'] = '職員名が入力されていません。';
     }
 
-    if ($staff_pass === '') {
-        $error[] = 'パスワードが入力されていません。';
+    if (empty($staff_pass)) {
+        $error_pass['未入力'] = 'パスワードが入力されていません。';
     }
-
 
 
     if (!preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,20}+\z/i', $staff_pass)) {
-        $error[] = 'パスワードは８文字以上20文字以下に英数字を最低１文字含むようにしてください。';
+        $error_pass['規則性違反'] = 'パスワードは８文字以上20文字以下に英数字を最低１文字含むようにしてください。';
     }
 
-    
+    $error = array_merge($error_name, $error_pass);
 
-} catch (Exception  $e) {
-    $error_message = 'ただいま障害により大変ご迷惑をおかけしております。';
-}
-
+    if (empty($error)) {
+        // エラーがなければ自動的にsign_up_done.phpにPOST
+        echo '<body onload="document.FRM.submit();" >';
+        echo '<form name="FRM" method="POST" action="sign_up_done.php">';
+        echo '<input type="hidden" name="name" value="' . htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="pass" value="' . htmlspecialchars($staff_pass, ENT_QUOTES, 'UTF-8') . '">';
+        echo '</form>';
+        echo '</body>';
+    } else {
 
 ?>
 
@@ -63,36 +68,42 @@ try {
 <body>
 
     <div class="form-wrapper">
-        <form method="post" action="sign_up_done.php">
-        <label for="name"class="required">職員名</label>
-        <input type="text" placeholder="消防太郎"name="name"><br/>
-        <label for="password"class="required">パスワード</label>
-        <input type="password" placeholder="半角整数8文字以上で"name="pass">
-        
-        <br>
-        <?php if (!empty($error)) : ?>
-            <ul class="error-message">
-                <?php foreach ($error as $err) : ?>
-                    <li><?= $err ?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else : ?>
-        <?php
-            $hash_pass = password_hash($staff_pass, PASSWORD_DEFAULT);
-
-            $sql = 'INSERT INTO firedept_staff SET staff_name = :staff_name,staff_pass = :staff_pass';
-            $stmt = $db_host->prepare($sql);
-            $stmt->bindValue(':staff_name', $staff_name, PDO::PARAM_STR);
-            $stmt->bindValue(':staff_pass', $hash_pass, PDO::PARAM_STR);
-            $stmt->execute();
-            header('Location: ../login/login.php');
-            exit();
-        
-        ?>
-        <?php endif; ?>
-            <input type="submit" value="登録">
-            <input type="button" onclick="history.back()"value="戻る">
+        <form method="post" action="sign_up_check.php">
+            <label for="name"class="required">職員名</label>
+            <input type="text" placeholder="消防太郎" name="name" value="<?php 
+                if(isset($staff_name['重複'])) {
+                    echo '';
+                } else {
+                    echo htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
+                } 
+            ?>"><br/>
+            <?php if (!empty($error_name)) : ?>
+                <ul class="error-message-name">
+                    <?php foreach ($error_name as $err_name) : ?>
+                        <li><?= $err_name ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <label for="password"class="required">パスワード</label>
+            <input type="password" placeholder="半角整数8文字以上で" name="pass" value="<?php
+                if(isset($staff_pass['規則性違反'])) {
+                    echo '';
+                } else {
+                    echo htmlspecialchars($staff_pass, ENT_QUOTES, 'UTF-8');
+                }
+            ?>"><br>
+            <?php if (!empty($error_pass)) : ?>
+                <ul class="error-message-pass">
+                    <?php foreach ($error_pass as $err_pass) : ?>
+                        <li><?= $err_pass ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <input type="submit" value="登録" >
+            <input type="button" onclick="history.back()" value="戻る">
+            
         </form>
     </div>
 </body>
 </html>
+<?php } ?>

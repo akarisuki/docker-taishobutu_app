@@ -1,34 +1,16 @@
-<?php session_start();
-      session_regenerate_id(true);
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,
-          maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../common/sass/taishobutu.css">
-
-
-    <title>防火対象物管理アプリ</title>
-</head>
-<body>
-<?php
-
-    
-
-//ヘッダーを読み込み
+<?php 
+session_start();
+session_regenerate_id(true);
 include("/var/www/html/taishobutu_app/common/header.php");
+
 //政令別表の配列 $appendix_arrayを読み込む
-require_once '/var/www/html/taishobutu_app/common/bettpiyo_array.php';
+require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
+require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
 //変数で受け取る
 //それからそれぞれバリデーションする 対象：用途区分、対象物名、
 //ガチガチにはバリデーションしない。
 //用途区分についてのバリデーション　例選択しない場合の
-$error = [];
 
 $post = $_POST;
 
@@ -44,66 +26,162 @@ $owners_name = $post['owners_name'];
 
 $owners_tel = $post['owners_tel'];
 
-$total_area = (int)$post['total_area'];
+$total_area = floor((float)$post['total_area'] * 100) / 100;
 
-if(!preg_match('/^[0-9-]*$/',$taishobutu_tel)){
-  $error[] = '対象物連絡先は半角数字に-を含むようにしてください';
-}
+$error_appendix = [];
 
-if(!preg_match('/^[0-9-]*$/',$owners_tel)){
-  $error[] = '関係者連絡先は半角数字に-を含むようにしてください';
-}
+$error_taishobutu_name = [];
+
+$error_taishobutu_address = [];
+
+$error_taishobutu_tel = [];
+
+$error_owners_tel = [];
+
+$error_total_area = [];
 
 if($appendix === 0){
-  $error[] = '用途区分を選択して下さい。';
+  $error_appendix[] = '用途区分を選択して下さい。';
 }
 
-if($taishobutu_name === ''){
-  $error[] = '対象物名が入力されていません。';
+if(empty($taishobutu_name)){
+  $error_taishobutu_name[] = '対象物名が入力されていません。';
+}
+
+$sql = 'SELECT COUNT(*) FROM taishobutu_main WHERE taishobutu_name = :taishobutu_name';
+$stmt = $db_host->prepare($sql);
+$stmt->bindValue(':taishobutu_name', $taishobutu_name, PDO::PARAM_STR);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$result = array_map('intval', $result);
+
+if($result['COUNT(*)'] >= 1) {
+  $error_taishobutu_name['重複'] = 'この対象物名は既に使用されています。';
+}
+
+
+if(empty($taishobutu_address)){
+  $error_taishobutu_address[] = '対象物所在地が入力されていません。';
+}
+
+if(empty($taishobutu_tel)){
+  $error_taishobutu_tel[] = '対象物連絡先を入力してください。';
+}
+
+if(!preg_match('/^[0-9-]*$/',$taishobutu_tel)){
+  $error_taishobutu_tel[] = '対象物連絡先は半角数字に-を含むようにしてください';
+}
+
+
+if(!preg_match('/^[0-9-]*$/',$owners_tel)){
+  $error_owners_tel[] = '所有者連絡先は半角数字に-を含むようにしてください';
+}
+
+if(empty($total_area)){
+  $error_total_area[] = '延べ面積が入力されていません。';
 }
 
 if(!preg_match('/^\d+(\.\d{1,2})?$/',$total_area)){
-  $error[] = '延面積は半角数字で小数点第２位の範囲までで入力してください。';
+  $error_total_area[] = '延面積は半角数字で小数点第２位の範囲までで入力してください。';
 }
 
-if(count($error) > 0){
-  foreach($error as $value){
-    print '・'.$value. '<br>';
-  }
-  print '<form>';
-  print '<input type="button" onclick="history.back()" value="戻る">';
-  print '<form>';
-} else {
-  //非番の日に実装する。
-  print '用途区分:'.$appendix_array[$appendix].'<br>';
-  print '対象物名:'.$taishobutu_name.'<br>';
-  print '対象物所在地:'.$taishobutu_address.'<br>';
-  print '対象物連絡先:'.$taishobutu_tel.'<br>';
-  print '関係者名:'.$owners_name.'<br>';
-  print '関係者連絡先:'.$owners_tel.'<br>';          
-  print '延べ面積:'.$total_area.'<br>';
-  print '<form method="post" action="taishobutu_done.php">';
-  print'<input type="hidden" name="appendix" value="'.$appendix.'">';
-  print'<input type="hidden" name="taishobutu_name" value="'.$taishobutu_name.'">';
-  print'<input type="hidden" name="taishobutu_address" value="' .$taishobutu_address.'">';
-  print'<input type="hidden" name="taishobutu_tel" value="' .$taishobutu_tel.'">';
-  print'<input type="hidden" name="owners_name" value="' .$owners_name.'">';
-  print'<input type="hidden" name="owners_tel" value="' .$owners_tel.'">';
-  print'<input type="hidden" name="total_area" value="' .$total_area.'">';
-  print'登録してもよろしいですか？';
-  print'<input type="submit" value="OK">';
-  print'<input type="button" onclick="history.back()"value="戻る">';
-  print'</form>';
-}
+$error = array_merge($error_appendix,$error_taishobutu_name,$error_taishobutu_address,
+                      $error_taishobutu_tel,$error_owners_tel,$error_total_area);
 
-
+if (empty($error)) {
+        // エラーがなければ自動的にtaishobutu_done.phpにPOST
+        echo '<body onload="document.FRM.submit();" >';
+        echo '<form name="FRM" method="POST" action="taishobutu_done.php">';
+        echo '<input type="hidden" name="appendix" value="' . $appendix . '">';
+        echo '<input type="hidden" name="taishobutu_name" value="' . htmlspecialchars($taishobutu_name, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="taishobutu_address" value="' . htmlspecialchars($taishobutu_address, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="taishobutu_tel" value="' . htmlspecialchars($taishobutu_tel, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="owners_name" value="' . htmlspecialchars($owners_name, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="owners_tel" value="' . htmlspecialchars($owners_tel, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="total_area" value="' . $total_area . '">';
+        echo '</form>';
+        echo '</body>';
+    } else {
 
 ?>
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,
+          maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/sass/taishobutu/taishobutu_add.css">
+    <link rel="stylesheet" href="../common/sass/common/header.css">
+    
+    <title>予防１１９</title>
+</head>
+<body>
 
 
+<div class="form-wrapper"> 
+    <form method="post" action="taishobutu_check.php">
 
-
-
+        <?php include ('/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_select_check.php'); ?>
+        <a href="http://www.chikuta119.jp/info/ihan_kohyo/pdf/beppyo01.pdf" target="_blank">用途区分ガイド</a><br/>
+    
+        <label for="taishobutu_name" class="required">対象物名</label>    
+        <input type="text" name="taishobutu_name" value="<?= htmlspecialchars($taishobutu_name, ENT_QUOTES, 'UTF-8') ?>"><br/>
+        <?php if(!empty($error_taishobutu_name)) : ?>
+            <ul class="error-message-tai-name">
+                <?php foreach($error_taishobutu_name as $err_tai_name) : ?>
+                    <li><?= $err_tai_name ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+  
+        <label for="taishobutu_address"class="required">対象物所在地</label>
+        <input type="text" name="taishobutu_address" value="<?= htmlspecialchars($taishobutu_address, ENT_QUOTES, 'UTF-8') ?>"><br/>
+        <?php if(!empty($error_taishobutu_address)) : ?>
+            <ul class="error-message-tai-address">
+                <?php foreach($error_taishobutu_address as $err_tai_add) : ?>
+                    <li><?= $err_tai_add ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+    
+        <label for="taishobutu_tel"class="required">対象物連絡先</label>
+        <input type="text" name="taishobutu_tel" maxlength="13" value="<?= htmlspecialchars($taishobutu_tel, ENT_QUOTES, 'UTF-8') ?>"><br/>
+        <?php if(!empty($error_taishobutu_tel)) : ?>
+            <ul class="error-message-tai-tel">
+                <?php foreach($error_taishobutu_tel as $err_tai_tel) : ?>
+                    <li><?= $err_tai_tel ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+    
+        <label for="owners_name"class="optional">所有者名</label>
+        <input type="text" name="owners_name" value="<?= htmlspecialchars($owners_name, ENT_QUOTES, 'UTF-8') ?>"><br/>
+    
+        <label for="owners_tel"class="optional">所有者連絡先</label>
+        <input type="text" name="owners_tel" maxlength="13" value="<?= htmlspecialchars($owners_tel, ENT_QUOTES, 'UTF-8') ?>"><br/>
+        <?php if(!empty($error_owners_tel)) : ?>
+            <ul class="error-message-owners-tel">
+                    <li><?= $error_owners_tel ?></li>
+            </ul>
+        <?php endif; ?>
+    
+        <label for="total_area"class="required">延べ面積</label>
+        <input type="number" name="total_area" step="0.01" value="<?= htmlspecialchars($total_area, ENT_QUOTES, 'UTF-8') ?>">㎡<br/>
+        <?php if(!empty($error_total_area)) : ?>
+            <ul class="error-message-total-area">
+                <?php foreach($error_total_area as $err_to_area) : ?>
+                    <li><?= $err_to_area ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+          
+        <input type="submit" value="追加する">
+        <input type="button" onclick="history.back()" value="戻る">
+    </form>
+</div>
 </body>
 </html>
+<?php } ?>

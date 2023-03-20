@@ -4,22 +4,22 @@ session_start();
     try{
         
         //require_once '/home/ubuntu/public_html/taishobutu_app/common/sanitize.php';
-        require_once '/var/www/html/taishobutu_app/common/db_connect.php';
+        require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
         $post = $_POST;
 
         $staff_name = $post['name'];
         $staff_pass = $post['pass'];
 
-        $error = [];
+        
 
         
         if (empty($staff_name)) {
-            $error[] = '職員名が入力されていません。';
+            $error_name = '職員名が入力されていません。';
         }
 
         if (empty($staff_pass)) {
-            $error[] = 'パスワードが入力されていません。';
+            $error_pass = 'パスワードが入力されていません。';
         }
 
         
@@ -38,7 +38,7 @@ session_start();
             header('Location: ../taishobutu/taishobutu_index.php');
             exit();
         } else {
-            $error[] = 'ユーザー名、またはパスワードが違います。';
+            $error_name_pass = 'ユーザー名、またはパスワードが違います。';
         }
     } catch (Exception $e) {
         $error_message = 'ただいま障害により大変ご迷惑をおかけしております。';
@@ -64,20 +64,26 @@ session_start();
         <form method="post" action="login_check.php">
             <label for="name" class="required">職員名</label>
             <input type="text" placeholder="消防太郎" name="name"><br />
+            <?php if (!empty($error_name)) : ?>
+                <ul class="error-message-name">
+                        <li><?= $error_name ?></li>
+                </ul>
+            <?php endif; ?>
             <label for="password" class="required">パスワード</label>
-            <input type="password" placeholder="半角整数8文字以上で" name="pass"><br />
-            <div class="link">
+            <input type="password" placeholder="半角整数8文字以上で" name="pass"><br /><br/><br/><br/>
+            <?php if (!empty($error_pass)) : ?>
+                <ul class="error-message-pass">
+                        <li><?= $error_pass ?></li>
+                </ul>
+            <?php endif; ?>
                 <a href="./password_reset.php">パスワードを忘れた場合</a><br>
-                <a href="../sign_up/sign_up.php">登録していない場合はこちら</a><br>
-            </div>
+                <a href="../sign_up/sign_up.php">登録していない場合はこちら</a><br />
             <div class="rememberme">
                 <input type="checkbox" name="rememberme">ログイン情報を保持する。
             </div>
-            <?php if (!empty($error)) : ?>
-                <ul class="error-message">
-                    <?php foreach ($error as $err) : ?>
-                        <li><?= $err ?></li>
-                    <?php endforeach; ?>
+            <?php if (!empty($error_name_pass)) : ?>
+                <ul class="error-message-name-pass">
+                        <li><?= $error_name_pass ?></li>
                 </ul>
             <?php endif; ?>
             <input type="submit" value="ログイン">

@@ -25,7 +25,7 @@ try{
     //ヘッダーを読み込み
     include("/var/www/html/taishobutu_app/common/header.php");
     //データベースに接続するファイルを呼び出す。
-    require_once '/var/www/html/taishobutu_app/common/db_connect.php';
+    require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
     $post = $_POST;
 

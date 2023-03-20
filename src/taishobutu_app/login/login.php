@@ -17,10 +17,8 @@
         <input type="text" placeholder="消防太郎"name="name"><br/>
         <label for="password"class="required" >パスワード</label>
         <input type="password" placeholder="半角整数8文字以上で"name="pass"><br/>
-        <div class="link">
-            <a href="./password_reset.php">パスワードを忘れた場合</a><br>
-            <a href="../sign_up/sign_up.php">登録していない場合はこちら</a><br>
-        </div>
+        <a class="pass_reset"href="./password_reset.php">パスワードを忘れた場合</a><br>
+        <a class="sign_up"href="../sign_up/sign_up.php">登録していない場合はこちら</a><br />
         <div class="rememberme">
             <input type="checkbox" name="rememberme">ログイン情報を保持する。
         </div>

@@ -21,10 +21,9 @@
 
 include("/var/www/html/taishobutu_app/common/header.php");
 
-require_once '/var/www/html/taishobutu_app/common/db_connect.php';
 
-require_once '/var/www/html/taishobutu_app/common/bettpiyo_array.php';
-
+require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
 $code = $_GET['code'];
 $sql = "SELECT * FROM taishobutu_main WHERE code = :code";
 $stmt = $db_host->prepare($sql);

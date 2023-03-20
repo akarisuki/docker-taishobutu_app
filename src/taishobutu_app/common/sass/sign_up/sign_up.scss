@@ -32,9 +32,10 @@ input[type="password"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 16px;
     background-color: #D9D9D9;
+    
 }
 input[type="submit"] {
     background-color: #4CAF50;
@@ -67,8 +68,6 @@ input[type="submit"]:hover {
     background-color: #3e8e41;
 }
 
-
-
 .center {
   display: flex;
   justify-content: center;
@@ -76,8 +75,16 @@ input[type="submit"]:hover {
   height: 100vh;
 }
 
-.error-message {
+.error-message-name {
+  color: red;
+  position: absolute;
+  top:  77px;
+  left: 70px;
+}
+
+.error-message-pass {
   color: red;
   position: absolute;
   left: 70px;
+  bottom: 220px;
 }

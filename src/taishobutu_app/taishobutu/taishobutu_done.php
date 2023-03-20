@@ -1,31 +1,18 @@
-<?php session_start();
-      session_regenerate_id(true);
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,
-          maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../common/sass/taishobutu.css">
+<?php 
+error_reporting(0);
 
+ob_start(); 
+session_start();
+session_regenerate_id(true);
 
-    <title>防火対象物管理アプリ</title>
-</head>
-<body>
-<?php
+// 出力バッファリングを開始
 
 
 try{
     
         
-
-    //ヘッダーを読み込み
-    include("/var/www/html/taishobutu_app/common/header.php");
     //データベースに接続するファイルを呼び出す。
-    require_once '/var/www/html/taishobutu_app/common/db_connect.php';
+    require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
     $post = $_POST;
 
@@ -58,10 +45,11 @@ try{
     $stmt->bindValue(':owners_tel', $owners_tel, PDO::PARAM_STR);
     $stmt->bindValue(':total_area', $total_area, PDO::PARAM_INT);
     $stmt->execute();
-
-    $db_host = null;
-    print '追加しました。';
-    print '<a href="../taishobutu/taishobutu_index.php">対象物一覧に戻る<a>';
+    // 出力バッファをクリアしてバッファリングを終了
+    $redirectUrl = '../taishobutu/taishobutu_index.php';
+    echo '<script>window.location.href = "' . $redirectUrl . '";</script>';
+    
+    exit;
 
 } catch (PDOException $e){
   print'ただいま障害により大変ご迷惑をおかけしております。';
