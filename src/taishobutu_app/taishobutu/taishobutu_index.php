@@ -78,11 +78,24 @@ $db_host = null;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../common/sass/taishobutu/taishobutu.index.css">
     <link rel="stylesheet" href="../common/sass/common/header.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1H7K2VX72Dg5v54x7f8Dv0FFo7l5IqacX5VpG5E" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMxmnO/x5+X2U6lX4y4/QMzRVjzmV5u1N5w7QJi8LxfLg7jB/079M9CjyfN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 
 
     <title>予防１１９</title>
 </head>
 <body>
+  <?php
+  // セッション変数に削除フラグが設定されている場合、アラートを表示
+  if (isset($_SESSION['deleted']) && $_SESSION['deleted']) {
+    echo "<script>showAlert('削除が完了しました。');</script>";
+    // 削除フラグをリセット
+    $_SESSION['deleted'] = false;
+  }
+  ?>
 <div class="form-search">
   <form action="taishobutu_index.php" method="post">
     <tr>
@@ -100,45 +113,62 @@ $db_host = null;
     </tr>
   </form>
 </div>
-<?php
 
-$db_host = null;
+<form action="taishobutu_delete.php" method="post">
+  <table class="excel-style">
+    <thead>
+      <tr>
+          <th class="checkbox-top">□</th>
+          <th class="code-top">番号</th>
+          <th class="appendix-top">用途区分</th>
+          <th class="taishobutu_name-top">防火対象物名</th>
+          <th class="taishobutu_address-top">防火対象物所在地</th>
+          <th class="taishobutu_tel-top">対象物連絡先</th>
+          <th class="owner_name-top">所有者名</th>
+          <th class="owner_tel-top">所有者連絡先</th>
+          <th class="total_area-top">延べ面積</th>
+          <th class="edit"></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <?php
+        $result_count = 0; 
+        while(true) {
+          $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+          if($result === false) {
+              break;
+          }
+            $result_count++;
 
-?>
-<table>
-  <tbody>
-    <tr><th>番号</th><th>用途区分</th><th>対象物名</th><th>対象物所在地</th><th>対象物連絡先</th><th>関係者名</th><th>関係者連絡先</th><th>延べ面積</th></tr>
-    <?php
-      $result_count = 0; 
-      while(true) {
-        $result = $stmt -> fetch(PDO::FETCH_ASSOC);
-        if($result === false) {
-            break;
+            echo "<tr>";
+            echo "<td class='checkbox-top'><input type='checkbox' name='codes[]' value='".htmlspecialchars($result['code'])."'></td>";
+            echo "<td class='code-top'>".htmlspecialchars($result['code'])."</td>";
+            echo "<td class='appendix-top'>".htmlspecialchars($appendix_array[$result['appendix']])."</td>";
+            echo "<td class='taishobutu_name-top'><a href='../taishobutu/datail/taishobutu_show_datail.php?code=".htmlspecialchars($result['code'])."'>".htmlspecialchars($result['taishobutu_name'])."</a></td>";
+            echo "<td class='taishobutu_address-top'>".htmlspecialchars($result['taishobutu_address'])."</td>";
+            echo "<td class='taishobutu_tel-top'>".htmlspecialchars($result['taishobutu_tel'])."</td>";
+            echo "<td class='owner_name-top'>".htmlspecialchars($result['owners_name'])."</td>";
+            echo "<td class='owner_tel-top'>".htmlspecialchars($result['owners_tel'])."</td>";
+            echo "<td class='total_area-top'>".htmlspecialchars($result['total_area'])."㎡"."</td>";
+            echo "<td class='edit'><a href='taishobutu_edit.php?code=".htmlspecialchars($result['code'])."'>修正</a></td>";
+            echo "</tr>";
         }
-          $result_count++;
 
-          print "<tr>";
-          print "<th class='cell-boder'>". $result['code']."</th>";
-          print "<th class='cell-boder'>". $appendix_array[$result['appendix']]."</th>";
-          print "<th class='cell-boder'><a href='taishobutu_datail.php?code=".$result['code']."'>". $result['taishobutu_name']."</a></th>";
-          print "<th class='cell-boder'>". $result['taishobutu_address']."</th>";
-          print "<th class='cell-boder'>". $result['taishobutu_tel']."</th>";
-          print "<th class='cell-boder'>". $result['owners_name']."</th>";
-          print "<th class='cell-boder'>". $result['owners_tel']."</th>";
-          print "<th class='cell-boder'>". $result['total_area']."㎡"."</th>";
-          print "<th class='cell-boder'><a href='taishobutu_edit.php? code=".$result['code']."'>修正</a></th>";
-          print "<th class='cell-boder'><a href='taishobutu_delete.php? code=".$result['code']."'>削除</a></th>";
-          print "</tr>";
-      }
+        if ($result_count === 0) {
+          echo "<tr><td colspan='9'>レコードがありません</td></tr>";
+        }
 
-      if ($result_count === 0) {
-        print "<tr><td colspan='9'>レコードがありません</td></tr>";
-      }
+      
+      ?>
+    </tbody>
+  </table>
+  <input type="submit" name="delete" value="選択したレコードを削除" onclick="return confirmDelete();">
+</form>
+<button type="button" name="delete-all" onclick="handleDeleteAll()">全削除</button>
 
-    
-    ?>
-  </tbody>
-</table>
+<?php $db_host = null; ?>
+
 
 </body>
 </html>

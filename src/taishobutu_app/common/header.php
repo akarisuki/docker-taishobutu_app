@@ -6,8 +6,8 @@
     </div>
       
     <div class="buttons d-flex justify-content-center">
-      <a href="../taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
-      <a href="../taishobutu/taishobutu_index.php" class="button">対象物一覧</a> 
+      <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
+      <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_index.php" class="button">対象物一覧</a> 
     </div>
     
     <div class="user-info">

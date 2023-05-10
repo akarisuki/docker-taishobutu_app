@@ -1,6 +1,8 @@
 @charset "UTF-8";
 body {
   background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+  padding-top: 170px;
 }
 
 .form-search {
@@ -47,4 +49,119 @@ input[type=button]:hover {
 
 table {
   padding-top: 200px; /* 適宜調整してください */
+}
+
+.excel-style {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  table-layout: fixed;
+}
+
+.excel-style th, .excel-style td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+
+.excel-style th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.excel-style tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* 以下のセレクタを追加して検索フォームには適用されないようにします */
+.form-search .excel-style th, .form-search .excel-style td {
+  border: none;
+}
+
+.excel-style th {
+  background-color: aqua;
+}
+
+.checkbox-top {
+  font-size: 30px;
+  width: 2px;
+  text-align: center;
+}
+
+.code-top {
+  width: 5px;
+  text-align: center;
+}
+
+.appendix-top {
+  width: 7px;
+  text-align: center;
+}
+
+.taishobutu_name-top {
+  width: 60px;
+  text-align: center;
+}
+
+.taishobutu_address-top {
+  width: 100px;
+  text-align: center;
+}
+
+.taishobutu_tel-top {
+  width: 26px;
+  text-align: center;
+}
+
+.owner_name-top {
+  width: 15px;
+  text-align: center;
+}
+
+.owner_tel-top {
+  width: 26px;
+  text-align: center;
+}
+
+.total_area-top {
+  width: 21px;
+  text-align: center;
+}
+
+.edit {
+  width: 3px;
+}
+
+input[name=delete] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: -322px;
+  right: 1148px;
+  margin: 455px;
+}
+input[name=delete]:hover {
+  background-color: #3e8e41;
+}
+
+button[name=delete-all] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: 133px;
+  right: 1500px;
+}
+button[name=delete-all]:hover {
+  background-color: #3e8e41;
 }/*# sourceMappingURL=taishobutu.index.css.map */

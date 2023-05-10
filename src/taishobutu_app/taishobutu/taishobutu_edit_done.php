@@ -1,21 +1,11 @@
-<?php session_start();
-      session_regenerate_id(true);
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,
-          maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../common/sass/taishobutu.css">
+<?php 
+error_reporting(0);
 
+ob_start(); 
+session_start();
+session_regenerate_id(true);
 
-    <title>防火対象物管理アプリ</title>
-</head>
-<body>
-<?php
+// 出力バッファリングを開始
 
 
 try{
@@ -29,6 +19,8 @@ try{
 
     $post = $_POST;
 
+    $code = (int)$post['code'];
+
     $appendix = (int)$post['appendix'];
 
     $taishobutu_name = $post['taishobutu_name'];
@@ -41,9 +33,17 @@ try{
 
     $owners_tel = $post['owners_tel'];
 
-    $total_area = (double)$post['total_area'];
+    $raw_total_area = $post['total_area'];
+    $total_area = round((float)$raw_total_area, 2);
+    $display_total_area = '';
 
-    $code = (int)$post['code'];
+    if (intval($total_area) === $total_area) {
+        $display_total_area = intval($total_area);
+    } else {
+        $display_total_area = number_format($total_area, 2, '.', '');
+    }
+
+    
 
     $sql = <<<EOD
     UPDATE taishobutu_main SET appendix = :appendix ,taishobutu_name = :taishobutu_name,
@@ -52,19 +52,20 @@ try{
     EOD;
 
     $stmt = $db_host->prepare($sql);
+    $stmt->bindValue(':code', $code, PDO::PARAM_INT);
     $stmt->bindValue(':appendix', $appendix, PDO::PARAM_INT);
     $stmt->bindValue(':taishobutu_name', $taishobutu_name, PDO::PARAM_STR);
     $stmt->bindValue(':taishobutu_address', $taishobutu_address, PDO::PARAM_STR);
     $stmt->bindValue(':taishobutu_tel', $taishobutu_tel, PDO::PARAM_STR);
     $stmt->bindValue(':owners_name', $owners_name, PDO::PARAM_STR);
     $stmt->bindValue(':owners_tel', $owners_tel, PDO::PARAM_STR);
-    $stmt->bindValue(':total_area', $total_area, PDO::PARAM_INT);
-    $stmt->bindValue(':code', $code, PDO::PARAM_INT);
+    $stmt->bindValue(':total_area', $display_total_area, PDO::PARAM_STR);
     $stmt->execute();
 
-    $db_host = null;
-    print '修正しました。';
-    print '<a href="taihobutu_index.php">対象物一覧に戻る<a>';
+    $redirectUrl = '../taishobutu/taishobutu_index.php';
+    echo '<script>window.location.href = "' . $redirectUrl . '";</script>';
+    
+    exit;
 
 } catch (PDOException $e){
   print'ただいま障害により大変ご迷惑をおかけしております。';

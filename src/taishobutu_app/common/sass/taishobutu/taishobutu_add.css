@@ -48,7 +48,7 @@ input[name=taishobutu_name], input[name=taishobutu_address], input[name=owners_n
 }
 
 input[name=taishobutu_tel], input[name=owners_tel], input[name=total_area] {
-  width: 148px;
+  width: 155px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -109,10 +109,24 @@ select {
   left: 277px;
 }
 
+.error-message-appendix-check {
+  color: red;
+  position: absolute;
+  bottom: 795px;
+  left: 277px;
+}
+
 .error-message-tai-name {
   color: red;
   position: absolute;
   bottom: 732px;
+  left: 277px;
+}
+
+.error-message-tai-name-check {
+  color: red;
+  position: absolute;
+  bottom: 699px;
   left: 277px;
 }
 
@@ -123,10 +137,24 @@ select {
   left: 277px;
 }
 
+.error-message-tai-address-check {
+  color: red;
+  position: absolute;
+  bottom: 607px;
+  left: 277px;
+}
+
 .error-message-tai-tel {
   color: red;
   position: absolute;
   bottom: 548px;
+  left: 277px;
+}
+
+.error-message-tai-tel-check {
+  color: red;
+  position: absolute;
+  bottom: 514px;
   left: 277px;
 }
 
@@ -137,9 +165,23 @@ select {
   left: 277px;
 }
 
+.error-message-owners-tel-check {
+  color: red;
+  position: absolute;
+  bottom: 331px;
+  left: 277px;
+}
+
 .error-message-total-area {
   color: red;
   position: absolute;
-  bottom: 270px;
+  bottom: 243px;
+  left: 277px;
+}
+
+.error-message-total-area-check {
+  color: red;
+  position: absolute;
+  bottom: 212px;
   left: 277px;
 }/*# sourceMappingURL=taishobutu_add.css.map */
