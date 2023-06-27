@@ -55,14 +55,28 @@ body {
   font-size: 0; /* ここに追加 */
 }
 
+.appendix-cell-set .cell:nth-child(1) {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: none;
+}
+
 .appendix-cell-set .cell:nth-child(2) {
+  border-top: 1px solid black;
+  border-bottom: none;
   text-align: center;
   width: 90px;
 }
 
+.appendix-cell-set .cell:nth-child(3) {
+  border-top: 1px solid black;
+  border-bottom: none;
+}
+
 .cell {
   display: inline-block;
-  border: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   padding: 5px 10px;
   font-family: Arial, sans-serif;
   font-size: 16px; /* フォントサイズを再設定 */
@@ -86,10 +100,12 @@ body {
 .taishobutu_name-cell-set .cell:nth-child(1) {
   text-align: center;
   width: 143px;
+  border-right: 1px solid black;
 }
 
 .taishobutu_name-cell-set .cell:nth-child(2) {
   width: 502px;
+  border-right: none;
 }
 
 .taishobutu_address-cell-set {
@@ -103,10 +119,12 @@ body {
 .taishobutu_address-cell-set .cell:nth-child(1) {
   text-align: center;
   width: 143px;
+  border-right: 1px solid black;
 }
 
 .taishobutu_address-cell-set .cell:nth-child(2) {
   width: 502px;
+  border-right: none;
 }
 
 .taishobutu_tel-cell-set {
@@ -120,12 +138,15 @@ body {
 .taishobutu_tel-cell-set .cell:nth-child(1) {
   text-align: center;
   width: 143px;
+  border-right: 1px solid black;
 }
 
 .taishobutu_tel-cell-set .cell:nth-child(2) {
   width: 502px;
   font-size: 20px;
   height: 36px;
+  border-right: none;
+  border-bottom: 1px solid black;
 }
 
 .owners-set {
@@ -140,7 +161,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #000;
+  border-bottom: 1px solid black;
   padding: 10px;
   margin-right: 0;
   height: 100px;
@@ -159,7 +180,6 @@ body {
 }
 
 .owner-info .cell {
-  border: 1px solid #000;
   padding: 5px 10px;
   border-left: 0;
 }
@@ -173,6 +193,16 @@ body {
   width: 502px;
 }
 
+.owners_name-cell-set .cell:nth-child(1) {
+  border-right: none;
+}
+
+.owners_name-cell-set .cell:nth-child(2) {
+  border-right: none;
+  border-left: 1px solid black;
+  border-top: none;
+}
+
 .owners_name-cell-set,
 .owners_address-cell-set,
 .owners_tel-cell-set {
@@ -180,8 +210,23 @@ body {
   height: 41px;
 }
 
-.owners_tel-cell-set .cell:last-child {
+.owners_address-cell-set .cell:nth-child(1) {
+  border-right: none;
+}
+
+.owners_address-cell-set .cell:nth-child(2) {
+  border-right: none;
+  border-left: 1px solid black;
+}
+
+.owners_tel-cell-set .cell:nth-child(1) {
+  border-right: none;
+}
+
+.owners_tel-cell-set .cell:nth-child(2) {
   font-size: 20px;
+  border-right: none;
+  border-left: 1px solid black;
 }
 
 .fire_safety_manager-set {
@@ -196,11 +241,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #000;
   padding: 10px;
   margin-right: 0;
   width: 30px;
   height: 146px;
+  border-right: 1px solid black;
 }
 
 .fire_safety_manager-label p {
@@ -215,19 +260,18 @@ body {
 }
 
 .fire_safety_manager-info .cell {
-  border: 1px solid #000;
   padding: 5px 10px;
   border-left: 0;
 }
 
-.fire_safety_manager-info .cell:first-child {
+.fire_safety_manager-info .cell:nth-child(1) {
   width: 105px;
-  border-left: 1px solid #000;
   font-size: 13px;
 }
 
-.fire_safety_manager-info .cell:last-child {
+.fire_safety_manager-info .cell:nth-child(2) {
   width: 500px;
+  border-right: none;
 }
 
 .fire_safety_manager-director-cell-set,
@@ -238,6 +282,10 @@ body {
   height: 42px;
 }
 
+.fire_plan .cell:nth-child(1), .fire_plan .cell:nth-child(2) {
+  border-bottom: none;
+}
+
 .building-set {
   position: relative;
   display: flex;
@@ -246,7 +294,7 @@ body {
   top: -42px;
 }
 
-.building-row {
+.building-row1, .building-row2, .building-row3 {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -254,7 +302,6 @@ body {
 }
 
 .cell {
-  border: 1px solid #000;
   padding: 5px 10px;
   text-align: center;
   box-sizing: border-box;
@@ -264,14 +311,24 @@ body {
   flex-grow: 1;
 }
 
-.building-row:nth-child(2) .cell,
-.building-row:nth-child(3) .cell {
+.building-row1 .cell, .building-row1 .building_classification {
+  border-top: 1px solid black;
+}
+
+.building-row1 .cell:nth-child(4),
+.building-row2 .cell:nth-child(6),
+.building-row3 .cell:nth-child(6) {
+  border-right: none;
+}
+
+.building-row2.cell,
+.building-row3.cell {
   width: 15.3846153846%;
 }
 
 /* 見出し欄の最小幅を設定し、同じサイズにする */
-.building-row:nth-child(2) .cell:first-child,
-.building-row:nth-child(3) .cell:first-child {
+.building-row2 .cell:first-child,
+.building-row3 .cell:first-child {
   min-width: 80px;
   width: auto;
 }
@@ -279,6 +336,18 @@ body {
 /* 見出し欄の文字列が横で表示される範囲で調整 */
 .building-row .cell:first-child {
   white-space: nowrap;
+}
+
+.building-row .cell:last-child {
+  border-right: none;
+}
+
+.building-row2 .cell:nth-child(2) {
+  width: 45px;
+}
+
+.building-row3 .cell:nth-child(2) {
+  width: 26px;
 }
 
 /* 建築物区分のフォントサイズを小さくする */
@@ -298,7 +367,6 @@ body {
 }
 
 .cell {
-  border: 1px solid #000;
   padding: 5px 10px;
   box-sizing: border-box;
 }
@@ -308,17 +376,24 @@ body {
   width: auto;
 }
 
+.capacity .cell:first-child {
+  font-size: 14px;
+  border-right: none;
+}
+
 .capacity .cell:first-child,
 .no_window_floor .cell:first-child {
-  min-width: 80px;
+  min-width: 84px;
 }
 
 .capacity .cell:last-child {
   width: 220px;
+  border-left: 1px solid black;
 }
 
 .no_window_floor .cell:last-child {
   width: 259px;
+  border-right: none;
 }
 
 .betushi_url {
@@ -343,135 +418,8 @@ body {
 }
 
 .bikorun-outline {
-  border: 1px solid #000; /* 枠線の色と太さを設定 */
+  border-top: 1px solid black;
   width: 643px; /* 長方形の幅を設定 */
-  height: 146px; /* 長方形の高さを設定 */
-  margin-top: 5px; /* 備考欄テキストとの間隔を設定 */
-}
-
-.free-line-top {
-  border-top: 1px solid black;
-  position: relative;
-  right: 0px;
-  bottom: 938px;
-  width: 301px;
-}
-
-.free-line-top2 {
-  border-right: 1px solid black;
-  position: relative;
-  right: 345px;
-  bottom: 940px;
-  height: 35px;
-}
-
-.free-line-top3 {
-  border-top: 1px solid black;
-  position: relative;
-  right: -1px;
-  bottom: 941px;
-  width: 645px;
-}
-
-.free-line-top4 {
-  border-top: 1px solid black;
-  position: relative;
-  right: -1px;
-  bottom: 907px;
-  width: 645px;
-}
-
-.free-line-top5 {
-  border-top: 1px solid black;
-  position: relative;
-  right: -1px;
-  bottom: 873px;
-  width: 645px;
-}
-
-.free-line-top6 {
-  border-top: 1px solid black;
-  position: relative;
-  right: -39px;
-  bottom: 837px;
-  width: 605px;
-}
-
-.free-line-center {
-  border-top: 1px solid black;
-  position: relative;
-  right: 0px;
-  bottom: 408px;
-}
-
-.free-line-right {
-  border-right: 1px solid black;
-  position: relative;
-  right: 0px;
-  bottom: 839px;
-  height: 124px;
-}
-
-.free-line-right2 {
-  border-right: 1px solid black;
-  position: relative;
-  right: 0px;
-  bottom: 533px;
-  height: 197px;
-}
-
-.free-line-right3 {
-  border-right: 1px solid black;
-  position: relative;
-  right: 0px;
-  bottom: 533px;
-  height: 24px;
-}
-
-.free-line-left {
-  border-left: 1px solid black;
-  position: relative;
-  left: 0px;
-  bottom: 1323px;
-  height: 38px;
-}
-
-.free-line-left2 {
-  border-left: 1px solid black;
-  position: relative;
-  left: 0px;
-  bottom: 768px;
-  height: 192px;
-}
-
-.free-line-left3 {
-  border-left: 1px solid black;
-  position: relative;
-  left: 143px;
-  bottom: 1291px;
-  height: 165px;
-}
-
-.free-line-left4 {
-  border-left: 1px solid black;
-  position: relative;
-  left: 142px;
-  bottom: 1582px;
-  height: 125px;
-}
-
-.free-line-left5 {
-  border-left: 1px solid black;
-  position: relative;
-  left: 0px;
-  bottom: 1275px;
-  height: 268px;
-}
-
-.free-line-bottom {
-  border-top: 1px solid black;
-  position: relative;
-  right: -1px;
-  bottom: 1055px;
-  width: 645px;
+  height: 138px; /* 長方形の高さを設定 */
+  margin-top: -40px; /* 備考欄テキストとの間隔を設定 */
 }/*# sourceMappingURL=show_datail.css.map */

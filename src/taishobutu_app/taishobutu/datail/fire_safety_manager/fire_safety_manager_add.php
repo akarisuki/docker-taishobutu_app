@@ -32,7 +32,7 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
    
   $_SESSION['message'] = '登録が完了しました。';
   $_SESSION['code'] = $code;
-  header('Location: http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager_datail.php?code=' . urlencode($code));
+  header('Location: http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.php?code=' . urlencode($code));
   exit();
 
 

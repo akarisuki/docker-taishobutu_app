@@ -4,23 +4,23 @@ session_regenerate_id(true);
 
 include("/var/www/html/taishobutu_app/common/header.php"); // この行をセッションの処理の前に移動
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-// require_once '/var/www/html/taishobutu_app/common/function.php';
+//require_once '/var/www/html/taishobutu_app/common/function.php';
 
 
 $code = isset($_POST['code']) ? $_POST['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : '');
-$sql = "SELECT * FROM fire_safety_manager WHERE code = :code ORDER BY fire_safety_manager_code ASC";
+$sql = "SELECT * FROM fire_equipment_report WHERE code = :code ORDER BY fire_equipment_report_code ASC";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':code', $code, PDO::PARAM_INT);
 
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$sql2 = "SELECT fire_safety_manager_code FROM fire_safety_manager WHERE code = :code ORDER BY fire_safety_manager_code DESC LIMIT 1";
+$sql2 = "SELECT fire_equipment_report_code FROM fire_equipment_report WHERE code = :code ORDER BY fire_equipment_report_code DESC LIMIT 1";
 $stmt2 = $db_host->prepare($sql2);
 $stmt2->bindValue(':code', $code, PDO::PARAM_INT);
 $stmt2->execute();
 $last_code_row = $stmt2->fetch(PDO::FETCH_ASSOC);
-$last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code']) ? $last_code_row['fire_safety_manager_code'] : 0;
+$last_fire_equipment_report_code = isset($last_code_row['fire_equipment_report_code']) ? $last_code_row['fire_equipment_report_code'] : 0;
 
 ?>
 
@@ -34,7 +34,7 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
           content="width=device-width,initial-scale=1.0,
           maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/taishobutu/datail/fire_safety_manager_datail.css">
+    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/taishobutu/datail/fire_equipment_report/fire_equipment_report_datail.css">
     <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/common/header.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
@@ -51,17 +51,17 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
     editMode = true;
 
     const row = $(this).closest("tr");
-    const director = row.find("td:eq(1) .display-value").text();
-    const name = row.find("td:eq(2) .display-value").text();
-    const appointmentDate = row.find("td:eq(3) .display-value").text();
-    const firePlanDate = row.find("td:eq(4) .display-value").text();
+    const report_date = row.find("td:eq(1) .display-value").text();
+    const deficiency = row.find("td:eq(2) .display-value").text();
+    const inspector = row.find("td:eq(3) .display-value").text();
+    const remarks = row.find("td:eq(4) .display-value").text();
 
-    $("input[name='fire_safety_manager_director']").val(director);
-    $("input[name='fire_safety_manager_name']").val(name);
-    $("input[name='appointment_date']").val(appointmentDate);
-    $("input[name='fire_plan_date']").val(firePlanDate);
+    $("input[name='report_date']").val(report_date);
+    $("input[name='deficiency']").val(deficiency);
+    $("input[name='inspector']").val(inspector);
+    $("input[name='remarks']").val(remarks);
 
-    $("input[name='fire_safety_manager_code']").val(id);
+    $("input[name='fire_equipment_report_code']").val(id);
     $("input[type='submit']").val("更新");
   });
 
@@ -69,21 +69,25 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
     const id = $(this).data("id");
 
     if (confirm("本当に削除しますか？")) {
-      $.post("fire_safety_manager_delete.php", { fire_safety_manager_code: id }, function (data) {
+      $.post("fire_equipment_report_delete.php", { fire_equipment_report_code: id }, function (data) {
+        alert(data); 
         location.reload();
       });
     }
   });
 
   $(".existingDataForm").on("submit", function (e) {
-    e.preventDefault();
+    if(editMode) {
+      e.preventDefault();
 
-    const url = editMode ? "fire_safety_manager_update.php" : "fire_safety_manager_add.php";
-    const formData = $(this).serialize();
+      const url =  "fire_equipment_report_update.php" ;
+      const formData = $(this).serialize();
 
-    $.post(url, formData, function (data) {
-      location.reload();
-    });
+      $.post(url, formData, function (data) {
+        alert(data); 
+        location.reload();
+      });
+    }
   });
 });
 
@@ -104,10 +108,10 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
             <thead>
               <tr>
                 <th>番号</th>
-                <th>職務上の地位</th>
-                <th>防火管理者名</th>
-                <th>選任年月日</th>
-                <th>消防計画作成・変更届年月日</th>
+                <th>受理年月日</th>
+                <th>点検を実施した設備</th>
+                <th>点検実施者</th>
+                <th>備考</th>
                 <th>編集・削除</th>
               </tr>
             </thead>
@@ -116,13 +120,13 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
               <?php foreach ($results as $row): ?>
                 <tr>
                   <td><?php echo $i; ?></td>
-                  <td><span class="display-value"><?php echo isset($row['fire_safety_manager_director']) ? $row['fire_safety_manager_director'] : ''; ?></span></td>
-                  <td><span class="display-value"><?php echo isset($row['fire_safety_manager_name']) ? $row['fire_safety_manager_name'] : ''; ?></span></td>
-                  <td><span class="display-value"><?php echo isset($row['appointment_date']) ? $row['appointment_date'] : ''; ?></span></td>
-                  <td><span class="display-value"><?php echo isset($row['fire_plan_date']) ? $row['fire_plan_date'] : ''; ?></span></td>
+                  <td><span class="display-value"><?php echo isset($row['report_date']) ? $row['report_date'] : ''; ?></span></td>
+                  <td><span class="display-value"><?php echo isset($row['deficiency']) ? $row['deficiency'] : ''; ?></span></td>
+                  <td><span class="display-value"><?php echo isset($row['inspector']) ? $row['inspector'] : ''; ?></span></td>
+                  <td><span class="display-value"><?php echo isset($row['remarks']) ? $row['remarks'] : ''; ?></span></td>
                   <td>
-                    <button class="edit-btn" data-id="<?php echo $row['fire_safety_manager_code']; ?>" <?php echo empty($row['fire_safety_manager_director']) ? 'disabled' : ''; ?>>編集</button>
-                    <button class="delete-btn" data-id="<?php echo $row['fire_safety_manager_code']; ?>" <?php echo empty($row['fire_safety_manager_director']) ? 'disabled' : ''; ?>>削除</button>
+                    <button class="edit-btn" data-id="<?php echo $row['fire_equipment_report_code']; ?>" <?php echo empty($row['report_date']) ? 'disabled' : ''; ?>>編集</button>
+                    <button class="delete-btn" data-id="<?php echo $row['fire_equipment_report_code']; ?>" <?php echo empty($row['report_date']) ? 'disabled' : ''; ?>>削除</button>
                   </td>
                 </tr>
                 <?php $i++; ?>
@@ -144,25 +148,25 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
       </table>
     </div>
     
-    <form class="existingDataForm" method="post" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager_add.php">
+    <form class="existingDataForm" method="post" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_equipment_report/fire_equipment_report_add.php">
       <input type="hidden" name="code" value="<?php echo $code; ?>">
-      <input type="hidden" name="fire_safety_manager_code" value="<?php echo $last_fire_safety_manager_code + 1; ?>">
+      <input type="hidden" name="fire_equipment_report_code" value="<?php echo $last_fire_equipment_report_code + 1; ?>">
       <div class="input-form-container">
         <label>
-          職務上の地位:
-          <input type="text" name="fire_safety_manager_director" >
+          受理年月日:
+          <input type="text" name="report_date" >
         </label>
         <label>
-          防火管理者名:
-          <input type="text" name="fire_safety_manager_name">
+          点検を実施した設備:
+          <input type="text" name="deficiency">
         </label>
         <label>
-          選任年月日:
-          <input type="text" name="appointment_date" >
+          点検実施者:
+          <input type="text" name="inspector" >
         </label>
         <label>
-          消防計画作成・変更届年月日:
-          <input type="text" name="fire_plan_date">
+          備考:
+          <input type="text" name="remarks">
         </label>
         <input type="submit" value="追加">
       
