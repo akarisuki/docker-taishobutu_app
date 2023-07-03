@@ -42,149 +42,151 @@ $db_host = null;
     <title>防火対象物管理アプリ</title>
 </head>
 <body>
-  <div class="container">
-    <div class="title-2"><h1>防火対象物台帳</h1></div>
-      <div class="code"><?php echo '番号'.$result_taishobutu_main['code'];?></div>
-      <div class="outline">
-            <div class="appendix-cell-set">
-                  <div class="cell">用途</div>
-                  <div class="cell"><?php echo $appendix_array[$result_taishobutu_main['appendix']]; ?></div>
-                  <div class="cell">
-                  <?php 
-                        $echo_specific = appendix_specific($result_taishobutu_main['appendix']);
-                        echo $echo_specific;
-                  ?>
-                  </div>    
-            </div>
-            <div class="taishobutu_name-cell-set">
-                  <div class="cell">対 象 物 名</div>
-                  <div class="cell"><?php echo $result_taishobutu_main['taishobutu_name'];?></div>
-            </div>
 
-            <div class="taishobutu_address-cell-set">
-                  <div class="cell">所  在  地</div>
-                  <div class="cell"><?php echo $result_taishobutu_main['taishobutu_address'];?></div>
-            </div>
-
-            <div class="taishobutu_tel-cell-set">
-                  <div class="cell">連  絡  先</div>
-                  <div class="cell"><?php echo $result_taishobutu_main['taishobutu_tel'];?></div>
-            </div>
-
-            <div class="owners-set">
-                  <div class="owner-label">
-                  <p>所</p>
-                  <p>有</p>
-                  <p>者</p>
-                  </div>
-                <div class="owner-info">
-                  <div class="owners_name-cell-set">
-                        <div class="cell">所有者名</div>
-                        <div class="cell"><?php echo $result_taishobutu_main['owners_name'];?></div>
-                  </div>
-                  <div class="owners_address-cell-set">
-                        <div class="cell">所在地</div>
-                        <div class="cell"></div>
-                  </div>
-                  <div class="owners_tel-cell-set">
-                        <div class="cell">連絡先</div>
-                        <div class="cell"><?php echo $result_taishobutu_main['owners_tel'];?></div>
-                  </div>
-                </div>
-            </div>
-            <!-- fire_safety_manager 防火管理者 -->
-            <div class="fire_safety_manager-set">
-                  <div class="fire_safety_manager-label">
-                  <p>防</p>
-                  <p>火</p>
-                  <p>管</p>
-                  <p>理</p>
-                  <p>者</p>
-                  </div>
-                  <div class="fire_safety_manager-info">
-                        <div class="fire_safety_manager-director-cell-set">
-                              <div class="cell">職務上の地位</div>
-                              <div class="cell"><?php echo $result_fire_safety_manager['fire_safety_manager_director'];?></div>
-                        </div>
-                        <div class="fire_safety_manager-name-cell-set">
-                              <div class="cell">氏    名</div>
-                              <div class="cell"><?php echo $result_fire_safety_manager['fire_safety_manager_name'];?></div>
-                        </div>
-                        <div class="appointment_date">
-                              <div class="cell">選任年月日</div>
-                              <div class="cell"><?php echo $result_fire_safety_manager['appointment_date'];?></div>
-                        </div>
-                        <div class="fire_plan">
-                              <div class="cell">消防計画</div>
-                              <div class="cell"><?php echo $result_fire_safety_manager['fire_plan_date'];?></div>
-                        </div>
-                  </div>
-            </div>
-            <div class="building-set">
-                  <div class="building-row1">
-                        <div class="cell">新築年月日</div>
-                        <div class="cell">○年○月○日</div>
-                        <div class="cell">階数</div>
-                        <div class="cell">地下 ○ 階 ・ 地上 ○ 階</div>
-                  </div>
-                  <div class="building-row2">
-                        <div class="cell">主要構造</div>
-                        <div class="cell">耐火構造</div>
-                        <div class="cell">内装制限</div>
-                        <div class="cell">有</div>
-                        <div class="cell building_classification">建築物区分</div>
-                        <div class="cell">4号建築物</div>
-                  </div>
-                  <div class="building-row3">
-                        <div class="cell">敷地面積</div>
-                        <div class="cell">○ ㎡</div>
-                        <div class="cell">建築面積</div>
-                        <div class="cell">○ ㎡</div>
-                        <div class="cell">延べ面積</div>
-                        <div class="cell">○ ㎡</div>
-                  </div>
-            </div>
-            <div class="etc-set">
-                  <div class="capacity">
-                        <div class="cell">収容人員</div>
-                        <div class="cell"></div>
-                  </div>
-                  <div class="no_window_floor">
-                        <div class="cell">無窓階</div>
-                        <div class="cell"></div>
-                  </div>
-            </div>
-            <div class="betushi_url">
-                  <form id="form1" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.php" method="post">
-                        <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
-                        <a href="#" onclick="submitForm('form1');" class="fire_safety_manager-url">1. 防火管理者選任状況  →  別紙①</a>
-                  </form>
-                  <form id="form2" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_equipment_report/fire_equipment_report_datail.php" method="post">
-                        <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
-                        <a href="#" onclick="submitForm('form2');" class="fire_equipment_report-url">2. 消防用設備点検報告  →  別紙②</a>
-                  </form>
-                  <form id="form3" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_fighting_training/fire_fighting_training_datail.php" method="post">
-                        <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
-                        <a href="#" onclick="submitForm('form3');" class="fire_fighting_training-url">3. 消防訓練実施状況   →   別紙③</a>
-                  </form>
-                  <form id="form4" action="http://localhost:50080/taishobutu_app/taishobutu/datail/inspection_status/inspection_status_datail.php" method="post">
-                        <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
-                        <a href="#" onclick="submitForm('form4');" class="inspection_status-url">4. 立入検査状況   →   別紙④</a>
-                  </form>
-            </div>
-
-            <div class="bikorun">
-                  <p>備  考  欄(対象物の取り扱いについての取り決め事項などを記入)</p>
-                  <div class="bikorun-outline"></div>
-            </div>
-            
-            
+  <div class="Frame">
+      <div class="Code"><?php echo '番号'.$result_taishobutu_main['code'];?></div>
+      <div class="Title2">防火対象物台帳</div>
+      <div class="RemarksColumnCellSet"><h6>備　考　欄(対象物の取り扱いについての取り決め事項などを記入)</h6></div>
+      <div class="LinkCellSet">
+        <div class="betushi_url">
+          <form id="form1" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.php" method="post">
+                <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+                <a href="#" onclick="submitForm('form1');" class="fire_safety_manager-url">1. 防火管理者選任状況  →  別紙①</a>
+          </form>
+          <form id="form2" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_equipment_report/fire_equipment_report_datail.php" method="post">
+                <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+                <a href="#" onclick="submitForm('form2');" class="fire_equipment_report-url">2. 消防用設備点検報告  →  別紙②</a>
+          </form>
+          <form id="form3" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_fighting_training/fire_fighting_training_datail.php" method="post">
+                <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+                <a href="#" onclick="submitForm('form3');" class="fire_fighting_training-url">3. 消防訓練実施状況     →   別紙③</a>
+          </form>
+          <form id="form4" action="http://localhost:50080/taishobutu_app/taishobutu/datail/inspection_status/inspection_status_datail.php" method="post">
+                <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+                  <a href="#" onclick="submitForm('form4');" class="inspection_status-url">4. 立入検査状況      →   別紙④</a>
+          </form>
+        </div>
+      </div>
+      <div class="CapacityWindowlessFloorCellSet">
+        <div class="WindowlessFloorCellSet">
+          <div class="WindowlessFloorValueCell"></div>
+          <div class="WindowlessFloorCell"><h6>無窓階</h6></div>
+        </div>
+        <div class="CapacityCellSet">
+          <div class="CapacityValueCell"></div>
+          <div class="CapacityCell"><h6>収容人員</h6></div>
+        </div>
+      </div>
+      <div class="BuildingInfoCellSet">
+        <div class="BuildingInfoBottomCellCet">
+          <div class="TotalAreaCellSet">
+            <div class="TotalAreaValueCell"></div>
+            <div class="TotalAreaCell"><h6>延べ面積</h6></div>
+          </div>
+          <div class="BuildingAreaCellSet">
+            <div class="BuildingAreaValueCell"></div>
+            <div class="BuildingAreaCell"><h6>建築面積</h6></div>
+          </div>
+          <div class="SiteAreaCellSet">
+            <div class="SiteAreaValueCell"></div>
+            <div class="SiteAreaCell"><h6>敷地面積</h6></div>
+          </div>
+        </div>
+        <div class="BuildingInfoMiddleCellCet">
+          <div class="BuildingClassificationCellSet">
+            <div class="BuildingClassificationValueCell"></div>
+            <div class="BuildingClassificationCell"><h6>建築物区分</h6></div>
+          </div>
+          <div class="InteriorLimitCellSet">
+            <div class="InteriorLimitValueCell"></div>
+            <div class="InteriorLimitCell"><h6>内装制限</h6></div>
+          </div>
+          <div class="MainStructureCellSet">
+            <div class="MainStructureValueCellSet"></div>
+            <div class="MainStructureCell"><h6>主要構造</h6></div>
+          </div>
+        </div>
+        <div class="BuildingInfoTopCellSet">
+          <div class="FloorsCellSet">
+            <div class="FloorsValueCell"><h6></h6></div>
+            <div class="FloorsCell"><h6>階数</h6></div>
+          </div>
+          <div class="NewConstructionDateCellSet">
+            <div class="NewConstructionDateValueCellSet"><h6></h6></div>
+            <div class="NewConstructionDateCell"><h6>新築年月日</h6></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="FireSafetyManagerCellSet">
+        <div class="FireSafetyManagerLavel"><h6>防<br/>火<br/>管<br/>理<br/>者</h6></div>
+        <div class="FirePlanCellSet">
+          <div class="FirePlanValueCell"><h6><?php echo $result_fire_safety_manager['fire_plan_date'];?></h6></div>
+          <div class="FirePlanCell"><h6>消防計画</h6></div>
+        </div>
+        <div class="AppointmentDateCellSet">
+          <div class="AppointmentDateValueCell"><h6><?php echo $result_fire_safety_manager['appointment_date'];?></h6></div>
+          <div class="AppointmentDateCell"><h6>選任年月日</h6></div>
+        </div>
+        <div class="FireSafetyManagerNameCellSet">
+          <div class="FireSafetyManagerNameValueCell"><h6><?php echo $result_fire_safety_manager['fire_safety_manager_name'];?></h6></div>
+          <div class="FireSafetyManagerNameCell"><h6>氏名</h6></div>
+        </div>
+        <div class="DirectorCellSet">
+          <div class="DirectorValueCell"><h6><?php echo $result_fire_safety_manager['fire_safety_manager_director'];?></h6></div>
+          <div class="DirectorCell"><h6>職務上の地位</h6></div>
+        </div>
+      </div>
+      
+      <div class="OwnerCellSet">
+        <div class="OwnerTellCellSet">
+          <div class="OwnerTellValueCell"><h6><?php echo $result_taishobutu_main['owners_tel'];?></h6></div>
+          <div class="OwnerTellCell"><h6>連絡先</h6></div>
+        </div>
+        <div class="OwnerAddressCellSet">
+          <div class="OwnerAddressValueCell"><h6></h6></div>
+          <div class="OwnerAddressCell"><h6>所在地</h6></div>
+        </div>
+        <div class="OwnerNameCellSet">
+          <div class="OwnerNameValueCell"><h6><?php echo $result_taishobutu_main['owners_name'];?></h6></div>
+          <div class="OwnerNameCell"><h6>所有者名</h6></div>
+        </div>
+        <div class="OwnerLabelCell"><h6>所<br/>有<br/>者</h6></div>
+      </div>
+      <div class="TopNameAddressTellCellSet">
+        <div class="TaishobutuAddressCellSet">
+          <div class="TaishobutuAddressValiueCell"><h6><?php echo $result_taishobutu_main['taishobutu_address'];?></h6></div>
+          <div class="TaishobutuAddressCell"><h6>所在地</h6></div>
+        </div>
+        <div class="TaishobutuTellCellSet">
+          <div class="TaishobutuTellValueCell"><h6><?php echo $result_taishobutu_main['taishobutu_tel'];?></h6></div>
+          <div class="TaishobutuTellCell"><h6>連絡先</h6></div>
+        </div>
+        <div class="TaishobutuNameCellSet">
+          <div class="TaishobutuNameValueCell"><h6><?php echo $result_taishobutu_main['taishobutu_name'];?></h6></div>
+          <div class="TaishobutuNameCell"><h6>対象物</h6></div>
+        </div>
+      
+      </div>
+      <div class="AppendixCellSet">
+        <div class="TokuteiOrHitokuteiCell"></div>
+        <div class="AppendixNumberCell"></div>
+        <div class="AppendixTitleCell"></div>
+        <div class="AppendixTextSet">
+          <div class="Appendix">用途</div>
+          <div class="AppendixValue"><?php echo $appendix_array[$result_taishobutu_main['appendix']]; ?></div>
+          <div class="TokuteiValue">
+            <?php 
+                $echo_specific = appendix_specific($result_taishobutu_main['appendix']);
+                echo $echo_specific;
+            ?>
+          </div>
+        </div>
       </div>
       
   </div>
+</body>
 
 </html>
-
-
 
 

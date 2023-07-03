@@ -1,0 +1,425 @@
+@charset "UTF-8";
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+}
+body {
+  background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+  padding-top: 170px;
+}
+
+.container {
+  background-color: white;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm;
+  margin: 0 auto;
+  box-sizing: border-box;
+  top: -96px;
+  position: relative;
+}
+
+.title-2 {
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -77px;
+  position: relative;
+}
+
+.code {
+  font-size: large;
+  position: relative;
+  top: -138px;
+  left: 571px;
+}
+
+.outline {
+  position: absolute;
+  top: 124px;
+  width: 645px;
+  height: 903px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.appendix-cell-set {
+  display: inline-block;
+  position: relative;
+  left: -1px;
+  top: -36px;
+  font-size: 0; /* ここに追加 */
+}
+
+.appendix-cell-set .cell:nth-child(1) {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: none;
+}
+
+.appendix-cell-set .cell:nth-child(2) {
+  border-top: 1px solid black;
+  border-bottom: none;
+  text-align: center;
+  width: 90px;
+}
+
+.appendix-cell-set .cell:nth-child(3) {
+  border-top: 1px solid black;
+  border-bottom: none;
+}
+
+.cell {
+  display: inline-block;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 5px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* フォントサイズを再設定 */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.appendix-cell-set > .cell:last-child {
+  text-align: center;
+  width: 158px;
+}
+
+.taishobutu_name-cell-set {
+  font-size: 0;
+  display: inline-block;
+  position: relative;
+  left: 0px;
+  top: -37px;
+}
+
+.taishobutu_name-cell-set .cell:nth-child(1) {
+  text-align: center;
+  width: 143px;
+  border-right: 1px solid black;
+}
+
+.taishobutu_name-cell-set .cell:nth-child(2) {
+  width: 502px;
+  border-right: none;
+}
+
+.taishobutu_address-cell-set {
+  font-size: 0;
+  display: inline-block;
+  position: relative;
+  left: 0px;
+  top: -38px;
+}
+
+.taishobutu_address-cell-set .cell:nth-child(1) {
+  text-align: center;
+  width: 143px;
+  border-right: 1px solid black;
+}
+
+.taishobutu_address-cell-set .cell:nth-child(2) {
+  width: 502px;
+  border-right: none;
+}
+
+.taishobutu_tel-cell-set {
+  font-size: 0;
+  display: inline-block;
+  position: relative;
+  left: 0px;
+  top: -39px;
+}
+
+.taishobutu_tel-cell-set .cell:nth-child(1) {
+  text-align: center;
+  width: 143px;
+  border-right: 1px solid black;
+}
+
+.taishobutu_tel-cell-set .cell:nth-child(2) {
+  width: 502px;
+  font-size: 20px;
+  height: 36px;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.owners-set {
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: 0px;
+  top: -40px;
+}
+
+.owner-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin-right: 0;
+  height: 100px;
+}
+
+.owner-label p {
+  line-height: 2;
+  margin: 0;
+  font-size: 18px;
+}
+
+.owner-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.owner-info .cell {
+  padding: 5px 10px;
+  border-left: 0;
+}
+
+.owner-info .cell:first-child {
+  width: 104px;
+  border-left: 1px solid #000;
+}
+
+.owner-info .cell:last-child {
+  width: 502px;
+}
+
+.owners_name-cell-set .cell:nth-child(1) {
+  border-right: none;
+}
+
+.owners_name-cell-set .cell:nth-child(2) {
+  border-right: none;
+  border-left: 1px solid black;
+  border-top: none;
+}
+
+.owners_name-cell-set,
+.owners_address-cell-set,
+.owners_tel-cell-set {
+  display: flex;
+  height: 41px;
+}
+
+.owners_address-cell-set .cell:nth-child(1) {
+  border-right: none;
+}
+
+.owners_address-cell-set .cell:nth-child(2) {
+  border-right: none;
+  border-left: 1px solid black;
+}
+
+.owners_tel-cell-set .cell:nth-child(1) {
+  border-right: none;
+}
+
+.owners_tel-cell-set .cell:nth-child(2) {
+  font-size: 20px;
+  border-right: none;
+  border-left: 1px solid black;
+}
+
+.fire_safety_manager-set {
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: 0px;
+  top: -40px;
+}
+
+.fire_safety_manager-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  margin-right: 0;
+  width: 30px;
+  height: 146px;
+  border-right: 1px solid black;
+}
+
+.fire_safety_manager-label p {
+  line-height: 1;
+  margin: 0;
+}
+
+.fire_safety_manager-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fire_safety_manager-info .cell {
+  padding: 5px 10px;
+  border-left: 0;
+}
+
+.fire_safety_manager-info .cell:nth-child(1) {
+  width: 105px;
+  font-size: 13px;
+}
+
+.fire_safety_manager-info .cell:nth-child(2) {
+  width: 500px;
+  border-right: none;
+}
+
+.fire_safety_manager-director-cell-set,
+.fire_safety_manager-name-cell-set,
+.fire_plan,
+.appointment_date {
+  display: flex;
+  height: 42px;
+}
+
+.fire_plan .cell:nth-child(1), .fire_plan .cell:nth-child(2) {
+  border-bottom: none;
+}
+
+.building-set {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  top: -42px;
+}
+
+.building-row1, .building-row2, .building-row3 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 0px;
+}
+
+.cell {
+  padding: 5px 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.cell:nth-child(2n) {
+  flex-grow: 1;
+}
+
+.building-row1 .cell, .building-row1 .building_classification {
+  border-top: 1px solid black;
+}
+
+.building-row1 .cell:nth-child(4),
+.building-row2 .cell:nth-child(6),
+.building-row3 .cell:nth-child(6) {
+  border-right: none;
+}
+
+.building-row2.cell,
+.building-row3.cell {
+  width: 15.3846153846%;
+}
+
+/* 見出し欄の最小幅を設定し、同じサイズにする */
+.building-row2 .cell:first-child,
+.building-row3 .cell:first-child {
+  min-width: 80px;
+  width: auto;
+}
+
+/* 見出し欄の文字列が横で表示される範囲で調整 */
+.building-row .cell:first-child {
+  white-space: nowrap;
+}
+
+.building-row .cell:last-child {
+  border-right: none;
+}
+
+.building-row2 .cell:nth-child(2) {
+  width: 45px;
+}
+
+.building-row3 .cell:nth-child(2) {
+  width: 26px;
+}
+
+/* 建築物区分のフォントサイズを小さくする */
+.building_classification {
+  font-size: 0.9em;
+}
+
+.etc-set {
+  position: relative;
+  display: flex;
+  top: -44px;
+}
+
+.capacity,
+.no_window_floor {
+  display: flex;
+}
+
+.cell {
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.capacity .cell,
+.no_window_floor .cell {
+  width: auto;
+}
+
+.capacity .cell:first-child {
+  font-size: 14px;
+  border-right: none;
+}
+
+.capacity .cell:first-child,
+.no_window_floor .cell:first-child {
+  min-width: 84px;
+}
+
+.capacity .cell:last-child {
+  width: 220px;
+  border-left: 1px solid black;
+}
+
+.no_window_floor .cell:last-child {
+  width: 259px;
+  border-right: none;
+}
+
+.betushi_url {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.fire_safety_manager-url {
+  margin-bottom: 10px; /* 任意のマージンを設定して、リンク間のスペースを調整できます */
+}
+
+.fire_equipment_report-url {
+  margin-bottom: 10px; /* 任意のマージンを設定して、リンク間のスペースを調整できます */
+}
+
+.bikorun p {
+  position: relative;
+  left: 100px;
+}
+
+.bikorun-outline {
+  border-top: 1px solid black;
+  width: 643px; /* 長方形の幅を設定 */
+  height: 138px; /* 長方形の高さを設定 */
+  margin-top: -40px; /* 備考欄テキストとの間隔を設定 */
+}/*# sourceMappingURL=show_datail2.css.map */

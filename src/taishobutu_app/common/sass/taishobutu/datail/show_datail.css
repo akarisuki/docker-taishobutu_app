@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @media print {
   @page {
     size: A4;
@@ -11,415 +10,1060 @@ body {
   padding-top: 170px;
 }
 
-.container {
-  background-color: white;
-  width: 210mm;
-  min-height: 297mm;
-  padding: 20mm;
-  margin: 0 auto;
-  box-sizing: border-box;
-  top: -96px;
+.Frame {
+  left: 675px;
+  width: 794px;
+  height: 1123px;
   position: relative;
+  background: white;
 }
 
-.title-2 {
-  font-size: large;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -77px;
-  position: relative;
-}
-
-.code {
-  font-size: large;
-  position: relative;
-  top: -138px;
-  left: 571px;
-}
-
-.outline {
+.Code {
+  left: 631px;
+  top: 48px;
   position: absolute;
-  top: 124px;
-  width: 645px;
-  height: 903px;
-  border: 1px solid black;
-  display: inline-block;
+  color: black;
+  font-size: 21px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.appendix-cell-set {
-  display: inline-block;
-  position: relative;
-  left: -1px;
-  top: -36px;
-  font-size: 0; /* ここに追加 */
+.Title2 {
+  left: 222px;
+  top: 19px;
+  position: absolute;
+  color: black;
+  font-size: 50px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.appendix-cell-set .cell:nth-child(1) {
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-bottom: none;
+.AppendixCellSet {
+  width: 296px;
+  height: 35px;
+  left: 72px;
+  top: 113px;
+  position: absolute;
 }
-
-.appendix-cell-set .cell:nth-child(2) {
-  border-top: 1px solid black;
-  border-bottom: none;
-  text-align: center;
-  width: 90px;
+.AppendixCellSet .AppendixTitleCell {
+  width: 68px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
 }
-
-.appendix-cell-set .cell:nth-child(3) {
-  border-top: 1px solid black;
-  border-bottom: none;
+.AppendixCellSet .AppendixNumberCell {
+  width: 68px;
+  height: 35px;
+  left: 68px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
 }
-
-.cell {
-  display: inline-block;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  padding: 5px 10px;
-  font-family: Arial, sans-serif;
-  font-size: 16px; /* フォントサイズを再設定 */
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.appendix-cell-set > .cell:last-child {
-  text-align: center;
+.AppendixCellSet .TokuteiOrHitokuteiCell {
   width: 158px;
+  height: 35px;
+  left: 138px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
 }
-
-.taishobutu_name-cell-set {
-  font-size: 0;
-  display: inline-block;
-  position: relative;
+.AppendixCellSet .AppendixTextSet {
+  width: 264px;
+  height: 19px;
+  left: 19px;
+  top: 8px;
+  position: absolute;
+}
+.AppendixCellSet .Appendix {
   left: 0px;
-  top: -37px;
+  top: 1px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AppendixCellSet .AppendixValue {
+  left: 63px;
+  top: 0px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AppendixCellSet .TokuteiValue {
+  left: 129px;
+  top: 1px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.taishobutu_name-cell-set .cell:nth-child(1) {
-  text-align: center;
-  width: 143px;
-  border-right: 1px solid black;
+.RemarksColumnCellSet {
+  width: 660px;
+  height: 199px;
+  left: 72px;
+  top: 872px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.RemarksColumnCellSet h6 {
+  left: 120px;
+  top: -31px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.taishobutu_name-cell-set .cell:nth-child(2) {
-  width: 502px;
-  border-right: none;
+.LinkCellSet {
+  width: 660px;
+  height: 234px;
+  left: 72px;
+  top: 638px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.LinkCellSet .betushi_url {
+  left: 216px;
+  top: 36px;
+  position: absolute;
 }
 
-.taishobutu_address-cell-set {
-  font-size: 0;
-  display: inline-block;
-  position: relative;
+.CapacityWindowlessFloorCellSet {
+  width: 660px;
+  height: 35px;
+  left: 72px;
+  top: 603px;
+  position: absolute;
+}
+.CapacityWindowlessFloorCellSet .WindowlessFloorCellSet {
+  width: 330px;
+  height: 35px;
+  left: 330px;
+  top: 0px;
+  position: absolute;
+}
+.CapacityWindowlessFloorCellSet .WindowlessFloorCellSet .WindowlessFloorValueCell {
+  width: 140px;
+  height: 35px;
   left: 0px;
-  top: -38px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
 }
-
-.taishobutu_address-cell-set .cell:nth-child(1) {
-  text-align: center;
-  width: 143px;
-  border-right: 1px solid black;
+.CapacityWindowlessFloorCellSet .WindowlessFloorCellSet .WindowlessFloorCell {
+  width: 190px;
+  height: 35px;
+  left: 140px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
 }
-
-.taishobutu_address-cell-set .cell:nth-child(2) {
-  width: 502px;
-  border-right: none;
+.CapacityWindowlessFloorCellSet .WindowlessFloorCellSet .WindowlessFloorCell h6 {
+  left: -98px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 7.5px;
+  word-wrap: break-word;
 }
-
-.taishobutu_tel-cell-set {
-  font-size: 0;
-  display: inline-block;
-  position: relative;
+.CapacityWindowlessFloorCellSet .CapacityCellSet {
+  width: 330px;
+  height: 35px;
   left: 0px;
-  top: -39px;
+  top: 0px;
+  position: absolute;
 }
-
-.taishobutu_tel-cell-set .cell:nth-child(1) {
-  text-align: center;
-  width: 143px;
-  border-right: 1px solid black;
+.CapacityWindowlessFloorCellSet .CapacityCellSet .CapacityValueCell {
+  width: 190px;
+  height: 35px;
+  left: 140px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
 }
-
-.taishobutu_tel-cell-set .cell:nth-child(2) {
-  width: 502px;
-  font-size: 20px;
-  height: 36px;
-  border-right: none;
-  border-bottom: 1px solid black;
-}
-
-.owners-set {
-  position: relative;
-  display: flex;
-  align-items: center;
+.CapacityWindowlessFloorCellSet .CapacityCellSet .CapacityCell {
+  width: 140px;
+  height: 35px;
   left: 0px;
-  top: -40px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.CapacityWindowlessFloorCellSet .CapacityCellSet .CapacityCell h6 {
+  left: 32px;
+  top: -30px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 6px;
+  word-wrap: break-word;
 }
 
-.owner-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom: 1px solid black;
-  padding: 10px;
-  margin-right: 0;
-  height: 100px;
+.BuildingInfoCellSet {
+  width: 660px;
+  height: 105px;
+  left: 72px;
+  top: 498px;
+  position: absolute;
 }
-
-.owner-label p {
-  line-height: 2;
-  margin: 0;
-  font-size: 18px;
-}
-
-.owner-info {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.owner-info .cell {
-  padding: 5px 10px;
-  border-left: 0;
-}
-
-.owner-info .cell:first-child {
-  width: 104px;
-  border-left: 1px solid #000;
-}
-
-.owner-info .cell:last-child {
-  width: 502px;
-}
-
-.owners_name-cell-set .cell:nth-child(1) {
-  border-right: none;
-}
-
-.owners_name-cell-set .cell:nth-child(2) {
-  border-right: none;
-  border-left: 1px solid black;
-  border-top: none;
-}
-
-.owners_name-cell-set,
-.owners_address-cell-set,
-.owners_tel-cell-set {
-  display: flex;
-  height: 41px;
-}
-
-.owners_address-cell-set .cell:nth-child(1) {
-  border-right: none;
-}
-
-.owners_address-cell-set .cell:nth-child(2) {
-  border-right: none;
-  border-left: 1px solid black;
-}
-
-.owners_tel-cell-set .cell:nth-child(1) {
-  border-right: none;
-}
-
-.owners_tel-cell-set .cell:nth-child(2) {
-  font-size: 20px;
-  border-right: none;
-  border-left: 1px solid black;
-}
-
-.fire_safety_manager-set {
-  position: relative;
-  display: flex;
-  align-items: center;
+.BuildingInfoCellSet .BuildingInfoBottomCellCet {
+  width: 660px;
+  height: 35px;
   left: 0px;
-  top: -40px;
+  top: 70px;
+  position: absolute;
 }
-
-.fire_safety_manager-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  margin-right: 0;
-  width: 30px;
-  height: 146px;
-  border-right: 1px solid black;
-}
-
-.fire_safety_manager-label p {
-  line-height: 1;
-  margin: 0;
-}
-
-.fire_safety_manager-info {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.fire_safety_manager-info .cell {
-  padding: 5px 10px;
-  border-left: 0;
-}
-
-.fire_safety_manager-info .cell:nth-child(1) {
-  width: 105px;
-  font-size: 13px;
-}
-
-.fire_safety_manager-info .cell:nth-child(2) {
-  width: 500px;
-  border-right: none;
-}
-
-.fire_safety_manager-director-cell-set,
-.fire_safety_manager-name-cell-set,
-.fire_plan,
-.appointment_date {
-  display: flex;
-  height: 42px;
-}
-
-.fire_plan .cell:nth-child(1), .fire_plan .cell:nth-child(2) {
-  border-bottom: none;
-}
-
-.building-set {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  top: -42px;
-}
-
-.building-row1, .building-row2, .building-row3 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  margin-bottom: 0px;
-}
-
-.cell {
-  padding: 5px 10px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.cell:nth-child(2n) {
-  flex-grow: 1;
-}
-
-.building-row1 .cell, .building-row1 .building_classification {
-  border-top: 1px solid black;
-}
-
-.building-row1 .cell:nth-child(4),
-.building-row2 .cell:nth-child(6),
-.building-row3 .cell:nth-child(6) {
-  border-right: none;
-}
-
-.building-row2.cell,
-.building-row3.cell {
-  width: 15.3846153846%;
-}
-
-/* 見出し欄の最小幅を設定し、同じサイズにする */
-.building-row2 .cell:first-child,
-.building-row3 .cell:first-child {
-  min-width: 80px;
-  width: auto;
-}
-
-/* 見出し欄の文字列が横で表示される範囲で調整 */
-.building-row .cell:first-child {
-  white-space: nowrap;
-}
-
-.building-row .cell:last-child {
-  border-right: none;
-}
-
-.building-row2 .cell:nth-child(2) {
-  width: 45px;
-}
-
-.building-row3 .cell:nth-child(2) {
-  width: 26px;
-}
-
-/* 建築物区分のフォントサイズを小さくする */
-.building_classification {
-  font-size: 0.9em;
-}
-
-.etc-set {
-  position: relative;
-  display: flex;
-  top: -44px;
-}
-
-.capacity,
-.no_window_floor {
-  display: flex;
-}
-
-.cell {
-  padding: 5px 10px;
-  box-sizing: border-box;
-}
-
-.capacity .cell,
-.no_window_floor .cell {
-  width: auto;
-}
-
-.capacity .cell:first-child {
-  font-size: 14px;
-  border-right: none;
-}
-
-.capacity .cell:first-child,
-.no_window_floor .cell:first-child {
-  min-width: 84px;
-}
-
-.capacity .cell:last-child {
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet {
   width: 220px;
-  border-left: 1px solid black;
+  height: 35px;
+  left: 440px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet .TotalAreaValueCell {
+  width: 130px;
+  height: 35px;
+  left: 90px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet .TotalAreaCell {
+  width: 90px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet .TotalAreaCell h6 {
+  left: 8px;
+  top: -31px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet {
+  width: 220px;
+  height: 35px;
+  left: 220px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaValueCell {
+  width: 130px;
+  height: 35px;
+  left: 90px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaCell {
+  width: 90px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaCell h6 {
+  left: 17px;
+  top: -30px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet {
+  width: 220px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaValueCell {
+  width: 130px;
+  height: 35px;
+  left: 90px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaCell {
+  width: 90px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaCell h6 {
+  left: 14px;
+  top: -30px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet {
+  width: 660px;
+  height: 35px;
+  left: 0px;
+  top: 35px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .BuildingClassificationCellSet {
+  width: 220px;
+  height: 35px;
+  left: 440px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .BuildingClassificationCellSet .BuildingClassificationValueCell {
+  width: 130px;
+  height: 35px;
+  left: 90px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .BuildingClassificationCellSet .BuildingClassificationCell {
+  width: 90px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .BuildingClassificationCellSet .BuildingClassificationCell h6 {
+  left: 8px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .InteriorLimitCellSet {
+  width: 220px;
+  height: 35px;
+  left: 220px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .InteriorLimitCellSet .InteriorLimitValueCell {
+  width: 130px;
+  height: 35px;
+  left: 90px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .InteriorLimitCellSet .InteriorLimitCell {
+  width: 90px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .InteriorLimitCellSet .InteriorLimitCell h6 {
+  left: 17px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .MainStructureCellSet {
+  width: 220px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .MainStructureCellSet .MainStructureValueCellSet {
+  width: 130px;
+  height: 35px;
+  left: 90px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .MainStructureCellSet .MainStructureCell {
+  width: 90px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoMiddleCellCet .MainStructureCellSet .MainStructureCell h6 {
+  left: 13px;
+  top: -28px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet {
+  width: 660px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .FloorsCellSet {
+  width: 350px;
+  height: 35px;
+  left: 310px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .FloorsCellSet .FloorsValueCell {
+  width: 282px;
+  height: 35px;
+  left: 68px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .FloorsCellSet .FloorsCell {
+  width: 68px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .FloorsCellSet .FloorsCell h6 {
+  left: 20px;
+  top: -30px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .NewConstructionDateCellSet {
+  width: 310px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .NewConstructionDateCellSet .NewConstructionDateValueCellSet {
+  width: 188px;
+  height: 35px;
+  left: 122px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .NewConstructionDateCellSet .NewConstructionDateCell {
+  width: 122px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.BuildingInfoCellSet .BuildingInfoTopCellSet .NewConstructionDateCellSet .NewConstructionDateCell h6 {
+  left: 24px;
+  top: -30px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.no_window_floor .cell:last-child {
-  width: 259px;
-  border-right: none;
+.FireSafetyManagerCellSet {
+  width: 660px;
+  height: 140px;
+  left: 72px;
+  top: 358px;
+  position: absolute;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerLavel {
+  width: 35px;
+  height: 140px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerLavel h6 {
+  left: 9px;
+  top: -25px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .FirePlanCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 105px;
+  position: absolute;
+}
+.FireSafetyManagerCellSet .FirePlanCellSet .FirePlanValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .FirePlanCellSet .FirePlanValueCell h6 {
+  left: 30px;
+  top: -27px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .FirePlanCellSet .FirePlanCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .FirePlanCellSet .FirePlanCell h6 {
+  left: 16px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 4.5px;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .AppointmentDateCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 70px;
+  position: absolute;
+}
+.FireSafetyManagerCellSet .AppointmentDateCellSet .AppointmentDateValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .AppointmentDateCellSet .AppointmentDateValueCell h6 {
+  left: 30px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .AppointmentDateCellSet .AppointmentDateCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .AppointmentDateCellSet .AppointmentDateCell h6 {
+  left: 14px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerNameCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 35px;
+  position: absolute;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerNameCellSet .FireSafetyManagerNameValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerNameCellSet .FireSafetyManagerNameValueCell h6 {
+  left: 28px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerNameCellSet .FireSafetyManagerNameCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .FireSafetyManagerNameCellSet .FireSafetyManagerNameCell h6 {
+  left: 23px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 22.5px;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .DirectorCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 0px;
+  position: absolute;
+}
+.FireSafetyManagerCellSet .DirectorCellSet .DirectorValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .DirectorCellSet .DirectorValueCell h6 {
+  left: 28px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.FireSafetyManagerCellSet .DirectorCellSet .DirectorCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+}
+.FireSafetyManagerCellSet .DirectorCellSet .DirectorCell h6 {
+  left: 9px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.betushi_url {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-  z-index: 1;
+.OwnerCellSet {
+  width: 660px;
+  height: 105px;
+  left: 72px;
+  top: 253px;
+  position: absolute;
+}
+.OwnerCellSet .OwnerLabelCell {
+  width: 35px;
+  height: 105px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.OwnerCellSet .OwnerLabelCell h6 {
+  left: 10px;
+  top: -17px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.OwnerCellSet .OwnerTellCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 70px;
+  position: absolute;
+}
+.OwnerCellSet .OwnerTellCellSet .OwnerTellValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.OwnerCellSet .OwnerTellCellSet .OwnerTellValueCell h6 {
+  left: 32px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.OwnerCellSet .OwnerTellCellSet .OwnerTellCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+}
+.OwnerCellSet .OwnerTellCellSet .OwnerTellCell h6 {
+  left: 14px;
+  top: -28px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 10.5px;
+  word-wrap: break-word;
+}
+.OwnerCellSet .OwnerAddressCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 35px;
+  position: absolute;
+}
+.OwnerCellSet .OwnerAddressCellSet .OwnerAddressValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.OwnerCellSet .OwnerAddressCellSet .OwnerAddressCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: white;
+}
+.OwnerCellSet .OwnerAddressCellSet .OwnerAddressCell h6 {
+  left: 14px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 10.5px;
+  word-wrap: break-word;
+}
+.OwnerCellSet .OwnerNameCellSet {
+  width: 625px;
+  height: 35px;
+  left: 35px;
+  top: 0px;
+  position: absolute;
+}
+.OwnerCellSet .OwnerNameCellSet .OwnerNameValueCell {
+  width: 523px;
+  height: 35px;
+  left: 102px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.OwnerCellSet .OwnerNameCellSet .OwnerNameValueCell h6 {
+  left: 30px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.OwnerCellSet .OwnerNameCellSet .OwnerNameCell {
+  width: 102px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-top: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.OwnerCellSet .OwnerNameCellSet .OwnerNameCell h6 {
+  left: 13px;
+  top: -28px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
 }
 
-.fire_safety_manager-url {
-  margin-bottom: 10px; /* 任意のマージンを設定して、リンク間のスペースを調整できます */
+.TopNameAddressTellCellSet {
+  width: 660px;
+  height: 105px;
+  left: 72px;
+  top: 148px;
+  position: absolute;
 }
 
-.fire_equipment_report-url {
-  margin-bottom: 10px; /* 任意のマージンを設定して、リンク間のスペースを調整できます */
+.TaishobutuAddressCellSet {
+  width: 660px;
+  height: 35px;
+  left: 0px;
+  top: 35px;
+  position: absolute;
+}
+.TaishobutuAddressCellSet .TaishobutuAddressCell {
+  width: 523px;
+  height: 35px;
+  left: 137px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.TaishobutuAddressCellSet .TaishobutuAddressCell h6 {
+  left: -105px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 10.5px;
+  word-wrap: break-word;
+}
+.TaishobutuAddressCellSet .TaishobutuAddressValiueCell {
+  width: 137px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+}
+.TaishobutuAddressCellSet .TaishobutuAddressValiueCell h6 {
+  left: 168px;
+  top: -29px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.bikorun p {
-  position: relative;
-  left: 100px;
+.TaishobutuTellCellSet {
+  width: 660px;
+  height: 35px;
+  left: 0px;
+  top: 70px;
+  position: absolute;
+}
+.TaishobutuTellCellSet .TaishobutuTellCell {
+  width: 137px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+}
+.TaishobutuTellCellSet .TaishobutuTellCell h6 {
+  left: 33px;
+  top: -28px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 10.5px;
+  word-wrap: break-word;
+}
+.TaishobutuTellCellSet .TaishobutuTellValueCell {
+  width: 523px;
+  height: 35px;
+  left: 137px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.TaishobutuTellCellSet .TaishobutuTellValueCell h6 {
+  left: 31px;
+  top: -31px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
-.bikorun-outline {
-  border-top: 1px solid black;
-  width: 643px; /* 長方形の幅を設定 */
-  height: 138px; /* 長方形の高さを設定 */
-  margin-top: -40px; /* 備考欄テキストとの間隔を設定 */
+.TaishobutuNameCellSet {
+  width: 660px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.TaishobutuNameCellSet .TaishobutuNameCell {
+  width: 137px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+}
+.TaishobutuNameCellSet .TaishobutuNameCell h6 {
+  left: 42px;
+  top: -28px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-wrap: break-word;
+}
+.TaishobutuNameCellSet .TaishobutuNameValueCell {
+  width: 523px;
+  height: 35px;
+  left: 137px;
+  top: 0px;
+  position: absolute;
+  border-left: 0.5px black solid;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+}
+.TaishobutuNameCellSet .TaishobutuNameValueCell h6 {
+  left: 28px;
+  top: -30px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }/*# sourceMappingURL=show_datail.css.map */
