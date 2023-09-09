@@ -118,6 +118,26 @@
   });
 });
 
+// function toggleValue(checkboxElem) {
+//     const hiddenInput = document.getElementById(checkboxElem.id + 'Hidden');
+//     if (checkboxElem.checked) {
+//         hiddenInput.value = '◯';
+//     } else {
+//         hiddenInput.value = '×';
+//     }
+// }
+function toggleValue(checkboxElem) {
+    const hiddenInput = document.getElementById(checkboxElem.id + 'Hidden');
+    const displayLabel = document.getElementById(checkboxElem.id + 'Label');
+    if (checkboxElem.checked) {
+        hiddenInput.value = '◯';
+        displayLabel.innerText = '◯';
+    } else {
+        hiddenInput.value = '×';
+        displayLabel.innerText = '×';
+    }
+}
+
 </script>
 
 </html>

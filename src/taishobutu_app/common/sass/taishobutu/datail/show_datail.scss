@@ -12,7 +12,7 @@ body {
 }
 
 .Frame {
-  left: 675px;
+  left: 335px;
   width: 794px; 
   height: 1123px; 
   position: relative; 
@@ -138,6 +138,29 @@ body {
     font-weight: 400; 
     word-wrap: break-word;
   }
+  .RemarksColumnValueCell {
+    p {
+      left: 11px; 
+      top:  18px; 
+      position: absolute; 
+      color: black; 
+      font-size: 15px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
+    #remarks_column {
+      width: 660px;
+      height: 174px;
+      margin-top: 25px;
+      margin-left: -1px;
+      color: black; 
+      font-size: 15px; 
+      font-family: Inter;  
+      background-color: #f2f2f2;
+      resize: none; /* このプロパティはユーザーがテキストエリアのサイズを変更するのを防ぎます */
+    }
+  }
 }
 
 
@@ -158,38 +181,59 @@ body {
   }
 }
 
-.CapacityWindowlessFloorCellSet {
+.CapacityWindowlessFloorBuildingStructureCellSet {
   width: 660px; 
   height: 35px; 
   left: 72px; 
   top: 603px; 
   position: absolute;
   .WindowlessFloorCellSet {
-    width: 330px; 
+    width: 220px; 
     height: 35px; 
-    left: 330px; 
+    left: 440px; 
     top: 0px; 
-    position: absolute;
+    position: relative;
     .WindowlessFloorValueCell {
-      width: 140px; 
+      position: relative;  
+      z-index: 1;
+      width: 131px; 
+      height: 35px; 
+      left: 90px; 
+      top: 0px; 
+      border-top: 0.50px black solid; 
+      border-right: 0.50px black solid;
+      h6 {
+        left: 47px; 
+        top: -29px; 
+        position: absolute; 
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        letter-spacing: 7.50px; 
+        word-wrap: break-word;
+      }
+      #windowless_floor {
+        width: 131px;
+        height: 100%;
+        margin-left: 1px;
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter;  
+        background-color: #f2f2f2;
+      }
+    }
+    
+    .WindowlessFloorCell {
+      width: 90px; 
       height: 35px; 
       left: 0px; 
       top: 0px; 
       position: absolute;  
       border-top: 0.50px black solid; 
       border-right: 0.50px black solid;
-    }
-    
-    .WindowlessFloorCell {
-      width: 190px; 
-      height: 35px; 
-      left: 140px; 
-      top: 0px; 
-      position: absolute;  
-      border-top: 0.50px black solid; 
-      border-right: 0.50px black solid;
       h6 {
-        left: -98px; 
+        left: 15px; 
         top: -29px; 
         position: absolute; 
         color: black; 
@@ -202,23 +246,111 @@ body {
     }
   }
   .CapacityCellSet {
-    width: 330px; 
+    width: 220px; 
     height: 35px; 
-    left: 0px; 
+    left: 220px; 
     top: 0px; 
     position: absolute;
     .CapacityValueCell {
-      width: 190px; 
+      width: 130px; 
       height: 35px; 
-      left: 140px; 
+      left: 90px; 
       top: 0px; 
       position: absolute;  
       border-top: 0.50px black solid; 
       border-right: 0.50px black solid;
+      #capacity {
+        width: 101px;
+        height: 100%;
+        margin-left: 1px;
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter;  
+        background-color: #f2f2f2; 
+      }
+      h6 {
+        left: 54px; 
+        top: -30px; 
+        position: absolute; 
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        letter-spacing: 6px;
+        word-wrap: break-word;
+      }
+      h5 {
+        left: 109px; 
+        top: -20px; 
+        position: absolute; 
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        letter-spacing: 6px;
+        word-wrap: break-word; 
+      }
     }
     
     .CapacityCell {
-      width: 140px; 
+      width: 90px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;  
+      border-top: 0.50px black solid; 
+      border-right: 0.50px black solid;
+      h6 {
+        left: 5px; 
+        top: -30px; 
+        position: absolute; 
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        letter-spacing: 6px;
+        word-wrap: break-word;
+      }
+    }
+  }
+  .BuildingStructureCellSet {
+    width: 220px; 
+    height: 35px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    .BuildingStructureValueCell {
+      width: 130px; 
+      height: 35px; 
+      left: 90px; 
+      top: 0px; 
+      position: absolute;  
+      border-top: 0.50px black solid; 
+      border-right: 0.50px black solid;
+      #building_structure {
+        width: 130px;
+        height: 34px;
+        margin-top: 0px;
+        margin-left: 1px;
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter;  
+        background-color: #f2f2f2;
+      }
+      h6 {
+        left: 47px; 
+        top: -30px; 
+        position: absolute; 
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        letter-spacing: 6px;
+        word-wrap: break-word;
+      }
+    }
+    .BuildingStructureCell {
+      width: 90px; 
       height: 35px; 
       left: 0px; 
       top: 0px; 
@@ -227,16 +359,16 @@ body {
       border-top: 0.50px black solid; 
       border-right: 0.50px black solid;
       h6 {
-        left: 32px; 
+        left: 14px; 
         top: -30px; 
         position: absolute; 
         color: black; 
         font-size: 15px; 
         font-family: Inter; 
         font-weight: 400; 
-        letter-spacing: 6px;
-        word-wrap: break-word
+        word-wrap: break-word;
       }
+
     }
   }
 }
@@ -262,13 +394,33 @@ body {
       top: 0px; 
       position: absolute;
       .TotalAreaValueCell {
-        width: 130px; 
+        width: 131px; 
         height: 35px; 
         left: 90px; 
         top: 0px; 
         position: absolute; 
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        h5 {
+          left: 112px; 
+          top: -20px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word; 
+        }
+        h6 {
+          left: 47px;
+          top: -30px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word; 
+        }
       }
       
       .TotalAreaCell {
@@ -280,7 +432,7 @@ body {
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
         h6 {
-          left: 8px; 
+          left: 16px; 
           top: -31px; 
           position: absolute; 
           color: black; 
@@ -305,6 +457,37 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #building_area {
+          width: 101px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+          left: 42px; 
+          top: -31px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+        h5 {
+          left: 109px; 
+          top: -20px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          letter-spacing: 6px;
+          word-wrap: break-word; 
+        }
       }
       
       .BuildingAreaCell {
@@ -341,6 +524,36 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #site_area {
+          width: 101px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+          left: 37px; 
+          top: -31px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        } 
+        h5 {
+          left: 107px; 
+          top: -22px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
       }
       
       .SiteAreaCell {
@@ -378,13 +591,34 @@ body {
       top: 0px; 
       position: absolute;
       .BuildingClassificationValueCell {
-        width: 130px; 
+        width: 131px; 
         height: 35px; 
         left: 90px; 
         top: 0px; 
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #building_classification{
+          width: 131px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+          left: 6px; 
+          top: -26px; 
+          position: absolute; 
+          color: black; 
+          font-size: 14px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          letter-spacing: 7.50px; 
+          word-wrap: break-word;
+        }
       }
       .BuildingClassificationCell {
         width: 90px; 
@@ -420,6 +654,26 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #interior_limit{
+          width: 129px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+            left: 52px; 
+            top: -30px; 
+            position: absolute; 
+            color: black; 
+            font-size: 15px; 
+            font-family: Inter; 
+            font-weight: 400; 
+            word-wrap: break-word;
+        }
       }
       .InteriorLimitCell {
         width: 90px; 
@@ -455,6 +709,27 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #main_structure{
+          width: 129px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+          left: 27px; 
+          top: -29px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          letter-spacing: 7.50px; 
+          word-wrap: break-word;
+        }
       }
       .MainStructureCell {
         width: 90px; 
@@ -466,8 +741,8 @@ body {
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
         h6 {
-          left: 13px; 
-          top: -28px; 
+          left: 14px; 
+          top: -30px; 
           position: absolute; 
           color: black; 
           font-size: 15px; 
@@ -491,13 +766,34 @@ body {
       top: 0px; 
       position: absolute;
       .FloorsValueCell {
-        width: 282px; 
+        width: 283px; 
         height: 35px; 
         left: 68px; 
         top: 0px; 
         position: absolute; 
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #floor{
+          width: 282px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+          left: 20px; 
+          top: -30px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+        
       }
       .FloorsCell {
         width: 68px; 
@@ -533,6 +829,27 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
+        #new_construction_date{
+          width: 186px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
+        h6 {
+          left: 47px; 
+          top: -29px; 
+          position: absolute; 
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          letter-spacing: 7.50px; 
+          word-wrap: break-word;
+        }
       }
       .NewConstructionDateCell {
         width: 122px; 
@@ -863,6 +1180,27 @@ body {
       position: absolute; 
       border-left: 0.50px black solid; 
       border-right: 0.50px black solid;
+      #owners_address {
+        width: 523px;
+        height: 33px;
+        margin-top: 2px;
+        margin-left: 0px;
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter;  
+        background-color: #f2f2f2;
+      }
+      h6 {
+        left: 30px; 
+        top: -29px; 
+        position: absolute; 
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        letter-spacing: 7.50px; 
+        word-wrap: break-word;
+      }
     }  
     .OwnerAddressCell {
       width: 102px; 
@@ -1058,14 +1396,14 @@ body {
     border-left: 0.50px black solid; 
     border-top: 0.50px black solid;
     h6 {
-      left: 42px; 
+      left: 31px; 
       top: -28px; 
       position: absolute; 
       color: black; 
       font-size: 15px; 
       font-family: Inter; 
       font-weight: 400; 
-      letter-spacing: 3px; 
+      letter-spacing: 10.50px; 
       word-wrap: break-word;
     }
   }
@@ -1091,6 +1429,71 @@ body {
   }
 }
 
+#datail_add_button {
+  position: fixed;
+  top: 9px;
+  left: 372px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
 
+#datail_add_button:hover {
+  background-color: #0062cc;
+}
 
+#datail_add_button:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}
 
+#datail_edit_button {
+  position: fixed;
+  top: 9px;
+  left: 561px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#datail_edit_button:hover {
+  background-color: #0062cc;
+}
+
+#datail_edit_button:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}
+
+#add_submit {
+  position: fixed;
+  top: 9px;
+  left: 390px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000; 
+}

@@ -7,23 +7,31 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
 require_once '/var/www/html/taishobutu_app/common/function.php';
 
-$code = $_GET['code'];
+
+
+$code = isset($_GET['code']) ? $_GET['code'] : '';
+
 
 $sql_taishobutu_main = "SELECT * FROM taishobutu_main WHERE code = :code";
 $stmt_taishobutu_main = $db_host->prepare($sql_taishobutu_main);
-$stmt_taishobutu_main->bindParam(':code', $code, PDO::PARAM_STR);
+$stmt_taishobutu_main->bindParam(':code', $code, PDO::PARAM_INT);
 $stmt_taishobutu_main->execute();
 
 $result_taishobutu_main = $stmt_taishobutu_main->fetch(PDO::FETCH_ASSOC);
 
-
-
 $sql_fire_safety_manager = "SELECT * FROM fire_safety_manager WHERE code = :code";
 $stmt_fire_safety_manager = $db_host->prepare($sql_fire_safety_manager);
-$stmt_fire_safety_manager->bindParam(':code',$code, PDO::PARAM_STR);
+$stmt_fire_safety_manager->bindParam(':code',$code, PDO::PARAM_INT);
 $stmt_fire_safety_manager->execute();
 
 $result_fire_safety_manager = $stmt_fire_safety_manager->fetch(PDO::FETCH_ASSOC);
+
+$sql_taishobutu_datail = "SELECT * FROM taishobutu_datail WHERE code = :code";
+$stmt_taishobutu_datail = $db_host->prepare($sql_taishobutu_datail);
+$stmt_taishobutu_datail->bindParam(':code',$code, PDO::PARAM_INT);
+$stmt_taishobutu_datail->execute();
+
+$result_taishobutu_datail = $stmt_taishobutu_datail->fetch(PDO::FETCH_ASSOC);
 
 $db_host = null;
 ?>
@@ -41,12 +49,35 @@ $db_host = null;
 
     <title>防火対象物管理アプリ</title>
 </head>
+
 <body>
+  <div class="datail_add_button">
+      <form id="form5" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_add.php" method="post">
+          <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+          <a href="#" onclick="submitForm('form5');" class="button" id="datail_add_button">詳細記載項目追加</a>
+      </form>
+  </div>
+  <div class="datail_edit_button">
+      <form id="form6" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_edit.php" method="post">
+          <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+          <a href="#" onclick="submitForm('form6');" class="button" id="datail_edit_button">詳細記載項目変更</a>
+      </form>
+  </div> 
 
   <div class="Frame">
       <div class="Code"><?php echo '番号'.$result_taishobutu_main['code'];?></div>
       <div class="Title2">防火対象物台帳</div>
-      <div class="RemarksColumnCellSet"><h6>備　考　欄(対象物の取り扱いについての取り決め事項などを記入)</h6></div>
+      <div class="RemarksColumnCellSet"><h6>備　考　欄(対象物の取り扱いについての取り決め事項などを記入)</h6>
+          <div class="RemarksColumnValueCell">
+              <p>
+                <?php
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['remarks_column'];
+                    }
+                ?>
+              </p>
+          </div>
+      </div>
       <div class="LinkCellSet">
         <div class="betushi_url">
           <form id="form1" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.php" method="post">
@@ -65,54 +96,143 @@ $db_host = null;
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                   <a href="#" onclick="submitForm('form4');" class="inspection_status-url">4. 立入検査状況      →   別紙④</a>
           </form>
+          <form id="form7" action="http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.php" method="post">
+                <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+                  <a href="#" onclick="submitForm('form7');" class="firefighting_equipment_list-url">5. 消防用設備等一覧表    →   別紙⑤</a>
+          </form>
+          
         </div>
       </div>
-      <div class="CapacityWindowlessFloorCellSet">
+      <div class="CapacityWindowlessFloorBuildingStructureCellSet">
         <div class="WindowlessFloorCellSet">
-          <div class="WindowlessFloorValueCell"></div>
+          <div class="WindowlessFloorValueCell">
+            <h6>
+              <?php 
+                  if($result_taishobutu_datail !== false) {
+                    echo $result_taishobutu_datail['windowless_floor'];
+                  }
+              ?>
+            </h6>
+          </div>
           <div class="WindowlessFloorCell"><h6>無窓階</h6></div>
         </div>
         <div class="CapacityCellSet">
-          <div class="CapacityValueCell"></div>
+          <div class="CapacityValueCell">
+            <h6>
+              <?php 
+                  if($result_taishobutu_datail !== false) {
+                    echo $result_taishobutu_datail['capacity'];
+                  }
+              ?>
+            </h6><h5>人</h5>
+          </div>
           <div class="CapacityCell"><h6>収容人員</h6></div>
+        </div>
+        <div class="BuildingStructureCellSet">
+          <div class="BuildingStructureValueCell">
+            <h6>
+              <?php
+                  if($result_taishobutu_datail !== false)  {
+                    echo $result_taishobutu_datail['building_structure']; 
+                  }
+              ?>
+            </h6>
+          </div>
+          <div class="BuildingStructureCell"><h6>建築構造</h6></div>
         </div>
       </div>
       <div class="BuildingInfoCellSet">
         <div class="BuildingInfoBottomCellCet">
           <div class="TotalAreaCellSet">
-            <div class="TotalAreaValueCell"></div>
+            <div class="TotalAreaValueCell"><h6><?php echo $result_taishobutu_main['total_area'];?></h6><h5>㎡</h5></div>
             <div class="TotalAreaCell"><h6>延べ面積</h6></div>
           </div>
           <div class="BuildingAreaCellSet">
-            <div class="BuildingAreaValueCell"></div>
+            <div class="BuildingAreaValueCell">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['building_area'];
+                    }
+                ?>
+              </h6><h5>㎡</h5>
+            </div>
             <div class="BuildingAreaCell"><h6>建築面積</h6></div>
           </div>
           <div class="SiteAreaCellSet">
-            <div class="SiteAreaValueCell"></div>
+            <div class="SiteAreaValueCell">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['site_area'];
+                    }
+                ?>
+              </h6><h5>㎡</h5>
+            </div>
             <div class="SiteAreaCell"><h6>敷地面積</h6></div>
           </div>
         </div>
         <div class="BuildingInfoMiddleCellCet">
           <div class="BuildingClassificationCellSet">
-            <div class="BuildingClassificationValueCell"></div>
+            <div class="BuildingClassificationValueCell">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['building_classification'];
+                    }
+                ?>
+              </h6>
+            </div>
             <div class="BuildingClassificationCell"><h6>建築物区分</h6></div>
           </div>
           <div class="InteriorLimitCellSet">
-            <div class="InteriorLimitValueCell"></div>
+            <div class="InteriorLimitValueCell">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['interior_limit'];
+                    }
+                ?>
+              </h6>
+            </div>
             <div class="InteriorLimitCell"><h6>内装制限</h6></div>
           </div>
           <div class="MainStructureCellSet">
-            <div class="MainStructureValueCellSet"></div>
+            <div class="MainStructureValueCellSet">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['main_structure'];
+                    }
+                ?>
+              </h6>
+            </div>
             <div class="MainStructureCell"><h6>主要構造</h6></div>
           </div>
         </div>
         <div class="BuildingInfoTopCellSet">
           <div class="FloorsCellSet">
-            <div class="FloorsValueCell"><h6></h6></div>
+            <div class="FloorsValueCell">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['floor'];
+                    }
+                ?>
+              </h6>
+            </div>
             <div class="FloorsCell"><h6>階数</h6></div>
           </div>
           <div class="NewConstructionDateCellSet">
-            <div class="NewConstructionDateValueCellSet"><h6></h6></div>
+            <div class="NewConstructionDateValueCellSet">
+              <h6>
+                <?php 
+                    if($result_taishobutu_datail !== false){
+                      echo $result_taishobutu_datail['new_construction_date'];
+                    }
+                ?>
+              </h6>
+            </div>
             <div class="NewConstructionDateCell"><h6>新築年月日</h6></div>
           </div>
         </div>
@@ -121,19 +241,51 @@ $db_host = null;
       <div class="FireSafetyManagerCellSet">
         <div class="FireSafetyManagerLavel"><h6>防<br/>火<br/>管<br/>理<br/>者</h6></div>
         <div class="FirePlanCellSet">
-          <div class="FirePlanValueCell"><h6><?php echo $result_fire_safety_manager['fire_plan_date'];?></h6></div>
+          <div class="FirePlanValueCell">
+            <h6>
+              <?php 
+                  if($result_fire_safety_manager !== false){
+                    echo $result_fire_safety_manager['fire_plan_date'];
+                  }
+              ?>
+            </h6>
+          </div>
           <div class="FirePlanCell"><h6>消防計画</h6></div>
         </div>
         <div class="AppointmentDateCellSet">
-          <div class="AppointmentDateValueCell"><h6><?php echo $result_fire_safety_manager['appointment_date'];?></h6></div>
+          <div class="AppointmentDateValueCell">
+            <h6>
+              <?php
+                  if($result_fire_safety_manager !== false){
+                    echo $result_fire_safety_manager['appointment_date'];
+                  }
+              ?>
+            </h6>
+          </div>
           <div class="AppointmentDateCell"><h6>選任年月日</h6></div>
         </div>
         <div class="FireSafetyManagerNameCellSet">
-          <div class="FireSafetyManagerNameValueCell"><h6><?php echo $result_fire_safety_manager['fire_safety_manager_name'];?></h6></div>
+          <div class="FireSafetyManagerNameValueCell">
+            <h6>
+              <?php
+                  if($result_fire_safety_manager){
+                    echo $result_fire_safety_manager['fire_safety_manager_name'];
+                  }
+              ?>
+            </h6>
+          </div>
           <div class="FireSafetyManagerNameCell"><h6>氏名</h6></div>
         </div>
         <div class="DirectorCellSet">
-          <div class="DirectorValueCell"><h6><?php echo $result_fire_safety_manager['fire_safety_manager_director'];?></h6></div>
+          <div class="DirectorValueCell">
+            <h6>
+              <?php
+                  if($result_fire_safety_manager){
+                    echo $result_fire_safety_manager['fire_safety_manager_director'];
+                  }
+              ?>
+            </h6>
+          </div>
           <div class="DirectorCell"><h6>職務上の地位</h6></div>
         </div>
       </div>
@@ -144,7 +296,15 @@ $db_host = null;
           <div class="OwnerTellCell"><h6>連絡先</h6></div>
         </div>
         <div class="OwnerAddressCellSet">
-          <div class="OwnerAddressValueCell"><h6></h6></div>
+          <div class="OwnerAddressValueCell">
+            <h6>
+              <?php
+                  if($result_taishobutu_datail !== false){
+                    echo $result_taishobutu_datail['owners_address'];
+                  }
+              ?>
+            </h6>
+          </div>
           <div class="OwnerAddressCell"><h6>所在地</h6></div>
         </div>
         <div class="OwnerNameCellSet">

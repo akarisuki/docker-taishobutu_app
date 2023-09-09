@@ -1,0 +1,2130 @@
+@media print {
+  @page {
+    size: A3;
+    margin: 20mm;
+  }
+}
+
+body {
+  background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+  padding-top: 138px;
+}
+
+.FireEquipmentLimitedQuantity {
+  width: 1588px; 
+  height: 1123px; 
+  position: relative; 
+  background: white;
+  
+}
+
+.page_title {
+  position: absolute;
+  top: -15px;
+  left: 533px;
+  font-family: Inter;
+  font-size: 41px;
+  font-weight: 400;
+  color: black;
+  word-wrap: break-word;
+}
+
+.EmergencyPowerSupplyCellset {
+  width: 1454px; 
+  height: 105px; 
+  left: 67px; 
+  top: 962px; 
+  position: absolute;
+  .StorageBatteryEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 70px; 
+    position: absolute;
+    .StorageBatteryEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .StorageBatteryEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .StorageBatteryEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .StorageBatteryEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .StorageBatteryEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .InHousePowerGenerationEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 35px; 
+    position: absolute;
+    .InHousePowerGenerationEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .InHousePowerGenerationEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .InHousePowerGenerationEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .InHousePowerGenerationEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .InHousePowerGenerationEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .ThePowerReceivingFacilityDedicatedToAStandByPowerSource {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 0px; 
+    position: absolute;
+    .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .EmergencyPowerSupplyLabel {
+    width: 120px;
+    height: 105px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .EmergencyPowerSupplyLabelArea {
+      width: 120px; 
+      height: 105px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-left: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+      h1 {
+        left: 14px; 
+        top: 19px; 
+        position: absolute; 
+        color: black; 
+        font-size: 23px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.FireFightingFacilityCellset {
+  width: 1454px; 
+  height: 175px; 
+  left: 67px; 
+  top: 787px; 
+  position: absolute;
+  .ConnectingWaterPipe {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 140px; 
+    position: absolute;
+    .ConnectingWaterPipeGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .ConnectingWaterPipeAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .ConnectingWaterPipeNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .ConnectingWaterPipeNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .ConnectingWaterPipeName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px;
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word
+        }
+      }
+    }
+  }
+  .LinkedSprinklerSystem {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 105px; 
+    position: absolute;
+    .LinkedSprinklerSystemGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .LinkedSprinklerSystemAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .LinkedSprinklerSystemNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .LinkedSprinklerSystemNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .LinkedSprinklerSystemName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .SmokeExhaustEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 70px; 
+    position: absolute;
+    .SmokeExhaustEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SmokeExhaustEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SmokeExhaustEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SmokeExhaustEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .SmokeExhaustEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute;
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .EmergencyOutletFacility {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 35px; 
+    position: absolute;
+    .EmergencyOutletFacilityGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EmergencyOutletFacilityAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EmergencyOutletFacilityNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EmergencyOutletFacilityNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .EmergencyOutletFacilityName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .RadioCommunicationAuxiliaryEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 0px; 
+    position: absolute;
+    .RadioCommunicationAuxiliaryEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute;
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .RadioCommunicationAuxiliaryEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .RadioCommunicationAuxiliaryEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .RadioCommunicationAuxiliaryEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .RadioCommunicationAuxiliaryEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .FireFightingFacilityLabel {
+    width: 120px; 
+    height: 175px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .FireFightingFacilityLabelArea {
+      width: 120px; 
+      height: 175px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-left: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+      h1 {
+        left: 14px; 
+        top: 22px; 
+        position: absolute; 
+        color: black; 
+        font-size: 23px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.FirefightingWaterCellset {
+  width: 1454px; 
+  height: 35px; 
+  left: 67px; 
+  top: 752px; 
+  position: absolute;
+  .FireTank {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 0px; 
+    position: absolute;
+    .FireTankGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireTankAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireTankNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireTankNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .FireTankName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .FirefightingWaterLabel {
+    width: 120px; 
+    height: 35px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .FirefightingWaterLabelArea {
+      width: 120px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-left: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+      h1 {
+        left: 14px; 
+        top: -15px; 
+        position: absolute; 
+        color: black; 
+        font-size: 23px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.EvacuationEquipmentCellset {
+  width: 1454px; 
+  height: 70px; 
+  left: 67px; 
+  top: 682px; 
+  position: absolute;
+  .GuideLightsGuideSigns {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 35px; 
+    position: absolute;
+    .GuideLightsGuideSignsGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .GuideLightsGuideSignsAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .GuideLightsGuideSignsNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .GuideLightsGuideSignsNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .GuideLightsGuideSignsName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .SlideEscapeLadderRescueBag {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 0px; 
+    position: absolute;
+    .SlideEscapeLadderRescueBagGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SlideEscapeLadderRescueBagAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SlideEscapeLadderRescueBagNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SlideEscapeLadderRescueBagNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .SlideEscapeLadderRescueBagName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .EvacuationEquipmentLabel {
+    width: 120px; 
+    height: 70px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .EvacuationEquipmentLabelArea {
+      width: 120px; 
+      height: 70px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-left: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+      h1 {
+        left: 14px; 
+        top: 1px; 
+        position: absolute; 
+        color: black; 
+        font-size: 23px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.AlarmEquipmentCellset {
+  width: 1454px; 
+  height: 175px; 
+  left: 67px; 
+  top: 507px; 
+  position: absolute;
+  .EmergencyAlarmDevice {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 140px; 
+    position: absolute;
+    .EmergencyAlarmDeviceGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EmergencyAlarmDeviceAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EmergencyAlarmDeviceNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EmergencyAlarmDeviceNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .EmergencyAlarmDeviceName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .GasLeakFireAlarmNameCellset {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 105px; 
+    position: absolute;
+    .GasLeakFireAlarmGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .GasLeakFireAlarmAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .GasLeakFireAlarmNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .GasLeakFireAlarmNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .GasLeakFireAlarmName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .EarthLeakageFireAlarm {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 70px; 
+    position: absolute;
+    .EarthLeakageFireAlarmGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px;
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EarthLeakageFireAlarmAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .EarthLeakageFireAlarmNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid;
+      border-bottom: 0.50px black solid;
+    }
+    .EarthLeakageFireAlarmNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .EarthLeakageFireAlarmName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute;
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .FireAlarmEquipmentThatNotifiesTheFireDepartment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 35px; 
+    position: absolute;
+    .FireAlarmEquipmentThatNotifiesTheFireDepartmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireAlarmEquipmentThatNotifiesTheFireDepartmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireAlarmEquipmentThatNotifiesTheFireDepartmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute;
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireAlarmEquipmentThatNotifiesTheFireDepartmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .FireAlarmEquipmentThatNotifiesTheFireDepartmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .AutomaticFireAlarmSystem {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 0px; 
+    position: absolute;
+    .AutomaticFireAlarmSystemGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .AutomaticFireAlarmSystemAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .AutomaticFireAlarmSystemNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .AutomaticFireAlarmSystemNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .AutomaticFireAlarmSystemName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute;
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .AlarmEquipmentLabel {
+    width: 120px;
+    height: 175px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .AlarmEquipmentLabelArea {
+      width: 120px; 
+      height: 175px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-left: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+      h1 {
+        left: 14px; 
+        top: 55px; 
+        position: absolute; 
+        color: black; 
+        font-size: 23px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.FireExtinguishingEquipmentCellset {
+  width: 1454px; 
+  height: 385px; 
+  left: 67px; 
+  top: 122px; 
+  position: absolute;
+  .SimpleFireExtinguisher {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 350px; 
+    position: absolute;
+    .SimpleFireExtinguisherGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SimpleFireExtinguisherAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SimpleFireExtinguisherNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SimpleFireExtinguisherNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .SimpleFireExtinguisherName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid;
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .PowerFirePumpEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 315px; 
+    position: absolute;
+    .PowerFirePumpEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .PowerFirePumpEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .PowerFirePumpEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .PowerFirePumpEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .PowerFirePumpEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .SprinklerEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 280px; 
+    position: absolute;
+    .SprinklerEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SprinklerEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SprinklerEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .SprinklerEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .SprinklerEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE;
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .FoamFireExtinguisher {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 245px; 
+    position: absolute;
+    .FoamFireExtinguisherGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FoamFireExtinguisherAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FoamFireExtinguisherNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE;
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FoamFireExtinguisherNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .FoamFireExtinguisherName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .PowderFireExtinguishingEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 210px; 
+    position: absolute;
+    .PowderFireExtinguishingEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute;
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .PowderFireExtinguishingEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .PowderFireExtinguishingEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px;
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .PowderFireExtinguishingEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .PowderFireExtinguishingEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .WaterSprayFireExtinguishingEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 175px; 
+    position: absolute;
+    .WaterSprayFireExtinguishingEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .WaterSprayFireExtinguishingEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .WaterSprayFireExtinguishingEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .WaterSprayFireExtinguishingEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .WaterSprayFireExtinguishingEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .InertGasFireExtinguishingEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 140px; 
+    position: absolute;
+    .InertGasFireExtinguishingEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .InertGasFireExtinguishingEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute;
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .InertGasFireExtinguishingEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .InertGasFireExtinguishingEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .InertGasFireExtinguishingEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .HalideFireExtinguishingEquipment {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 105px; 
+    position: absolute;
+    .HalideFireExtinguishingEquipmentGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .HalideFireExtinguishingEquipmentAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .HalideFireExtinguishingEquipmentNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .HalideFireExtinguishingEquipmentNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .HalideFireExtinguishingEquipmentName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+      
+    }
+  }
+  .OutdoorFireHydrant {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 70px; 
+    position: absolute;
+    .OutdoorFireHydrantGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .OutdoorFireHydrantAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .OutdoorFireHydrantNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .OutdoorFireHydrantNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .OutdoorFireHydrantName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .IndoorFireHydrant {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 35px; 
+    position: absolute;
+    .IndoorFireHydrantGR {
+      width: 673px; 
+      height: 35px; 
+      left: 661px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .IndoorFireHydrantAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .IndoorFireHydrantNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .IndoorFireHydrantNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .IndoorFireHydrantName {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .FireExtinguisher {
+    width: 1334px; 
+    height: 35px; 
+    left: 120px; 
+    top: 0px; 
+    position: absolute;
+    .FireExtinguisherGR {
+      width: 674px; 
+      height: 35px; 
+      left: 660px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireExtinguisherAI {
+      width: 145px; 
+      height: 35px; 
+      left: 516px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireExtinguisherNOI {
+      width: 145px; 
+      height: 35px; 
+      left: 370px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    .FireExtinguisherNameCellset {
+      width: 370px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute;
+      .FireExtinguisherNameCell {
+        width: 370px; 
+        height: 35px; 
+        left: 0px; 
+        top: 0px; 
+        position: absolute; 
+        background: #FFFEFE; 
+        border-right: 0.50px black solid; 
+        border-bottom: 0.50px black solid;
+        h1 {
+          left: 7px; 
+          top: -14px; 
+          position: absolute; 
+          color: black; 
+          font-size: 23px; 
+          font-family: Inter; 
+          font-weight: 400; 
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .FireExtinguishingEquipmentLabel {
+    width: 120px; 
+    height: 385px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .FireExtinguishingEquipmentLabelArea {
+      width: 120px; 
+      height: 385px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-left: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+      h1 {
+        left: 14px; 
+        top: 159px; 
+        position: absolute; 
+        color: black; 
+        font-size: 23px; 
+        font-family: Inter; 
+        font-weight: 400; 
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.Labelcellset {
+  width: 1454px; 
+  height: 35px; 
+  left: 67px; 
+  top: 87px; 
+  position: absolute;
+  .GroundsRemarksCell {
+    width: 672.46px; 
+    height: 35px; 
+    left: 781.54px; 
+    top: 0px; 
+    position: absolute;
+    .GroundsRemarks {
+      width: 672.46px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-top: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    h1 {
+      left: 272.46px; 
+      top: -15px; 
+      position: absolute; 
+      color: black; 
+      font-size: 23px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
+  }
+  .ActualInstallationCell {
+    width: 146.10px; 
+    height: 35px; 
+    left: 635.44px; 
+    top: 0px; 
+    position: absolute;
+    .ActualInstallation {
+      width: 146.10px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-top: 0.50px black solid;
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    h1 {
+      left: 14.56px; 
+      top: -15px; 
+      position: absolute; 
+      color: black; 
+      font-size: 23px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
+  }
+  .NecessityOfInstallationCell {
+    width: 145.10px; 
+    height: 35px; 
+    left: 490.34px; 
+    top: 0px; 
+    position: absolute;
+    .NecessityOfInstallation {
+      width: 145.10px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border-top: 0.50px black solid; 
+      border-right: 0.50px black solid; 
+      border-bottom: 0.50px black solid;
+    }
+    h1 {
+      left: 14.66px; 
+      top: -15px; 
+      position: absolute; 
+      color: black; 
+      font-size: 23px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
+  }
+  .FireEquipmentNameCell {
+    width: 490.34px; 
+    height: 35px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute;
+    .FireEquipmentName {
+      width: 490.34px; 
+      height: 35px; 
+      left: 0px; 
+      top: 0px; 
+      position: absolute; 
+      background: #FFFEFE; 
+      border: 0.50px black solid;
+    }
+    h1 {
+      left: 120px; 
+      top: -15px; 
+      position: absolute; 
+      text-align: center; 
+      color: black; 
+      font-size: 23px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
+  }
+}
+
+
+#equipment_edit_button {
+  position: fixed;
+  top: 9px;
+  left: 369px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#equipment_edit_button:hover {
+  background-color: #0062cc;
+}
+
+#equipment_edit_button:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}
+
+.AI_NOI {
+  font-size: 24px;
+  position: absolute;
+  left: 66px;
+  top: -11px;
+  
+}
