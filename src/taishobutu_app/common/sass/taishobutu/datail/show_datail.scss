@@ -48,23 +48,47 @@ body {
   top: 113px; 
   position: absolute;
   .AppendixTitleCell {
-    width: 68px; 
+    width: 57px; 
     height: 35px; 
     left: 0px; 
     top: 0px; 
     position: absolute;  
     border-left: 0.50px black solid; 
     border-top: 0.50px black solid;
+    .Appendix {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      color: black; 
+      font-size: 15px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
   }
   .AppendixNumberCell {
-    width: 68px; 
+    width: 79px; 
     height: 35px; 
-    left: 68px; 
+    left: 57px; 
     top: 0px; 
     position: absolute;  
     border-left: 0.50px black solid; 
     border-top: 0.50px black solid; 
     border-right: 0.50px black solid;
+    .AppendixValue {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      color: black; 
+      font-size: 15px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
   }
   .TokuteiOrHitokuteiCell {
     width: 158px; 
@@ -74,46 +98,22 @@ body {
     position: absolute; 
     border-top: 0.50px black solid; 
     border-right: 0.50px black solid;
-  }
-  .AppendixTextSet {
-    width: 264px; 
-    height: 19px; 
-    left: 19px; 
-    top: 8px; 
-    position: absolute;
-  }
-  
-  .Appendix {
-    left: 0px; 
-    top: 1px; 
-    position: absolute; 
-    color: black; 
-    font-size: 15px; 
-    font-family: Inter; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
-  .AppendixValue {
-    left: 63px; 
-    top: 0px; 
-    position: absolute; 
-    color: black; 
-    font-size: 15px; 
-    font-family: Inter; 
-    font-weight: 400; 
-    word-wrap: break-word;
+    .TokuteiValue {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      color: black; 
+      font-size: 15px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word;
+    }
   }
   
-  .TokuteiValue {
-    left: 129px; 
-    top: 1px; 
-    position: absolute; 
-    color: black; 
-    font-size: 15px; 
-    font-family: Inter; 
-    font-weight: 400; 
-    word-wrap: break-word;
-  }
+      
+  
 }
 
 
@@ -259,35 +259,14 @@ body {
       position: absolute;  
       border-top: 0.50px black solid; 
       border-right: 0.50px black solid;
-      #capacity {
-        width: 101px;
-        height: 100%;
-        margin-left: 1px;
-        color: black; 
-        font-size: 15px; 
-        font-family: Inter;  
-        background-color: #f2f2f2; 
-      }
-      h6 {
-        left: 54px; 
-        top: -30px; 
-        position: absolute; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .Capacity-value {
         color: black; 
         font-size: 15px; 
         font-family: Inter; 
         font-weight: 400; 
-        letter-spacing: 6px;
-        word-wrap: break-word;
-      }
-      h5 {
-        left: 109px; 
-        top: -20px; 
-        position: absolute; 
-        color: black; 
-        font-size: 15px; 
-        font-family: Inter; 
-        font-weight: 400; 
-        letter-spacing: 6px;
         word-wrap: break-word; 
       }
     }
@@ -401,25 +380,17 @@ body {
         position: absolute; 
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
-        h5 {
-          left: 112px; 
-          top: -20px; 
-          position: absolute; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .total-area-value{
           color: black; 
           font-size: 15px; 
           font-family: Inter; 
           font-weight: 400; 
           word-wrap: break-word; 
-        }
-        h6 {
-          left: 47px;
-          top: -30px; 
-          position: absolute; 
-          color: black; 
-          font-size: 15px; 
-          font-family: Inter; 
-          font-weight: 400; 
-          word-wrap: break-word; 
+          
         }
       }
       
@@ -457,35 +428,16 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
-        #building_area {
-          width: 101px;
-          height: 34px;
-          margin-top: 0px;
-          margin-left: 1px;
-          color: black; 
-          font-size: 15px; 
-          font-family: Inter;  
-          background-color: #f2f2f2;
-        }
-        h6 {
-          left: 42px; 
-          top: -31px; 
-          position: absolute; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+        .building-area-value {
           color: black; 
           font-size: 15px; 
           font-family: Inter; 
           font-weight: 400; 
-          word-wrap: break-word;
-        }
-        h5 {
-          left: 109px; 
-          top: -20px; 
-          position: absolute; 
-          color: black; 
-          font-size: 15px; 
-          font-family: Inter; 
-          font-weight: 400; 
-          letter-spacing: 6px;
           word-wrap: break-word; 
         }
       }
@@ -524,30 +476,10 @@ body {
         position: absolute;  
         border-top: 0.50px black solid; 
         border-right: 0.50px black solid;
-        #site_area {
-          width: 101px;
-          height: 34px;
-          margin-top: 0px;
-          margin-left: 1px;
-          color: black; 
-          font-size: 15px; 
-          font-family: Inter;  
-          background-color: #f2f2f2;
-        }
-        h6 {
-          left: 37px; 
-          top: -31px; 
-          position: absolute; 
-          color: black; 
-          font-size: 15px; 
-          font-family: Inter; 
-          font-weight: 400; 
-          word-wrap: break-word;
-        } 
-        h5 {
-          left: 107px; 
-          top: -22px; 
-          position: absolute; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .site-area-value {
           color: black; 
           font-size: 15px; 
           font-family: Inter; 

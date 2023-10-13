@@ -7,7 +7,7 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
 require_once '/var/www/html/taishobutu_app/common/function.php';
 
-$code = $_POST['code'];
+$code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 
 
 $sql_firefighting_equipment_list = "SELECT * FROM firefighting_equipment_list WHERE code = :code";

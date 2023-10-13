@@ -54,10 +54,15 @@ try{
     $stmt->bindValue(':owners_tel', $owners_tel, PDO::PARAM_STR);
     $stmt->bindValue(':total_area', $display_total_area, PDO::PARAM_STR);
     $stmt->execute();
+
+
     // 出力バッファをクリアしてバッファリングを終了
     $redirectUrl = '../taishobutu/taishobutu_index.php';
     echo '<script>window.location.href = "' . $redirectUrl . '";</script>';
-    
+    $_SESSION['flash'] = [
+        'type' => 'success',
+        'message' => '追加が完了しました。'
+    ];
     exit;
 
 } catch (PDOException $e){

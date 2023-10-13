@@ -7,7 +7,7 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
 require_once '/var/www/html/taishobutu_app/common/function.php';
 
-$code = $_GET['code'];
+$code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 
 ?>
 

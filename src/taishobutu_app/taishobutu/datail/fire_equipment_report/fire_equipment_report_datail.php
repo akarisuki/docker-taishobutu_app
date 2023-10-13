@@ -4,10 +4,11 @@ session_regenerate_id(true);
 
 include("/var/www/html/taishobutu_app/common/header.php"); // この行をセッションの処理の前に移動
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-//require_once '/var/www/html/taishobutu_app/common/function.php';
+require_once '/var/www/html/taishobutu_app/common/function.php';
 
+$_SESSION['flash'] = $_SESSION['flash'] ?? null;
 
-$code = isset($_POST['code']) ? $_POST['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : '');
+$code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 $sql = "SELECT * FROM fire_equipment_report WHERE code = :code ORDER BY fire_equipment_report_code ASC";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':code', $code, PDO::PARAM_INT);
@@ -21,6 +22,7 @@ $stmt2->bindValue(':code', $code, PDO::PARAM_INT);
 $stmt2->execute();
 $last_code_row = $stmt2->fetch(PDO::FETCH_ASSOC);
 $last_fire_equipment_report_code = isset($last_code_row['fire_equipment_report_code']) ? $last_code_row['fire_equipment_report_code'] : 0;
+
 
 ?>
 
@@ -67,28 +69,40 @@ $last_fire_equipment_report_code = isset($last_code_row['fire_equipment_report_c
 
   $(".delete-btn").on("click", function () {
     const id = $(this).data("id");
+    const codeValue = $("input[name='code']").val(); 
 
     if (confirm("本当に削除しますか？")) {
-      $.post("fire_equipment_report_delete.php", { fire_equipment_report_code: id }, function (data) {
-        alert(data); 
+      $.post("fire_equipment_report_delete.php", 
+      { fire_equipment_report_code: id,}, 
+      function (data) {
         location.reload();
       });
     }
   });
 
   $(".existingDataForm").on("submit", function (e) {
-    if(editMode) {
       e.preventDefault();
 
-      const url =  "fire_equipment_report_update.php" ;
+      const url = editMode ? "fire_equipment_report_update.php" : "fire_equipment_report_add.php";
       const formData = $(this).serialize();
 
       $.post(url, formData, function (data) {
-        alert(data); 
         location.reload();
       });
-    }
+    
   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flashMessage');
+        if(flashMessage) {
+            flashMessage.style.opacity = '0';
+            setTimeout(function() {
+                flashMessage.style.display = 'none';
+            }, 1000); // 1秒後に非表示
+        }
+    }, 5000); // 5秒後に透明度を0に
 });
 
 </script>
@@ -96,11 +110,20 @@ $last_fire_equipment_report_code = isset($last_code_row['fire_equipment_report_c
 </head>
 
 <body>
+<div class="taishobutu_show_datail_button">
+    <form id="form11" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail.php" method="post">
+        <input type="hidden" name="code" value="<?php echo $code; ?>">
+        <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">対象物詳細画面へ戻る</a>
+    </form>
+</div>
+
+
     <?php
     // セッション変数からメッセージを取得し、表示
-    if (isset($_SESSION['message'])) {
-        echo '<div class="alert">' . $_SESSION['message'] . '</div>';
-        unset($_SESSION['message']); // メッセージを削除
+    if (isset($_SESSION['flash'])) {
+      $flash = $_SESSION['flash'];
+      echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
+      $_SESSION['flash'] = null;
     }
     ?>
     <div class="table-container">

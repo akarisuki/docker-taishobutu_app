@@ -49,7 +49,7 @@ body {
   position: absolute;
 }
 .AppendixCellSet .AppendixTitleCell {
-  width: 68px;
+  width: 57px;
   height: 35px;
   left: 0px;
   top: 0px;
@@ -57,15 +57,39 @@ body {
   border-left: 0.5px black solid;
   border-top: 0.5px black solid;
 }
+.AppendixCellSet .AppendixTitleCell .Appendix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 .AppendixCellSet .AppendixNumberCell {
-  width: 68px;
+  width: 79px;
   height: 35px;
-  left: 68px;
+  left: 57px;
   top: 0px;
   position: absolute;
   border-left: 0.5px black solid;
   border-top: 0.5px black solid;
   border-right: 0.5px black solid;
+}
+.AppendixCellSet .AppendixNumberCell .AppendixValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: black;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 .AppendixCellSet .TokuteiOrHitokuteiCell {
   width: 158px;
@@ -76,37 +100,12 @@ body {
   border-top: 0.5px black solid;
   border-right: 0.5px black solid;
 }
-.AppendixCellSet .AppendixTextSet {
-  width: 264px;
-  height: 19px;
-  left: 19px;
-  top: 8px;
-  position: absolute;
-}
-.AppendixCellSet .Appendix {
-  left: 0px;
-  top: 1px;
-  position: absolute;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-.AppendixCellSet .AppendixValue {
-  left: 63px;
-  top: 0px;
-  position: absolute;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-.AppendixCellSet .TokuteiValue {
-  left: 129px;
-  top: 1px;
-  position: absolute;
+.AppendixCellSet .TokuteiOrHitokuteiCell .TokuteiValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
   color: black;
   font-size: 15px;
   font-family: Inter;
@@ -252,36 +251,15 @@ body {
   position: absolute;
   border-top: 0.5px black solid;
   border-right: 0.5px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.CapacityWindowlessFloorBuildingStructureCellSet .CapacityCellSet .CapacityValueCell #capacity {
-  width: 101px;
-  height: 100%;
-  margin-left: 1px;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  background-color: #f2f2f2;
-}
-.CapacityWindowlessFloorBuildingStructureCellSet .CapacityCellSet .CapacityValueCell h6 {
-  left: 54px;
-  top: -30px;
-  position: absolute;
+.CapacityWindowlessFloorBuildingStructureCellSet .CapacityCellSet .CapacityValueCell .Capacity-value {
   color: black;
   font-size: 15px;
   font-family: Inter;
   font-weight: 400;
-  letter-spacing: 6px;
-  word-wrap: break-word;
-}
-.CapacityWindowlessFloorBuildingStructureCellSet .CapacityCellSet .CapacityValueCell h5 {
-  left: 109px;
-  top: -20px;
-  position: absolute;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  font-weight: 400;
-  letter-spacing: 6px;
   word-wrap: break-word;
 }
 .CapacityWindowlessFloorBuildingStructureCellSet .CapacityCellSet .CapacityCell {
@@ -391,21 +369,11 @@ body {
   position: absolute;
   border-top: 0.5px black solid;
   border-right: 0.5px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet .TotalAreaValueCell h5 {
-  left: 112px;
-  top: -20px;
-  position: absolute;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet .TotalAreaValueCell h6 {
-  left: 47px;
-  top: -30px;
-  position: absolute;
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .TotalAreaCellSet .TotalAreaValueCell .total-area-value {
   color: black;
   font-size: 15px;
   font-family: Inter;
@@ -446,36 +414,15 @@ body {
   position: absolute;
   border-top: 0.5px black solid;
   border-right: 0.5px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaValueCell #building_area {
-  width: 101px;
-  height: 34px;
-  margin-top: 0px;
-  margin-left: 1px;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  background-color: #f2f2f2;
-}
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaValueCell h6 {
-  left: 42px;
-  top: -31px;
-  position: absolute;
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaValueCell .building-area-value {
   color: black;
   font-size: 15px;
   font-family: Inter;
   font-weight: 400;
-  word-wrap: break-word;
-}
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaValueCell h5 {
-  left: 109px;
-  top: -20px;
-  position: absolute;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  font-weight: 400;
-  letter-spacing: 6px;
   word-wrap: break-word;
 }
 .BuildingInfoCellSet .BuildingInfoBottomCellCet .BuildingAreaCellSet .BuildingAreaCell {
@@ -512,31 +459,11 @@ body {
   position: absolute;
   border-top: 0.5px black solid;
   border-right: 0.5px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaValueCell #site_area {
-  width: 101px;
-  height: 34px;
-  margin-top: 0px;
-  margin-left: 1px;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  background-color: #f2f2f2;
-}
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaValueCell h6 {
-  left: 37px;
-  top: -31px;
-  position: absolute;
-  color: black;
-  font-size: 15px;
-  font-family: Inter;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaValueCell h5 {
-  left: 107px;
-  top: -22px;
-  position: absolute;
+.BuildingInfoCellSet .BuildingInfoBottomCellCet .SiteAreaCellSet .SiteAreaValueCell .site-area-value {
   color: black;
   font-size: 15px;
   font-family: Inter;

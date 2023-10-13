@@ -4,10 +4,11 @@ session_regenerate_id(true);
 
 include("/var/www/html/taishobutu_app/common/header.php"); // この行をセッションの処理の前に移動
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-// require_once '/var/www/html/taishobutu_app/common/function.php';
+require_once '/var/www/html/taishobutu_app/common/function.php';
 
+$_SESSION['flash'] = $_SESSION['flash'] ?? null;
 
-$code = isset($_POST['code']) ? $_POST['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : '');
+$code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 $sql = "SELECT * FROM inspection_status WHERE code = :code ORDER BY inspection_status_code ASC";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':code', $code, PDO::PARAM_INT);
@@ -52,12 +53,12 @@ $last_inspection_status_code = isset($last_code_row['inspection_status_code']) ?
 
     const row = $(this).closest("tr");
     const inspection_date = row.find("td:eq(1) .display-value").text();
-    const inspector_name = row.find("td:eq(2) .display-value").text();
+    const inspection_name = row.find("td:eq(2) .display-value").text();
     const instructions = row.find("td:eq(3) .display-value").text();
     const remarks = row.find("td:eq(4) .display-value").text();
 
     $("input[name='inspection_date']").val(inspection_date);
-    $("input[name='inspector_name']").val(inspector_name);
+    $("input[name='inspection_name']").val(inspection_name);
     $("input[name='instructions']").val(instructions);
     $("input[name='remarks']").val(remarks);
 
@@ -69,25 +70,37 @@ $last_inspection_status_code = isset($last_code_row['inspection_status_code']) ?
     const id = $(this).data("id");
 
     if (confirm("本当に削除しますか？")) {
-      $.post("inspection_status_delete.php", { inspection_status_code: id }, function (data) {
+      $.post("inspection_status_delete.php", 
+      { inspection_status_code: id }, 
+        function (data) {
         location.reload();
       });
     }
   });
 
   $(".existingDataForm").on("submit", function (e) {
-    if(editMode) {
+    
       e.preventDefault();
 
-      const url =  "inspection_status_update.php" ;
+      const url =  editMode ? "inspection_status_update.php" : "inspection_status_add.php";
       const formData = $(this).serialize();
 
       $.post(url, formData, function (data) {
-        alert(data); 
         location.reload();
       });
-    }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flashMessage');
+        if(flashMessage) {
+            flashMessage.style.opacity = '0';
+            setTimeout(function() {
+                flashMessage.style.display = 'none';
+            }, 1000); // 1秒後に非表示
+        }
+    }, 5000); // 5秒後に透明度を0に
 });
 
 </script>
@@ -95,11 +108,18 @@ $last_inspection_status_code = isset($last_code_row['inspection_status_code']) ?
 </head>
 
 <body>
+    <div class="taishobutu_show_datail_button">
+        <form id="form11" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail.php" method="post">
+            <input type="hidden" name="code" value="<?php echo $code; ?>">
+            <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">対象物詳細画面へ戻る</a>
+        </form>
+    </div>
     <?php
     // セッション変数からメッセージを取得し、表示
-    if (isset($_SESSION['message'])) {
-        echo '<div class="alert">' . $_SESSION['message'] . '</div>';
-        unset($_SESSION['message']); // メッセージを削除
+    if (isset($_SESSION['flash'])) {
+      $flash = $_SESSION['flash'];
+      echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
+      $_SESSION['flash'] = null;
     }
     ?>
     <div class="table-container">
@@ -120,7 +140,7 @@ $last_inspection_status_code = isset($last_code_row['inspection_status_code']) ?
                 <tr>
                   <td><?php echo $i; ?></td>
                   <td><span class="display-value"><?php echo isset($row['inspection_date']) ? $row['inspection_date'] : ''; ?></span></td>
-                  <td><span class="display-value"><?php echo isset($row['inspector_name']) ? $row['inspector_name'] : ''; ?></span></td>
+                  <td><span class="display-value"><?php echo isset($row['inspection_name']) ? $row['inspection_name'] : ''; ?></span></td>
                   <td><span class="display-value"><?php echo isset($row['instructions']) ? $row['instructions'] : ''; ?></span></td>
                   <td><span class="display-value"><?php echo isset($row['remarks']) ? $row['remarks'] : ''; ?></span></td>
                   <td>
@@ -157,7 +177,7 @@ $last_inspection_status_code = isset($last_code_row['inspection_status_code']) ?
         </label>
         <label>
           査察職員名:
-          <input type="text" name="inspector_name">
+          <input type="text" name="inspection_name">
         </label>
         <label>
           指示事項の有無:

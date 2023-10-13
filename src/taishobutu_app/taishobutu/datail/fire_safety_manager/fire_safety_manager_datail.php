@@ -4,10 +4,11 @@ session_regenerate_id(true);
 
 include("/var/www/html/taishobutu_app/common/header.php"); // この行をセッションの処理の前に移動
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-// require_once '/var/www/html/taishobutu_app/common/function.php';
+require_once '/var/www/html/taishobutu_app/common/function.php';
 
+$_SESSION['flash'] = $_SESSION['flash'] ?? null;
 
-$code = isset($_POST['code']) ? $_POST['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : '');
+$code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 $sql = "SELECT * FROM fire_safety_manager WHERE code = :code ORDER BY fire_safety_manager_code ASC";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':code', $code, PDO::PARAM_INT);
@@ -69,7 +70,9 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
     const id = $(this).data("id");
 
     if (confirm("本当に削除しますか？")) {
-      $.post("fire_safety_manager_delete.php", { fire_safety_manager_code: id }, function (data) {
+      $.post("fire_safety_manager_delete.php", 
+      { fire_safety_manager_code: id }, 
+        function (data) {
         location.reload();
       });
     }
@@ -87,17 +90,38 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flashMessage');
+        if(flashMessage) {
+            flashMessage.style.opacity = '0';
+            setTimeout(function() {
+                flashMessage.style.display = 'none';
+            }, 1000); // 1秒後に非表示
+        }
+    }, 5000); // 5秒後に透明度を0に
+});
+
 </script>
     
 </head>
 
 <body>
+    <div class="taishobutu_show_datail_button">
+        <form id="form11" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail.php" method="post">
+            <input type="hidden" name="code" value="<?php echo $code; ?>">
+            <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">対象物詳細画面へ戻る</a>
+        </form>
+    </div>
     <?php
-    // セッション変数からメッセージを取得し、表示
-    if (isset($_SESSION['message'])) {
-        echo '<div class="alert">' . $_SESSION['message'] . '</div>';
-        unset($_SESSION['message']); // メッセージを削除
-    }
+      // セッション変数からメッセージを取得し、表示
+      
+
+      if (isset($_SESSION['flash'])) {
+          $flash = $_SESSION['flash'];
+          echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
+          $_SESSION['flash'] = null;
+      }
     ?>
     <div class="table-container">
         <table>

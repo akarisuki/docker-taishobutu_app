@@ -9,7 +9,8 @@ require_once '/var/www/html/taishobutu_app/common/function.php';
 
 
 
-$code = isset($_GET['code']) ? $_GET['code'] : '';
+
+$code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 
 
 $sql_taishobutu_main = "SELECT * FROM taishobutu_main WHERE code = :code";
@@ -118,13 +119,16 @@ $db_host = null;
         </div>
         <div class="CapacityCellSet">
           <div class="CapacityValueCell">
-            <h6>
-              <?php 
-                  if($result_taishobutu_datail !== false) {
-                    echo $result_taishobutu_datail['capacity'];
-                  }
-              ?>
-            </h6><h5>人</h5>
+            <div class="Capacity-value">
+              <span>
+                <?php 
+                    if($result_taishobutu_datail !== false) {
+                      echo $result_taishobutu_datail['capacity'];
+                    }
+                ?>
+              </span>
+              <span>人</span>
+            </div>
           </div>
           <div class="CapacityCell"><h6>収容人員</h6></div>
         </div>
@@ -144,30 +148,41 @@ $db_host = null;
       <div class="BuildingInfoCellSet">
         <div class="BuildingInfoBottomCellCet">
           <div class="TotalAreaCellSet">
-            <div class="TotalAreaValueCell"><h6><?php echo $result_taishobutu_main['total_area'];?></h6><h5>㎡</h5></div>
+            <div class="TotalAreaValueCell">
+              <div class="total-area-value">
+                  <span><?php echo $result_taishobutu_main['total_area'];?></span>
+                  <span>㎡</span>
+              </div>
+            </div>
             <div class="TotalAreaCell"><h6>延べ面積</h6></div>
           </div>
           <div class="BuildingAreaCellSet">
             <div class="BuildingAreaValueCell">
-              <h6>
-                <?php 
-                    if($result_taishobutu_datail !== false){
-                      echo $result_taishobutu_datail['building_area'];
-                    }
-                ?>
-              </h6><h5>㎡</h5>
+              <div class="building-area-value">
+                <span>
+                  <?php 
+                      if($result_taishobutu_datail !== false){
+                        echo $result_taishobutu_datail['building_area'];
+                      }
+                  ?>
+                </span>
+                <span>㎡</span>
+              </div>
             </div>
             <div class="BuildingAreaCell"><h6>建築面積</h6></div>
           </div>
           <div class="SiteAreaCellSet">
             <div class="SiteAreaValueCell">
-              <h6>
-                <?php 
-                    if($result_taishobutu_datail !== false){
-                      echo $result_taishobutu_datail['site_area'];
-                    }
-                ?>
-              </h6><h5>㎡</h5>
+              <div class="site-area-value">
+                <span>
+                  <?php 
+                      if($result_taishobutu_datail !== false){
+                        echo $result_taishobutu_datail['site_area'];
+                      }
+                  ?>
+                </span>
+                <span>㎡</span>
+              </div>
             </div>
             <div class="SiteAreaCell"><h6>敷地面積</h6></div>
           </div>
@@ -329,19 +344,17 @@ $db_host = null;
       
       </div>
       <div class="AppendixCellSet">
-        <div class="TokuteiOrHitokuteiCell"></div>
-        <div class="AppendixNumberCell"></div>
-        <div class="AppendixTitleCell"></div>
-        <div class="AppendixTextSet">
-          <div class="Appendix">用途</div>
-          <div class="AppendixValue"><?php echo $appendix_array[$result_taishobutu_main['appendix']]; ?></div>
+        <div class="TokuteiOrHitokuteiCell">
           <div class="TokuteiValue">
-            <?php 
-                $echo_specific = appendix_specific($result_taishobutu_main['appendix']);
-                echo $echo_specific;
-            ?>
+              <?php 
+                  $echo_specific = appendix_specific($result_taishobutu_main['appendix']);
+                  echo $echo_specific;
+              ?>
           </div>
         </div>
+        <div class="AppendixNumberCell"><div class="AppendixValue"><?php echo $appendix_array[$result_taishobutu_main['appendix']]; ?></div></div>
+        <div class="AppendixTitleCell"><div class="Appendix">用途</div></div>
+        
       </div>
       
   </div>

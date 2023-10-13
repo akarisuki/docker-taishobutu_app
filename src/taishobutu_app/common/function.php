@@ -138,6 +138,21 @@ function toggleValue(checkboxElem) {
     }
 }
 
+document.getElementById("yourFormId").addEventListener("submit", function(e) {
+    const inputFields = document.querySelectorAll("input[type='text']"); // 入力フィールドのタイプに合わせて調整してください
+
+    for (const field of inputFields) {
+        if (field.value.trim() === "") {
+            alert("全てのフィールドを入力してください。");
+            e.preventDefault(); // フォームの送信を防ぐ
+            return;
+        }
+    }
+});
+
+
+
+
 </script>
 
 </html>

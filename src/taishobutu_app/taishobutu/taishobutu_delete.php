@@ -32,7 +32,10 @@ if($all_integers) {
 }
 
 $db_host = null;
-
+$_SESSION['flash'] = [
+      'type' => 'success',
+      'message' => '削除が完了しました。'
+];
 // 削除後に元のページにリダイレクト
 header('Location: taishobutu_index.php');
 exit();

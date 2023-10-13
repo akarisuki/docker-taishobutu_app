@@ -2,7 +2,7 @@
 body {
   background-color: #6f6f6f;
   font-family: Arial, sans-serif;
-  padding-top: 170px;
+  padding-top: 223px;
 }
 
 .form-search {
@@ -95,7 +95,7 @@ table {
 }
 
 .appendix-top {
-  width: 7px;
+  width: 14px;
   text-align: center;
 }
 
@@ -142,8 +142,8 @@ input[name=delete] {
   cursor: pointer;
   font-size: 16px;
   position: absolute;
-  top: -322px;
-  right: 1148px;
+  top: -286px;
+  right: 780px;
   margin: 455px;
 }
 input[name=delete]:hover {
@@ -159,9 +159,37 @@ button[name=delete-all] {
   cursor: pointer;
   font-size: 16px;
   position: absolute;
-  top: 133px;
-  right: 1500px;
+  top: 169px;
+  right: 1120px;
 }
 button[name=delete-all]:hover {
   background-color: #3e8e41;
+}
+
+.alert-success {
+  top: -103px;
+  left: -9px;
+  width: 1518px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #35cb07;
+  position: relative;
+  background-color: #b9e8be;
+  text-align: center;
+  transition: opacity 1s ease-out;
+}
+
+.alert-error {
+  top: -103px;
+  left: -9px;
+  width: 1518px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #ff0000;
+  position: relative;
+  background-color: #ed8b8b;
+  text-align: center;
+  transition: opacity 1s ease-out;
 }/*# sourceMappingURL=taishobutu.index.css.map */

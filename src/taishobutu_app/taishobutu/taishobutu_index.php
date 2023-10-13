@@ -83,17 +83,29 @@ $db_host = null;
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMxmnO/x5+X2U6lX4y4/QMzRVjzmV5u1N5w7QJi8LxfLg7jB/079M9CjyfN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                var flashMessage = document.getElementById('flashMessage');
+                if(flashMessage) {
+                    flashMessage.style.opacity = '0';
+                    setTimeout(function() {
+                        flashMessage.style.display = 'none';
+                    }, 1000); // 1秒後に非表示
+                }
+            }, 5000); // 5秒後に透明度を0に
+        });
+    </script>
     <title>予防１１９</title>
 </head>
 <body>
   <?php
-  // セッション変数に削除フラグが設定されている場合、アラートを表示
-  if (isset($_SESSION['deleted']) && $_SESSION['deleted']) {
-    echo "<script>showAlert('削除が完了しました。');</script>";
-    // 削除フラグをリセット
-    $_SESSION['deleted'] = false;
+  
+  
+  if (isset($_SESSION['flash'])) {
+    $flash = $_SESSION['flash'];
+    echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
+    $_SESSION['flash'] = null;
   }
   ?>
 <div class="form-search">

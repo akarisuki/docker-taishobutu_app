@@ -8,7 +8,10 @@ $stmt = $db_host->prepare($sql);
 $stmt->execute();
 
 // 削除が成功したら、セッション変数に削除フラグを設定
-$_SESSION['deleted'] = true;
+$_SESSION['flash'] = [
+  'type' => 'success',
+  'message' => '全削除が完了しました。'
+];
 
 $db_host = null;
 

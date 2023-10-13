@@ -6,7 +6,7 @@ body {
 .table-container {
   margin: 20px;
   position: relative;
-  top: 180px;
+  top: 200px;
 }
 
 table {
@@ -35,5 +35,59 @@ form.existingDataForm {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
-  bottom: 818px;
+  bottom: 816px;
+}
+
+#taishobutu_show_datail_button {
+  position: fixed;
+  top: 9px;
+  left: 389px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#taishobutu_show_datail_button:hover {
+  background-color: #0062cc;
+}
+
+#taishobutu_show_datail_buttonn:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}
+
+.alert-success {
+  top: 62px;
+  left: -9px;
+  width: 1518px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #36e000;
+  position: relative;
+  background-color: #b9e8be;
+  text-align: center;
+  transition: opacity 1s ease-out;
+}
+
+.alert-error {
+  top: 62px;
+  left: -9px;
+  width: 1518px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #ff0000;
+  position: relative;
+  background-color: #ed8b8b;
+  text-align: center;
+  transition: opacity 1s ease-out;
 }/*# sourceMappingURL=fire_equipment_report_datail.css.map */
