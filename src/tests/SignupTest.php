@@ -7,14 +7,14 @@ class SignUpTest extends TestCase
     
     protected function setUp(): void {
         // 一度読み込んで、その内容をテストする
-        $this->signUpForm = file_get_contents(__DIR__ . '/../taishotubu_app/sign_up/sign_up.php');
+        $this->signUpForm = file_get_contents(__DIR__ . '/../taishobutu_app/sign_up/sign_up.php');
     }
 
     
 
     public function testFormExists()
     {
-        $formHtml = file_get_contents(__DIR__ . '/../taishotubu_app/sign_up/sign_up.php');
+        $formHtml = file_get_contents(__DIR__ . '/../taishobutu_app/sign_up/sign_up.php');
         error_log($formHtml);  // Log the HTML content
         $this->assertStringContainsString('<form', $formHtml);
     }
