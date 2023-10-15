@@ -75,7 +75,7 @@ class SignUpCheckTest extends TestCase {
 
       // テスト対象のスクリプトを実行
       ob_start();  // 出力バッファリング開始
-      include '/../taishobutu_app/sign_up/sign_up.php';
+      include '/../taishobutu_app/sign_up/sign_check_.php';
       $output = ob_get_clean();  // 出力内容を取得してバッファリング終了
       
       // アサーション（ここではエラーが存在しないことを確認）
