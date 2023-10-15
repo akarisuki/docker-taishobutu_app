@@ -41,4 +41,45 @@ class SignUpTest extends TestCase
 
     // その他、フォームの要素が正しく設定されているかのテスト...
 }
+
+class SignUpCheckTest extends TestCase {
+  public function testUserNameValidation()
+  {
+      // PDOのモックを作成
+      $pdo = $this->createMock(PDO::class);
+      
+      // PDOStatementのモックを作成
+      $stmt = $this->createMock(PDOStatement::class);
+
+      // PDO::prepareが呼ばれたらPDOStatementのモックを返す
+      $pdo->method('prepare')
+          ->willReturn($stmt);
+
+      // PDOStatement::bindValueが呼ばれたらtrueを返す
+      $stmt->method('bindValue')
+          ->willReturn(true);
+
+      // PDOStatement::executeが呼ばれたらtrueを返す
+      $stmt->method('execute')
+          ->willReturn(true);
+
+      // PDOStatement::fetchが呼ばれたら['COUNT(*)' => 0]を返す（ユーザ名が存在しない場合）
+      $stmt->method('fetch')
+          ->willReturn(['COUNT(*)' => 0]);
+
+      // $_POSTのモック
+      $_POST = [
+          'name' => 'valid_user_name',
+          'pass' => 'valid_password'
+      ];
+
+      // テスト対象のスクリプトを実行
+      ob_start();  // 出力バッファリング開始
+      include '/../taishobutu_app/sign_up/sign_up.php';
+      $output = ob_get_clean();  // 出力内容を取得してバッファリング終了
+      
+      // アサーション（ここではエラーが存在しないことを確認）
+      $this->assertStringNotContainsString('error', $output);
+  } 
+}
 ?>
