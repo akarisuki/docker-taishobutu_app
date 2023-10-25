@@ -9,6 +9,7 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
     $staff_name = $post['name'];
     $staff_pass = $post['pass'];
+    $fire_dept_code = (int)$post['fire_dept_code'];
 
     
     //ユーザー名の重複
@@ -40,7 +41,17 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
         $error_pass['規則性違反'] = 'パスワードは８文字以上20文字以下に英数字を最低１文字含むようにしてください。';
     }
 
-    $error = array_merge($error_name, $error_pass);
+    if($fire_dept_code === 0) {
+        $error_fire_dept_code = '消防署コードを選択してください。';
+    }
+
+    if (isset($error_fire_dept_code)) {
+        $error_fire_dept_code = ['fire_dept_code' => $error_fire_dept_code];
+    } else {
+        $error_fire_dept_code = [];
+    }
+
+    $error = array_merge($error_name, $error_pass,$error_fire_dept_code);
 
     if (empty($error)) {
         // エラーがなければ自動的にsign_up_done.phpにPOST
@@ -48,6 +59,7 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
         echo '<form name="FRM" method="POST" action="sign_up_done.php">';
         echo '<input type="hidden" name="name" value="' . htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8') . '">';
         echo '<input type="hidden" name="pass" value="' . htmlspecialchars($staff_pass, ENT_QUOTES, 'UTF-8') . '">';
+        echo '<input type="hidden" name="fire_dept_code" value="' . $fire_dept_code . '">';
         echo '</form>';
         echo '</body>';
     } else {
@@ -66,39 +78,59 @@ require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 </head>
 
 <body>
-
+    <div class="title">職員登録画面</div>
     <div class="form-wrapper">
         <form method="post" action="sign_up_check.php">
-            <label for="name"class="required">職員名</label>
-            <input type="text" placeholder="消防太郎" name="name" value="<?php 
-                if(isset($staff_name['重複'])) {
-                    echo '';
-                } else {
-                    echo htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
-                } 
-            ?>"><br/>
-            <?php if (!empty($error_name)) : ?>
-                <ul class="error-message-name">
-                    <?php foreach ($error_name as $err_name) : ?>
-                        <li><?= $err_name ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-            <label for="password"class="required">パスワード</label>
-            <input type="password" placeholder="半角整数8文字以上で" name="pass" value="<?php
-                if(isset($staff_pass['規則性違反'])) {
-                    echo '';
-                } else {
-                    echo htmlspecialchars($staff_pass, ENT_QUOTES, 'UTF-8');
-                }
-            ?>"><br>
-            <?php if (!empty($error_pass)) : ?>
-                <ul class="error-message-pass">
-                    <?php foreach ($error_pass as $err_pass) : ?>
-                        <li><?= $err_pass ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
+            <div class="staff_name">
+                <label for="name"class="required">職員名</label>
+                <input type="text" placeholder="消防太郎" name="name" value="<?php 
+                    if(isset($staff_name['重複'])) {
+                        echo '';
+                    } else {
+                        echo htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
+                    } 
+                ?>">
+            
+                <?php if (!empty($error_name)) : ?>
+                    <ul class="error-message-name">
+                        <?php foreach ($error_name as $err_name) : ?>
+                            <li><?= $err_name ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+            <div class="staff_pass">
+                <label for="password"class="required">パスワード</label>
+                <input type="password" placeholder="半角整数8文字以上で" name="pass" value="<?php
+                    if(isset($staff_pass['規則性違反'])) {
+                        echo '';
+                    } else {
+                        echo htmlspecialchars($staff_pass, ENT_QUOTES, 'UTF-8');
+                    }
+                ?>">
+                <?php if (!empty($error_pass)) : ?>
+                    <ul class="error-message-pass">
+                        <?php foreach ($error_pass as $err_pass) : ?>
+                            <li><?= $err_pass ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+            <div class="fire_dept_code">
+                <label for="fire_dept_code" class="required">消防署コード</label>
+                <select name="fire_dept_code" id="fire_dept_code">
+                    <option value=0 selected>選択してください</option>
+                    <option value=1>A消防署</option>
+                    <option value=2>B消防署</option>
+                    <option value=3>C消防署</option>
+                    <option value=4>D消防署</option>
+                    <option value=5>E消防署</option>
+                    <option value=6>F消防署</option>
+                </select>
+                <?php if (!empty($error_fire_dept_code)) : ?>
+                    <ul><li class="error-fire-dept-code">消防署コードを選択してください。</li></ul>
+                <?php endif ?>
+            </div>
             <input type="submit" value="登録" >
             <input type="button" onclick="history.back()" value="戻る">
             

@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
-
+$isLoggedIn = isset($_SESSION['user_id']);  // 例: $_SESSION['user_id'] にユーザーIDが保存されている場合をログイン済みとみなす
 include("/var/www/html/taishobutu_app/common/header.php");
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
@@ -34,6 +34,8 @@ $stmt_taishobutu_datail->execute();
 
 $result_taishobutu_datail = $stmt_taishobutu_datail->fetch(PDO::FETCH_ASSOC);
 
+$dataExists = $result_taishobutu_datail !== false;
+
 $db_host = null;
 ?>
 <!DOCTYPE html>
@@ -52,18 +54,32 @@ $db_host = null;
 </head>
 
 <body>
-  <div class="datail_add_button">
-      <form id="form5" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_add.php" method="post">
-          <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
-          <a href="#" onclick="submitForm('form5');" class="button" id="datail_add_button">詳細記載項目追加</a>
-      </form>
-  </div>
-  <div class="datail_edit_button">
-      <form id="form6" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_edit.php" method="post">
-          <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
-          <a href="#" onclick="submitForm('form6');" class="button" id="datail_edit_button">詳細記載項目変更</a>
-      </form>
-  </div> 
+  <?php
+    if (isset($_SESSION['flash'])) {
+      $flash = $_SESSION['flash'];
+      echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
+      $_SESSION['flash'] = null;
+    }
+  ?>
+  <?php if(!$dataExists): ?>
+    <!-- データが存在しない場合のみ「詳細記載項目追加」ボタンを表示 -->
+    <div class="datail_add_button">
+        <form id="form5" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_add.php" method="post">
+            <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+            <a href="#" onclick="submitForm('form5');" class="button" id="datail_add_button">詳細記載項目追加</a>
+        </form>
+    </div>
+  <?php endif; ?>
+
+  <?php if($dataExists): ?>
+    <!-- データが存在する場合のみ「詳細記載項目変更」ボタンを表示 -->
+    <div class="datail_edit_button">
+        <form id="form6" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_edit.php" method="post">
+            <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+            <a href="#" onclick="submitForm('form6');" class="button" id="datail_edit_button">詳細記載項目変更</a>
+        </form>
+    </div>
+  <?php endif; ?>
 
   <div class="Frame">
       <div class="Code"><?php echo '番号'.$result_taishobutu_main['code'];?></div>

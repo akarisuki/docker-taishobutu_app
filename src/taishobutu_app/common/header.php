@@ -6,14 +6,15 @@
     </div>
       
     <div class="buttons d-flex justify-content-center">
-      <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
-      <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_index.php" class="button">対象物一覧</a> 
+      <?php if(isset($_SESSION['login'])):?>
+        <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
+        <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_index.php" class="button">対象物一覧</a> 
+      <?php endif; ?>
     </div>
     
     <div class="user-info">
       <?php if(isset($_SESSION['login']) === false): ?>
         <p>ログインされていません。<br /><a href="../login/login.php">ログイン画面へ</a></p>
-        <?php exit(); ?>
       <?php else: ?>
         <p><?= $_SESSION['name'] ?>さんログイン中</p>
         <form action="../login/logout.php" method="post">

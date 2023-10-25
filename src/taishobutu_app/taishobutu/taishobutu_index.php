@@ -1,19 +1,25 @@
 <?php 
 session_start();
 session_regenerate_id(true);
-
+$isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
 
 include("/var/www/html/taishobutu_app/common/header.php");
 require_once '/var/www/html/taishobutu_app/common/function.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 
+$fire_dept_code = $_SESSION['fire_dept_code'] ?? null;
+
 if (isset($_POST['search'])) {
   $_SESSION['search_appendix'] = isset($_POST['search_appendix']) ? (int)$_POST['search_appendix'] : 0;
   $_SESSION['search_taishobutu_name'] = isset($_POST['search_taishobutu_name']) ? $_POST['search_taishobutu_name'] : '';
   $_SESSION['search_taishobutu_address'] = isset($_POST['search_taishobutu_address']) ? $_POST['search_taishobutu_address'] : '';
   $_SESSION['search_total_area'] = isset($_POST['search_total_area']) ? (int)$_POST['search_total_area'] : 0;
+} else {
+  // 初回のページ表示時の処理
+  $fire_dept_code = $_SESSION['fire_dept_code'] ;
 }
+
 
 $search_appendix = isset($_SESSION['search_appendix']) ? $_SESSION['search_appendix'] : 0;
 $search_taishobutu_name = isset($_SESSION['search_taishobutu_name']) ? $_SESSION['search_taishobutu_name'] : '';
@@ -21,10 +27,10 @@ $search_taishobutu_address = isset($_SESSION['search_taishobutu_address']) ? $_S
 $search_total_area = isset($_SESSION['search_total_area']) ? $_SESSION['search_total_area'] : 0;
 
 
-$sql = "SELECT * FROM taishobutu_main WHERE 1";
+$sql = "SELECT * FROM taishobutu_main WHERE fire_dept_code = ?";
+$bind_param_str = 'i';
+$bind_param_arr[] = $fire_dept_code;
 
-$bind_param_str = '';
-$bind_param_arr = [];
 
 if($search_appendix){
   $sql .= " AND appendix = ?";
@@ -50,17 +56,20 @@ if($search_total_area){
   $bind_param_arr[] = $search_total_area;
 }
 
-$stmt = $db_host->prepare($sql);
-
-if ($bind_param_str) {
-  $i = 1;
-  foreach ($bind_param_arr as $value) {
-      $stmt->bindParam($i, $value);
-      $i++;
+try {
+  $stmt = $db_host->prepare($sql);
+  
+  if ($bind_param_str) {
+    $i = 1;
+    foreach ($bind_param_arr as $value) {
+        $stmt->bindValue($i, $value);  // bindParamからbindValueに変更
+        $i++;
+    }
   }
+  $stmt->execute();
+} catch (PDOException $e) {
+  echo "エラーが発生しました: " . $e->getMessage();
 }
-$stmt->execute();
-
 
 $db_host = null;
 
@@ -107,6 +116,8 @@ $db_host = null;
     echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
     $_SESSION['flash'] = null;
   }
+  
+  if($isLoggedIn):
   ?>
 <div class="form-search">
   <form action="taishobutu_index.php" method="post">
@@ -170,7 +181,7 @@ $db_host = null;
         if ($result_count === 0) {
           echo "<tr><td colspan='9'>レコードがありません</td></tr>";
         }
-
+        
       
       ?>
     </tbody>
@@ -180,7 +191,7 @@ $db_host = null;
 <button type="button" name="delete-all" onclick="handleDeleteAll()">全削除</button>
 
 <?php $db_host = null; ?>
-
+<?php endif; ?>
 
 </body>
 </html>

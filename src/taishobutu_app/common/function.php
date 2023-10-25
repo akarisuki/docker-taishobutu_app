@@ -2,11 +2,11 @@
 
   <script>
     function clearForm() {
-            document.querySelector('input[name="search_taishobutu_name"]').value = '';
-            document.querySelector('input[name="search_taishobutu_address"]').value = '';
-            document.querySelector('input[name="search_total_area"]').value = '';
-            document.querySelector('select[name="search_appendix"]').value = 0;
-            document.querySelector('input[name="search"]').click();
+      document.querySelector('input[name="search_taishobutu_name"]').value = '';
+      document.querySelector('input[name="search_taishobutu_address"]').value = '';
+      document.querySelector('input[name="search_total_area"]').value = '';
+      document.querySelector('select[name="search_appendix"]').value = 0;
+      document.querySelector('input[name="search"]').click();
     }
 
     function confirmDelete() {
@@ -67,7 +67,17 @@
       document.getElementById(formId).submit();
     }
 
-    
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            var flashMessage = document.getElementById('flashMessage');
+            if(flashMessage) {
+                flashMessage.style.opacity = '0';
+                setTimeout(function() {
+                    flashMessage.style.display = 'none';
+                }, 1000); // 1秒後に非表示
+            }
+        }, 5000); // 5秒後に透明度を0に
+    }); 
 
   </script>
 

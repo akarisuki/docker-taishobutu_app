@@ -10,19 +10,34 @@
     <title>防火対象物管理アプリ</title>
 </head>
 <body>
-    
-<div class="form-wrapper">
-    <form method="post" action="sign_up_check.php">
-    <label for="name"class="required">職員名</label>
-    <input type="text" placeholder="消防太郎"name="name"><br/>
-    <label for="password"class="required">パスワード</label>
-    <input type="password" placeholder="半角整数8文字以上で"name="pass">
-    
-    <br/>
-    <input type="submit" value="登録">
-    <input type="button" onclick="history.back()"value="戻る">
-    </form>
-</div>
-
+    <div class="title">職員登録画面</div>
+    <div class="form-wrapper">
+        <form method="post" action="sign_up_check.php">
+            <div class="staff_name">
+                <label for="name" class="required">職員名</label>
+                <input type="text" placeholder="消防太郎" name="name">
+            </div>
+            <div class="staff_pass">
+                <label for="password" class="required">パスワード</label>
+                <input type="password" placeholder="半角整数8文字以上で" name="pass">
+            </div>
+            <div class="fire_dept_code">
+                <label for="fire_dept_code" class="required">消防署コード</label>
+                <select name="fire_dept_code" id="fire_dept_code">
+                    <option value=0 selected>選択してください</option>
+                    <option value=1>A消防署</option>
+                    <option value=2>B消防署</option>
+                    <option value=3>C消防署</option>
+                    <option value=4>D消防署</option>
+                    <option value=5>E消防署</option>
+                    <option value=6>F消防署</option>
+                </select>
+            </div>
+            <div class="sign_up_botton">
+                <input type="submit" value="登録">
+                <input type="button" onclick="history.back()" value="戻る">
+            </div>
+        </form>
+    </div>
 </body>
 </html>

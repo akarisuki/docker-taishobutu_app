@@ -1,6 +1,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
+$isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
 include("/var/www/html/taishobutu_app/common/header.php");
 
 //政令別表の配列 $appendix_arrayを読み込む
@@ -79,10 +80,10 @@ if(!preg_match('/^[0-9-]*$/',$taishobutu_tel)){
   $error_taishobutu_tel[] = '対象物連絡先は半角数字に-を含むようにしてください';
 }
 
-
-if (!empty($owners_tel) && !preg_match('/^[0-9-]*$/', $owners_tel)) {
-  $error_owners_tel[] = '所有者連絡先は半角数字に-を含むようにしてください';
+if(!preg_match('/^[0-9-]*$/',$owners_tel)){
+  $error_owners_tel[] = '対象物連絡先は半角数字に-を含むようにしてください';
 }
+
 
 if(empty($raw_total_area)){
   $error_total_area[] = '延べ面積が入力されていません。';
@@ -110,7 +111,7 @@ if (empty($error)) {
         echo '</form>';
         echo '</body>';
     } else {
-
+      
 ?>
 
 <!DOCTYPE html>

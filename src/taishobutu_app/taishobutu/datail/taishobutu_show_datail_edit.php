@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
-
+$isLoggedIn = isset($_SESSION['user_id']);  // 例: $_SESSION['user_id'] にユーザーIDが保存されている場合をログイン済みとみなす
 include("/var/www/html/taishobutu_app/common/header.php");
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
@@ -89,6 +89,10 @@ foreach ($result_taishobutu_datail as $column_name => $value) {
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                   <a href="#" onclick="submitForm('form4');" class="inspection_status-url">4. 立入検査状況      →   別紙④</a>
           </form>
+          <form id="form7" action="http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.php" method="post">
+                <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
+                  <a href="#" onclick="submitForm('form7');" class="firefighting_equipment_list-url">5. 消防用設備等一覧表    →   別紙⑤</a>
+          </form>
         </div>
       </div>
     <form method="POST" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_edit_done.php">
@@ -104,7 +108,7 @@ foreach ($result_taishobutu_datail as $column_name => $value) {
           <div class="WindowlessFloorCell"><h6>無窓階</h6></div>
         </div>
         <div class="CapacityCellSet">
-          <div class="CapacityValueCell"><input type="text" name="capacity" id="capacity" value="<?php echo $displayData['capacity'];?>"><h6>人</h6></div>
+          <div class="CapacityValueCell"><input type="text" name="capacity" id="capacity" value="<?php echo $displayData['capacity'];?>"></div>
           <div class="CapacityCell"><h6>収容人員</h6></div>
         </div>
         <div class="BuildingStructureCellSet">
@@ -126,11 +130,11 @@ foreach ($result_taishobutu_datail as $column_name => $value) {
             <div class="TotalAreaCell"><h6>延べ面積</h6></div>
           </div>
           <div class="BuildingAreaCellSet">
-            <div class="BuildingAreaValueCell"><input type="number" name="building_area" step="0.01" id="building_area"value="<?php echo $displayData['building_area'];?>"><h5>㎡</h5></div>
+            <div class="BuildingAreaValueCell"><input type="number" name="building_area" step="0.01" id="building_area"value="<?php echo $displayData['building_area'];?>"></div>
             <div class="BuildingAreaCell"><h6>建築面積</h6></div>
           </div>
           <div class="SiteAreaCellSet">
-            <div class="SiteAreaValueCell"><input type="number" name="site_area" step="0.01" id="site_area" value="<?php echo $displayData['site_area'];?>"><h5>㎡</h5></div>
+            <div class="SiteAreaValueCell"><input type="number" name="site_area" step="0.01" id="site_area" value="<?php echo $displayData['site_area'];?>"></div>
             <div class="SiteAreaCell"><h6>敷地面積</h6></div>
           </div>
         </div>
@@ -211,20 +215,19 @@ foreach ($result_taishobutu_datail as $column_name => $value) {
       
       </div>
       <div class="AppendixCellSet">
-        <div class="TokuteiOrHitokuteiCell"></div>
-        <div class="AppendixNumberCell"></div>
-        <div class="AppendixTitleCell"></div>
-        <div class="AppendixTextSet">
-          <div class="Appendix">用途</div>
-          <div class="AppendixValue"><?php echo $appendix_array[$result_taishobutu_main['appendix']]; ?></div>
+        <div class="TokuteiOrHitokuteiCell">
           <div class="TokuteiValue">
-            <?php 
-                $echo_specific = appendix_specific($result_taishobutu_main['appendix']);
-                echo $echo_specific;
-            ?>
+              <?php 
+                  $echo_specific = appendix_specific($result_taishobutu_main['appendix']);
+                  echo $echo_specific;
+              ?>
           </div>
         </div>
+        <div class="AppendixNumberCell"><div class="AppendixValue"><?php echo $appendix_array[$result_taishobutu_main['appendix']]; ?></div></div>
+        <div class="AppendixTitleCell"><div class="Appendix">用途</div></div>
+        
       </div>
+
       <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
 
       <?php foreach($operation as $key => $value) {

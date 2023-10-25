@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 session_start();
     try{
         
@@ -10,6 +10,7 @@ session_start();
 
         $staff_name = $post['name'];
         $staff_pass = $post['pass'];
+        $fire_dept_code = $post['fire_dept_code'];
 
         
 
@@ -22,23 +23,31 @@ session_start();
             $error_pass = 'パスワードが入力されていません。';
         }
 
-        
+        if($fire_dept_code === "0") {
+            $error_fire_dept_code = '消防署コードを選択してください。';
+        }
 
         $hash_pass = password_hash($staff_pass,PASSWORD_DEFAULT);
 
-        $sql = 'SELECT * FROM firedept_staff WHERE staff_name = :staff_name';
+        $sql = 'SELECT * FROM firedept_staff WHERE staff_name = :staff_name AND fire_dept_code = :fire_dept_code';
         $stmt = $db_host->prepare($sql);
         $stmt->bindValue(':staff_name', $staff_name,PDO::PARAM_STR);
+        $stmt->bindValue(':fire_dept_code',$fire_dept_code,PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result) && password_verify($staff_pass, $result['staff_pass'])) {
             $_SESSION['login'] = 1;
             $_SESSION['id'] = $result['code'];
             $_SESSION['name'] = $result['staff_name'];
+            $_SESSION['fire_dept_code'] = $result['fire_dept_code'];
+            $_SESSION['flash'] = [
+                'type' => 'success',
+                'message' => 'ログインに成功しました。'
+            ];
             header('Location: ../taishobutu/taishobutu_index.php');
             exit();
         } else {
-            $error_name_pass = 'ユーザー名、またはパスワードが違います。';
+            $error_name_pass = 'ユーザー名、又はパスワードが違います。';
         }
     } catch (Exception $e) {
         $error_message = 'ただいま障害により大変ご迷惑をおかけしております。';
@@ -60,32 +69,57 @@ session_start();
 </head>
 
 <body>
+<div class="title">ログイン画面</div>
     <div class="form-wrapper">
         <form method="post" action="login_check.php">
-            <label for="name" class="required">職員名</label>
-            <input type="text" placeholder="消防太郎" name="name"><br />
-            <?php if (!empty($error_name)) : ?>
-                <ul class="error-message-name">
-                        <li><?= $error_name ?></li>
-                </ul>
-            <?php endif; ?>
-            <label for="password" class="required">パスワード</label>
-            <input type="password" placeholder="半角整数8文字以上で" name="pass"><br /><br/><br/><br/>
-            <?php if (!empty($error_pass)) : ?>
-                <ul class="error-message-pass">
-                        <li><?= $error_pass ?></li>
-                </ul>
-            <?php endif; ?>
-                <a href="./password_reset.php">パスワードを忘れた場合</a><br>
-                <a href="../sign_up/sign_up.php">登録していない場合はこちら</a><br />
-            <div class="rememberme">
-                <input type="checkbox" name="rememberme">ログイン情報を保持する。
+            <div class="staff_name">
+                <label for="name" class="required">職員名</label>
+                <input type="text" placeholder="消防太郎" name="name"><br />
+                <?php if (!empty($error_name)) : ?>
+                    <ul class="error-message-name">
+                            <li><?= $error_name ?></li>
+                    </ul>
+                <?php endif; ?>
             </div>
-            <?php if (!empty($error_name_pass)) : ?>
+            <div class="staff_pass">
+                <label for="password" class="required">パスワード</label>
+                <input type="password" placeholder="半角整数8文字以上で" name="pass"><br /><br/><br/><br/>
+                <?php if (!empty($error_pass)) : ?>
+                    <ul class="error-message-pass">
+                            <li><?= $error_pass ?></li>
+                    </ul>
+                <?php endif; ?>
+                <?php if (!empty($error_name_pass)) : ?>
                 <ul class="error-message-name-pass">
                         <li><?= $error_name_pass ?></li>
                 </ul>
             <?php endif; ?>
+            </div>
+            <div class="fire_dept_code">
+                <label for="fire_dept_code" class="required">消防署コード</label>
+                <select name="fire_dept_code" id="fire_dept_code">
+                    <option value=0 selected>選択してください</option>
+                    <option value=1>A消防署</option>
+                    <option value=2>B消防署</option>
+                    <option value=3>C消防署</option>
+                    <option value=4>D消防署</option>
+                    <option value=5>E消防署</option>
+                    <option value=6>F消防署</option>
+                </select>
+                <?php if (!empty($error_fire_dept_code)) : ?>
+                    <ul class="error-fire-dept-code">
+                        <li><?= $error_fire_dept_code ?></li>
+                    </ul>
+                <?php endif; ?>
+            </div>
+            <div class="link">
+                <a class="pass_reset"href="./password_reset.php">パスワードを忘れた場合</a><br>
+                <a class="sign_up"href="../sign_up/sign_up.php">登録していない場合はこちら</a>
+            </div>
+            <div class="rememberme">
+                <input type="checkbox" name="rememberme">ログイン情報を保持する。
+            </div>
+            
             <input type="submit" value="ログイン">
         </form>
     </div>

@@ -10,15 +10,20 @@
 
             $staff_name = $post['name'];
             $staff_pass = $post['pass'];
-
+            $fire_dept_code = $post['fire_dept_code'];
             //パスワードの暗号化
             $hash_pass = password_hash($staff_pass, PASSWORD_DEFAULT);
 
-            $sql = 'INSERT INTO firedept_staff SET staff_name = :staff_name,staff_pass = :staff_pass';
+            $sql = 'INSERT INTO firedept_staff SET staff_name = :staff_name,staff_pass = :staff_pass ,fire_dept_code = :fire_dept_code';
             $stmt = $db_host->prepare($sql);
             $stmt->bindValue(':staff_name', $staff_name, PDO::PARAM_STR);
             $stmt->bindValue(':staff_pass', $hash_pass, PDO::PARAM_STR);
+            $stmt->bindValue(':fire_dept_code', $fire_dept_code, PDO::PARAM_INT);
             $stmt->execute();
+            $_SESSION['flash'] = [
+                'type' => 'success',
+                'message' => '登録が完了しました。'
+            ];
 
             header('Location: ../taishobutu/taishobutu_index.php');
             exit;

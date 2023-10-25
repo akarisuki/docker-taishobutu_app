@@ -4,6 +4,7 @@ error_reporting(0);
 ob_start(); 
 session_start();
 session_regenerate_id(true);
+$isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
 
 // 出力バッファリングを開始
 

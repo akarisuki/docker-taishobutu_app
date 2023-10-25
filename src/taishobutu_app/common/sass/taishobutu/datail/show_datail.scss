@@ -262,6 +262,16 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      #capacity{
+        width: 129px;
+        height: 34px;
+        margin-top: 0px;
+        margin-left: 1px;
+        color: black; 
+        font-size: 15px; 
+        font-family: Inter;  
+        background-color: #f2f2f2;
+      }
       .Capacity-value {
         color: black; 
         font-size: 15px; 
@@ -432,7 +442,16 @@ body {
         align-items: center;
         justify-content: center;
         
-        
+        #building_area{
+          width: 129px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
         .building-area-value {
           color: black; 
           font-size: 15px; 
@@ -479,6 +498,16 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        #site_area{
+          width: 129px;
+          height: 34px;
+          margin-top: 0px;
+          margin-left: 1px;
+          color: black; 
+          font-size: 15px; 
+          font-family: Inter;  
+          background-color: #f2f2f2;
+        }
         .site-area-value {
           color: black; 
           font-size: 15px; 
@@ -1428,4 +1457,32 @@ body {
   border-radius: 10px;
   cursor: pointer;
   z-index: 1000; 
+}
+
+.alert-success {
+  top: -103px;
+  left: -9px;
+  width: 1518px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #35cb07;
+  position: relative;
+  background-color: #b9e8be;
+  text-align: center;
+  transition: opacity 1s ease-out;
+}
+
+.alert-error {
+  top: -103px;
+  left: -9px;
+  width: 1518px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #ff0000;
+  position: relative;
+  background-color: #ed8b8b;
+  text-align: center;
+  transition: opacity 1s ease-out;
 }
