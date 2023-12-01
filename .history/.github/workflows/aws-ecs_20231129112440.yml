@@ -1,0 +1,94 @@
+# このワークフローは、"master" ブランチへのプッシュがあると、新しいコンテナイメージをAmazon ECRにビルドしてプッシュし、
+# その後新しいタスク定義をAmazon ECSにデプロイします。
+#
+# このワークフローを使用するには、以下のセットアップ手順を完了する必要があります：
+#
+# 1. イメージを格納するためのECRリポジトリを作成します。
+#    例：`aws ecr create-repository --repository-name my-ecr-repo --region us-east-2`。
+#    下記のワークフロー内の `ECR_REPOSITORY` 環境変数の値をリポジトリの名前に置き換えます。
+#    下記のワークフロー内の `AWS_REGION` 環境変数の値をリポジトリのリージョンに置き換えます。
+#
+# 2. ECSタスク定義、ECSクラスター、及びECSサービスを作成します。
+#    例えば、ECSコンソールのGetting Startedガイドに従います：
+#      https://us-east-2.console.aws.amazon.com/ecs/home?region=us-east-2#/firstRun
+#    下記のワークフロー内の `ECS_SERVICE` 環境変数の値を設定したAmazon ECSサービスの名前に置き換えます。
+#    下記のワークフロー内の `ECS_CLUSTER` 環境変数の値を設定したクラスターの名前に置き換えます。
+#
+# 3. ECSタスク定義をリポジトリ内のJSONファイルとして格納します。
+#    形式は `aws ecs register-task-definition --generate-cli-skeleton` の出力に従う必要があります。
+#    下記のワークフロー内の `ECS_TASK_DEFINITION` 環境変数の値をJSONファイルへのパスに置き換えます。
+#    下記のワークフロー内の `CONTAINER_NAME` 環境変数の値をタスク定義の `containerDefinitions` セクションにあるコンテナの名前に置き換えます。
+#
+# 4. IAMユーザーのアクセスキーを `AWS_ACCESS_KEY_ID` と `AWS_SECRET_ACCESS_KEY` という名前のGitHub Actionsシークレットに格納します。
+#    下記の各アクションのドキュメントで推奨されるIAMポリシー、及びアクセスキー資格情報の取り扱いのベストプラクティスを参照してください。
+
+
+
+name: Deploy to Amazon ECS
+
+on:
+  push:
+    branches: [ "master" ]
+
+env:
+  AWS_REGION: ap-northeast-1                   # お好みのAWSリージョンに設定してください。例: us-west-1
+  ECR_REPOSITORY: taishobutu-app-ecs           # Amazon ECRリポジトリ名に設定してください
+  ECS_SERVICE: MY_ECS_SERVICE                 # Amazon ECSサービス名に設定してください
+  ECS_CLUSTER: MY_ECS_CLUSTER                 # Amazon ECSクラスター名に設定してください
+  ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # Amazon ECSタスク定義ファイルへのパスに設定してください。
+                                               # 例: .aws/task-definition.json
+  CONTAINER_NAME: MY_CONTAINER_NAME           # タスク定義のcontainerDefinitionsセクションにあるコンテナの
+                                               # 名前に設定してください。
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        # be deployed to ECS.
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ env.ECS_TASK_DEFINITION }}
+        container-name: ${{ env.CONTAINER_NAME }}
+        image: ${{ steps.build-image.outputs.image }}
+
+    - name: Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        service: ${{ env.ECS_SERVICE }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: true

@@ -1,0 +1,38 @@
+FROM php:8-apache
+
+WORKDIR /var/www/html
+
+# PHP で必要なライブラリをインストール
+RUN apt-get update \
+    && apt-get install -y libonig-dev libzip-dev unzip mariadb-client \
+    && docker-php-ext-install mbstring zip bcmath pdo_mysql mysqli \
+    
+# タイムゾーン設定
+ENV TZ=Asia/Tokyo
+
+# mod_rewrite モジュールを使えるようにする
+RUN a2enmod rewrite
+
+# アプリケーションフォルダを環境変数として設定
+ENV APP_HOME /var/www/html
+
+# 必要なファイルのみをコピーする
+COPY src/ $APP_HOME/
+
+# ソースコードと.envファイルをDockerImageに埋め込む
+COPY . $APP_HOME
+
+COPY src/.htaccess /var/www/html/.htaccess
+
+# Apache設定ファイルをコンテナにコピー
+COPY src/apache2.conf /etc/apache2/apache2.conf
+
+
+
+
+# composer のインストール
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
+# コンテナ起動時にApacheをフォアグラウンドで実行
+CMD ["apache2ctl", "-D", "FOREGROUND"]
