@@ -1,8 +1,11 @@
 <?php 
 session_start();
 session_regenerate_id(true);
-$isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
-
+if (!isset($_SESSION['name'])) {
+  // ログイン画面へリダイレクト
+  header('Location: ../login/login.php');
+  exit;
+}
 include("/var/www/html/taishobutu_app/common/header.php");
 require_once '/var/www/html/taishobutu_app/common/function.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
@@ -17,7 +20,7 @@ if (isset($_POST['search'])) {
   $_SESSION['search_total_area'] = isset($_POST['search_total_area']) ? (int)$_POST['search_total_area'] : 0;
 } else {
   // 初回のページ表示時の処理
-  $fire_dept_code = $_SESSION['fire_dept_code'] ;
+  $fire_dept_code = $_SESSION['fire_dept_code'] ?? null;
 }
 
 
