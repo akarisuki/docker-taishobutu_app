@@ -1,0 +1,103 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:025576800105:task-definition/taishobutu-app:18",
+    "containerDefinitions": [
+        {
+            "name": "php",
+            "image": "025576800105.dkr.ecr.ap-northeast-1.amazonaws.com/taishobutu-app-ecs:a7591bcc15e9cdf18d61517ff141a6f7a38493fa",
+            "cpu": 0,
+            "memory": 1024,
+            "portMappings": [
+                {
+                    "name": "php-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "DB_NAME",
+                    "value": "taishobutu"
+                },
+                {
+                    "name": "DB_HOST",
+                    "value": "db.cpd3qd31bm6q.ap-northeast-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "DB_USER",
+                    "value": "admin"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "value": "F1994060712z"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/taishobutu-app",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "family": "taishobutu-app",
+    "taskRoleArn": "arn:aws:iam::025576800105:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::025576800105:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 18,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2023-12-03T23:48:10.664Z",
+    "registeredBy": "arn:aws:iam::025576800105:user/yukiakarin",
+    "tags": []
+}
