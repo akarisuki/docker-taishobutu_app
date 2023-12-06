@@ -120,7 +120,7 @@ $db_host = null;
     $_SESSION['flash'] = null;
   }
   
-  if($isLoggedIn):
+  
   ?>
 <div class="form-search">
   <form action="taishobutu_index.php" method="post">
@@ -194,7 +194,7 @@ $db_host = null;
 <button type="button" name="delete-all" onclick="handleDeleteAll()">全削除</button>
 
 <?php $db_host = null; ?>
-<?php endif; ?>
+
 
 </body>
 </html>
