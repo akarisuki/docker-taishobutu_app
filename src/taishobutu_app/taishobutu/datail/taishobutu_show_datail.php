@@ -80,7 +80,7 @@ $db_host = null;
         </form>
     </div>
   <?php endif; ?>
-
+  
   <div class="Frame">
       <div class="Code"><?php echo '番号'.$result_taishobutu_main['code'];?></div>
       <div class="Title2">防火対象物台帳</div>
