@@ -7,8 +7,8 @@
       
     <div class="buttons d-flex justify-content-center">
       <?php if(isset($_SESSION['login'])):?>
-        <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
-        <a href="http://localhost:50080/taishobutu_app/taishobutu/taishobutu_index.php" class="button">対象物一覧</a> 
+        <a href="<?php echo htmlspecialchars(dirname($_SERVER['PHP_SELF'])) . '/taishobutu_add.php'; ?>" class="button">対象物登録</a> 
+        <a href="<?php echo htmlspecialchars(dirname($_SERVER['PHP_SELF'])) . '/taishobutu_index.php'; ?>" class="button">対象物一覧</a> 
       <?php endif; ?>
     </div>
     
