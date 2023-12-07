@@ -1,11 +1,11 @@
 <?php 
 session_start();
 session_regenerate_id(true);
-if (!isset($_SESSION['name'])) {
-  // ログイン画面へリダイレクト
-  header('Location: ../login/login.php');
-  exit;
-}
+// if (!isset($_SESSION['name'])) {
+//   // ログイン画面へリダイレクト
+//   header('Location: ../login/login.php');
+//   exit;
+// }
 include("/var/www/html/taishobutu_app/common/header.php");
 require_once '/var/www/html/taishobutu_app/common/function.php';
 require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
