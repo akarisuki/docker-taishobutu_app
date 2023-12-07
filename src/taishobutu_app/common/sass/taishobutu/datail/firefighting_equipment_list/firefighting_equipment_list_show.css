@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media print {
   @page {
     size: A3;
@@ -2127,30 +2128,24 @@ body {
   height: 7px;
 }
 
-.alert-success {
-  top: -75px;
-  left: -9px;
-  width: 1518px;
+.alert-success, .alert-error {
+  top: -103px;
+  left: 0; /* 左端からの位置を0に設定 */
+  width: 100%; /* 幅を100%に設定 */
   padding: 5px;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #36e000;
   position: relative;
-  background-color: #b9e8be;
   text-align: center;
   transition: opacity 1s ease-out;
 }
 
+.alert-success {
+  color: #35cb07;
+  background-color: #b9e8be;
+}
+
 .alert-error {
-  top: -75px;
-  left: -9px;
-  width: 1518px;
-  padding: 5px;
-  border: 1px solid transparent;
-  border-radius: 4px;
   color: #ff0000;
-  position: relative;
   background-color: #ed8b8b;
-  text-align: center;
-  transition: opacity 1s ease-out;
 }/*# sourceMappingURL=firefighting_equipment_list_show.css.map */
