@@ -14,7 +14,7 @@
     
     <div class="user-info">
       <?php if(isset($_SESSION['login']) === false): ?>
-        <p>ログインされていません。<br /><a href="../login/login.php">ログイン画面へ</a></p>
+        <p>ログインされていません。<br /><a href="<?php echo htmlspecialchars(dirname(dirname($_SERVER['PHP_SELF']))) . '/login/login.php'; ?>">ログイン画面へ</a></p>
         <?php 
           $dbHost = getenv('DB_HOST');
           $dbUser = getenv('DB_USER');

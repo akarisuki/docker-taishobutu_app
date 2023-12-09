@@ -6,10 +6,11 @@ session_regenerate_id(true);
 //   header('Location: ../login/login.php');
 //   exit;
 // }
-include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/function.php';
-require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+include("../common/header.php");
+require_once '../common/config.php';
+require_once '../common/function.php';
+require_once '../common/bettpiyo/bettpiyo_array.php';
+require_once '../common/db_operation/db_connect.php';
 
 $fire_dept_code = $_SESSION['fire_dept_code'] ?? null;
 
@@ -120,14 +121,15 @@ $db_host = null;
     $_SESSION['flash'] = null;
   }
   
-  
+  var_dump(BASE_URL);
+  var_dump($_SERVER['HTTP_HOST']);
   ?>
 <div class="form-search">
   <form action="taishobutu_index.php" method="post">
     <tr>
       <th>検索フォーム</th><br/>
       <th>用途区分</th>
-      <th><?php include('/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_select_search.php'); ?></th>
+      <th><?php include('../common/bettpiyo/bettpiyo_select_search.php'); ?></th>
       <th>防火対象物名</th>
       <td><input type="text" name="search_taishobutu_name" placeholder="すべて" value="<?php if(!empty($search_taishobutu_name)){echo $search_taishobutu_name; }?>"></td>
       <th>防火対象物所在地</th>

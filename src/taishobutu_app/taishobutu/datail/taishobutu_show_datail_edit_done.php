@@ -54,7 +54,7 @@ $_SESSION['flash'] = [
   'message' => '追加が完了しました。'
 ];
 $_SESSION['code'] = $code;
-header('Location: http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail.php?code=' . urldecode($code));
+header('Location: taishobutu_show_datail.php?code=' . urldecode($code));
 exit();
 
 

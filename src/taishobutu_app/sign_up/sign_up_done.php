@@ -4,7 +4,7 @@
             
             
             //データベースに接続するファイルを呼び出す。
-            require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+            require_once '../common/db_connect.php';
             //登録フォームから入力したデータを$postに格納する
             $post = $_POST;
 

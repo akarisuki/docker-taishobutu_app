@@ -270,7 +270,7 @@ $_SESSION['flash'] = [
   'message' => '追加が完了しました。'
 ];
 $_SESSION['code'] = $code;
-header('Location: http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.php?code=' . urldecode($code));
+header('Location: firefighting_equipment_list_show.php?code=' . urldecode($code));
 exit();
 
 

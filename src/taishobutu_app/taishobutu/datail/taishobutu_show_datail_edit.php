@@ -73,29 +73,29 @@ foreach ($result_taishobutu_datail as $column_name => $value) {
       <div class="Title2">防火対象物台帳</div>
       <div class="LinkCellSet">
         <div class="betushi_url">
-          <form id="form1" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.php" method="post">
+          <form id="form1" action="fire_safety_manager/fire_safety_manager_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                 <a href="#" onclick="submitForm('form1');" class="fire_safety_manager-url">1. 防火管理者選任状況  →  別紙①</a>
           </form>
-          <form id="form2" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_equipment_report/fire_equipment_report_datail.php" method="post">
+          <form id="form2" action="fire_equipment_report/fire_equipment_report_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                 <a href="#" onclick="submitForm('form2');" class="fire_equipment_report-url">2. 消防用設備点検報告  →  別紙②</a>
           </form>
-          <form id="form3" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_fighting_training/fire_fighting_training_datail.php" method="post">
+          <form id="form3" action="fire_fighting_training/fire_fighting_training_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                 <a href="#" onclick="submitForm('form3');" class="fire_fighting_training-url">3. 消防訓練実施状況     →   別紙③</a>
           </form>
-          <form id="form4" action="http://localhost:50080/taishobutu_app/taishobutu/datail/inspection_status/inspection_status_datail.php" method="post">
+          <form id="form4" action="inspection_status/inspection_status_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                   <a href="#" onclick="submitForm('form4');" class="inspection_status-url">4. 立入検査状況      →   別紙④</a>
           </form>
-          <form id="form7" action="http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.php" method="post">
+          <form id="form7" action="firefighting_equipment_list/firefighting_equipment_list_show.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                   <a href="#" onclick="submitForm('form7');" class="firefighting_equipment_list-url">5. 消防用設備等一覧表    →   別紙⑤</a>
           </form>
         </div>
       </div>
-    <form method="POST" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_edit_done.php">
+    <form method="POST" action="taishobutu_show_datail_edit_done.php">
       <div class="RemarksColumnCellSet"><h6>備　考　欄(対象物の取り扱いについての取り決め事項などを記入)</h6>
           <div class="RemarksColumnValueCell">
               <textarea name="remarks_column" id="remarks_column"><?php echo htmlspecialchars($displayData['remarks_column']); ?></textarea>

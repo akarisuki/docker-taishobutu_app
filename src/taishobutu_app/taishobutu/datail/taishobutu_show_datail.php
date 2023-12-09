@@ -64,7 +64,7 @@ $db_host = null;
   <?php if(!$dataExists): ?>
     <!-- データが存在しない場合のみ「詳細記載項目追加」ボタンを表示 -->
     <div class="datail_add_button">
-        <form id="form5" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_add.php" method="post">
+        <form id="form5" action="./taishobutu_show_datail_add.php" method="post">
             <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
             <a href="#" onclick="submitForm('form5');" class="button" id="datail_add_button">詳細記載項目追加</a>
         </form>
@@ -74,7 +74,7 @@ $db_host = null;
   <?php if($dataExists): ?>
     <!-- データが存在する場合のみ「詳細記載項目変更」ボタンを表示 -->
     <div class="datail_edit_button">
-        <form id="form6" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail_edit.php" method="post">
+        <form id="form6" action="./taishobutu_show_datail_edit.php" method="post">
             <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
             <a href="#" onclick="submitForm('form6');" class="button" id="datail_edit_button">詳細記載項目変更</a>
         </form>
@@ -97,23 +97,23 @@ $db_host = null;
       </div>
       <div class="LinkCellSet">
         <div class="betushi_url">
-          <form id="form1" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.php" method="post">
+          <form id="form1" action="fire_safety_manager/fire_safety_manager_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                 <a href="#" onclick="submitForm('form1');" class="fire_safety_manager-url">1. 防火管理者選任状況  →  別紙①</a>
           </form>
-          <form id="form2" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_equipment_report/fire_equipment_report_datail.php" method="post">
+          <form id="form2" action="fire_equipment_report/fire_equipment_report_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                 <a href="#" onclick="submitForm('form2');" class="fire_equipment_report-url">2. 消防用設備点検報告  →  別紙②</a>
           </form>
-          <form id="form3" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_fighting_training/fire_fighting_training_datail.php" method="post">
+          <form id="form3" action="fire_fighting_training/fire_fighting_training_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                 <a href="#" onclick="submitForm('form3');" class="fire_fighting_training-url">3. 消防訓練実施状況     →   別紙③</a>
           </form>
-          <form id="form4" action="http://localhost:50080/taishobutu_app/taishobutu/datail/inspection_status/inspection_status_datail.php" method="post">
+          <form id="form4" action="inspection_status/inspection_status_datail.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                   <a href="#" onclick="submitForm('form4');" class="inspection_status-url">4. 立入検査状況      →   別紙④</a>
           </form>
-          <form id="form7" action="http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.php" method="post">
+          <form id="form7" action="firefighting_equipment_list/firefighting_equipment_list_show.php" method="post">
                 <input type="hidden" name="code" value="<?php echo $result_taishobutu_main['code']; ?>">
                   <a href="#" onclick="submitForm('form7');" class="firefighting_equipment_list-url">5. 消防用設備等一覧表    →   別紙⑤</a>
           </form>
