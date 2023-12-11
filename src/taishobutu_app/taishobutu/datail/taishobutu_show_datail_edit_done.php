@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 session_regenerate_id(true);
+require_once '../../common/config.php';
 include("../../common/header.php");
 require_once '../../common/db_operation/db_connect.php';
 

@@ -3,10 +3,10 @@ session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
 require_once '../../../common/config.php';
-include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
-require_once '/var/www/html/taishobutu_app/common/function.php';
+include("../../../common/header.php");
+require_once '../../../common/db_operation/db_connect.php';
+require_once '../../../common/bettpiyo/bettpiyo_array.php';
+require_once '../../../common/function.php';
 
 $code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 
@@ -48,8 +48,8 @@ if(empty($result_firefighting_equipment_list)) {
           content="width=device-width,initial-scale=1.0,
           maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/common/header.css">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.css">
+    <link rel="stylesheet" href="../../../common/sass/common/header.css">
+    <link rel="stylesheet" href="../../../common/sass/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.css">
 
 
     <title>防火対象物管理アプリ</title>
@@ -81,7 +81,7 @@ if(empty($result_firefighting_equipment_list)) {
   <div class="FireEquipmentLimitedQuantity">
     
     <div class="equipment_edit_button">
-        <form id="form9" action="http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_edit.php" method="post">
+        <form id="form9" action="../firefighting_equipment_list_edit.php" method="post">
             <input type="hidden" name="code" value="<?php echo $code; ?>">
             <a href="#" onclick="submitForm('form9');" class="button" id="equipment_edit_button">消防用設備変更</a>
         </form>

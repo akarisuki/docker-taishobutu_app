@@ -2,10 +2,11 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
-include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
-require_once '/var/www/html/taishobutu_app/common/function.php';
+require_once '../../../common/config.php';
+include("../../../common/header.php");
+require_once '../../../common/db_operation/db_connect.php';
+require_once '../../../common/bettpiyo/bettpiyo_array.php';
+require_once '../../../common/function.php';
 
 $code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
 
@@ -94,9 +95,9 @@ foreach ($equipments as $key => $value) {
           content="width=device-width,initial-scale=1.0,
           maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/common/header.css">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.css">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_add.css">
+    <link rel="stylesheet" href="../../../common/sass/common/header.css">
+    <link rel="stylesheet" href="../../../common/sass/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_show.css">
+    <link rel="stylesheet" href="../../../common/sass/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_add.css">
 
 
     <title>防火対象物管理アプリ</title>
@@ -105,7 +106,7 @@ foreach ($equipments as $key => $value) {
 <body>
 
   <div class="FireEquipmentLimitedQuantity">
-    <form method="POST" action="http://localhost:50080/taishobutu_app/taishobutu/datail/firefighting_equipment_list/firefighting_equipment_list_edit_done.php">
+    <form method="POST" action="firefighting_equipment_list_edit_done.php">
       <h1 class="page_title">消防用設備等設置一覧表</h1>
       <div class="EmergencyPowerSupplyCellset">
         <div class="StorageBatteryEquipment">

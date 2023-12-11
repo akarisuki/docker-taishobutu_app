@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
       $_SESSION['flash'] = null;
     }
     ?>
+    
     <div class="table-container">
         <table>
             <thead>

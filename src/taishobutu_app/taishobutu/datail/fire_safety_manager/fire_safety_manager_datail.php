@@ -3,9 +3,9 @@ session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
 require_once '../../../common/config.php';
-include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-require_once '/var/www/html/taishobutu_app/common/function.php';
+include("../../../common/header.php");
+require_once '../../../common/db_operation/db_connect.php';
+require_once '../../../common/function.php';
 
 $_SESSION['flash'] = $_SESSION['flash'] ?? null;
 
@@ -36,8 +36,8 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
           content="width=device-width,initial-scale=1.0,
           maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.css">
-    <link rel="stylesheet" href="http://localhost:50080/taishobutu_app/common/sass/common/header.css">
+    <link rel="stylesheet" href="../../../common/sass/taishobutu/datail/fire_safety_manager/fire_safety_manager_datail.css">
+    <link rel="stylesheet" href="../../../common/sass/common/header.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
 
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <body>
     <div class="taishobutu_show_datail_button">
-        <form id="form11" action="http://localhost:50080/taishobutu_app/taishobutu/datail/taishobutu_show_datail.php" method="post">
+        <form id="form11" action="../taishobutu_show_datail.php" method="post">
             <input type="hidden" name="code" value="<?php echo $code; ?>">
             <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">対象物詳細画面へ戻る</a>
         </form>
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
       </table>
     </div>
     
-    <form class="existingDataForm" method="post" action="http://localhost:50080/taishobutu_app/taishobutu/datail/fire_safety_manager/fire_safety_manager_add.php">
+    <form class="existingDataForm" method="post" action="fire_safety_manager_add.php">
       <input type="hidden" name="code" value="<?php echo $code; ?>">
       <input type="hidden" name="fire_safety_manager_code" value="<?php echo $last_fire_safety_manager_code + 1; ?>">
       <div class="input-form-container">

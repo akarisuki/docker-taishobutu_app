@@ -2,8 +2,10 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
+require_once '../../../common/config.php';
 include("../../../common/header.php");
 require_once '../../../common/db_operation/db_connect.php';
+require_once '../../../common/function.php';
 
 
 $code = isset($_POST['code']) ? $_POST['code'] : (isset($_GET['code']) ? $_GET['code'] : (isset($_SESSION['code']) ? $_SESSION['code'] : ''));
@@ -20,9 +22,8 @@ $stmt->bindValue(':report_date', $report_date, PDO::PARAM_STR);
 $stmt->bindValue(':deficiency', $deficiency, PDO::PARAM_STR);
 $stmt->bindValue(':inspector', $inspector, PDO::PARAM_STR);
 $stmt->bindValue(':remarks', $remarks, PDO::PARAM_STR);
-
-
 $stmt->execute();
+
 $_SESSION['flash'] = [
   'type' => 'success',
   'message' => '更新が完了しました。'

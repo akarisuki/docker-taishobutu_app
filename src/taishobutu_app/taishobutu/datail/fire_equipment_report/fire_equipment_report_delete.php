@@ -2,6 +2,7 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
+require_once '../../../common/config.php';
 include("../../../common/header.php");
 require_once '../../../common/db_operation/db_connect.php';
 
@@ -18,7 +19,6 @@ $_SESSION['flash'] = [
   'message' => '削除が完了しました。'
 ];
 
-var_dump($_SESSION['flash']);
 $_SESSION['code'] = $code;
 header('Location: fire_equipment_report_datail.php?code=' . urlencode($code));
 exit();

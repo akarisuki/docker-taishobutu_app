@@ -58,7 +58,7 @@ if (!$allFieldsFilled) {
     'type' => 'success',
     'message' => '追加が完了しました。'
   ];
-  var_dump($_SESSION['flash']);
+  
   $_SESSION['code'] = $code;
   header('Location: fire_equipment_report_datail.php?code=' . urlencode($code));
   exit();

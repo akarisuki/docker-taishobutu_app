@@ -7,8 +7,8 @@
       
     <div class="buttons d-flex justify-content-center">
       <?php if(isset($_SESSION['login'])):?>
-        <a href="<?php echo BASE_URL; ?>/taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
-        <a href="<?php echo BASE_URL; ?>/taishobutu/taishobutu_index.php" class="button">対象物一覧</a>
+        <a href="<?php echo BASE_URL; ?>taishobutu/taishobutu_add.php" class="button">対象物登録</a> 
+        <a href="<?php echo BASE_URL; ?>taishobutu/taishobutu_index.php" class="button">対象物一覧</a>
       <?php endif; ?>
     </div>
     
