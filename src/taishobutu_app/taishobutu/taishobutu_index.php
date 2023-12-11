@@ -172,7 +172,7 @@ $db_host = null;
             echo "<td class='checkbox-top'><input type='checkbox' name='codes[]' value='".htmlspecialchars($result['code'])."'></td>";
             echo "<td class='code-top'>".htmlspecialchars($result['code'])."</td>";
             echo "<td class='appendix-top'>".htmlspecialchars($appendix_array[$result['appendix']])."</td>";
-            echo "<td class='taishobutu_name-top'><a href='" . BASE_URL . "taishobutu/datail/taishobutu_show_datail.php?code=" . htmlspecialchars($result['code']) . "'>" . htmlspecialchars($result['taishobutu_name']) . "</a></td>";
+            echo "<td class='taishobutu_name-top'><a href='" . BASE_URL . "taishobutu_app/taishobutu/datail/taishobutu_show_datail.php?code=" . htmlspecialchars($result['code']) . "'>" . htmlspecialchars($result['taishobutu_name']) . "</a></td>";
             echo "<td class='taishobutu_address-top'>".htmlspecialchars($result['taishobutu_address'])."</td>";
             echo "<td class='taishobutu_tel-top'>".htmlspecialchars($result['taishobutu_tel'])."</td>";
             echo "<td class='owner_name-top'>".htmlspecialchars($result['owners_name'])."</td>";
