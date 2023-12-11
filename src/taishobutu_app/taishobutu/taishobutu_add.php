@@ -2,7 +2,8 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
-include("/var/www/html/taishobutu_app/common/header.php");
+require_once '../common/config.php';
+include("../common/header.php");
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +25,7 @@ include("/var/www/html/taishobutu_app/common/header.php");
 <div class="form-wrapper">
     <form method="post" action="taishobutu_check.php">
 
-        <?php include ('/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_select.php'); ?>
+        <?php include ('../common/bettpiyo/bettpiyo_select.php'); ?>
         <a href="http://www.chikuta119.jp/info/ihan_kohyo/pdf/beppyo01.pdf" target="_blank">用途区分ガイド</a><br/>
 
         <label for="taishobutu_name" class="required">対象物名</label>

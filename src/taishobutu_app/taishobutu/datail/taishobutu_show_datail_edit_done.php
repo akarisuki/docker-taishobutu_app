@@ -2,8 +2,8 @@
 ob_start();
 session_start();
 session_regenerate_id(true);
-include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+include("../../common/header.php");
+require_once '../../common/db_operation/db_connect.php';
 
 
 

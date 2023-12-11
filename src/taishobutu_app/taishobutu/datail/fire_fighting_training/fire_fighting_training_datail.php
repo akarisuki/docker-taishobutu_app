@@ -2,6 +2,7 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
+require_once '../../../common/config.php';
 include("/var/www/html/taishobutu_app/common/header.php");
 require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
 require_once '/var/www/html/taishobutu_app/common/function.php';

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../common/config.php';
 $_SESSION=array();
 if(isset($_COOKIE[session_name()])==true)
 {
@@ -10,6 +11,6 @@ $_SESSION['flash'] = [
     'type' => 'success',
     'message' => 'ログアウトしました。'
 ];
-header('Location: ./login.php');
+header('Location: ' .BASE_URL. 'login/login.php');
 ?>
 /

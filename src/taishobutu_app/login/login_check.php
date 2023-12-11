@@ -4,7 +4,7 @@ session_start();
     try{
         
         //require_once '/home/ubuntu/public_html/taishobutu_app/common/sanitize.php';
-        require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+        require_once '../common/db_operation/db_connect.php';
 
         $post = $_POST;
 

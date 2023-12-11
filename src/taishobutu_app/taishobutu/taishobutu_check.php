@@ -2,11 +2,11 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
-include("/var/www/html/taishobutu_app/common/header.php");
+include("../common/header.php");
 
 //政令別表の配列 $appendix_arrayを読み込む
-require_once '/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_array.php';
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+require_once '../common/bettpiyo/bettpiyo_array.php';
+require_once '../common/db_operation/db_connect.php';
 
 
 $post = $_POST;
@@ -130,7 +130,7 @@ if (empty($error)) {
 <div class="form-wrapper"> 
     <form method="post" action="taishobutu_check.php">
 
-        <?php include ('/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_select_check.php'); ?>
+        <?php include ('../common/bettpiyo/bettpiyo_select_check.php'); ?>
         <a href="http://www.chikuta119.jp/info/ihan_kohyo/pdf/beppyo01.pdf" target="_blank">用途区分ガイド</a><br/>
     
         <label for="taishobutu_name" class="required">対象物名</label>    

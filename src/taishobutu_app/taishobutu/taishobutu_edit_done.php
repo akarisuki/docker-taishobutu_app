@@ -14,9 +14,9 @@ try{
         
 
     //ヘッダーを読み込み
-    include("/var/www/html/taishobutu_app/common/header.php");
+    include("../common/header.php");
     //データベースに接続するファイルを呼び出す。
-    require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
+    require_once '../common/db_operation/db_connect.php';
 
     $post = $_POST;
 
@@ -65,7 +65,10 @@ try{
 
     $redirectUrl = '../taishobutu/taishobutu_index.php';
     echo '<script>window.location.href = "' . $redirectUrl . '";</script>';
-    
+    $_SESSION['flash'] = [
+        'type' => 'success',
+        'message' => '追加が完了しました。'
+    ];
     exit;
 
 } catch (PDOException $e){

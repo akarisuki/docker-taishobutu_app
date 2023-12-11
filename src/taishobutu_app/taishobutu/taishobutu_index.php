@@ -6,8 +6,8 @@ session_regenerate_id(true);
 //   header('Location: ../login/login.php');
 //   exit;
 // }
-include("../common/header.php");
 require_once '../common/config.php';
+include("../common/header.php");
 require_once '../common/function.php';
 require_once '../common/bettpiyo/bettpiyo_array.php';
 require_once '../common/db_operation/db_connect.php';
@@ -121,8 +121,7 @@ $db_host = null;
     $_SESSION['flash'] = null;
   }
   
-  var_dump(BASE_URL);
-  var_dump($_SERVER['HTTP_HOST']);
+  
   ?>
 <div class="form-search">
   <form action="taishobutu_index.php" method="post">
@@ -173,13 +172,13 @@ $db_host = null;
             echo "<td class='checkbox-top'><input type='checkbox' name='codes[]' value='".htmlspecialchars($result['code'])."'></td>";
             echo "<td class='code-top'>".htmlspecialchars($result['code'])."</td>";
             echo "<td class='appendix-top'>".htmlspecialchars($appendix_array[$result['appendix']])."</td>";
-            echo "<td class='taishobutu_name-top'><a href='../taishobutu/datail/taishobutu_show_datail.php?code=".htmlspecialchars($result['code'])."'>".htmlspecialchars($result['taishobutu_name'])."</a></td>";
+            echo "<td class='taishobutu_name-top'><a href='" . BASE_URL . "taishobutu/datail/taishobutu_show_datail.php?code=" . htmlspecialchars($result['code']) . "'>" . htmlspecialchars($result['taishobutu_name']) . "</a></td>";
             echo "<td class='taishobutu_address-top'>".htmlspecialchars($result['taishobutu_address'])."</td>";
             echo "<td class='taishobutu_tel-top'>".htmlspecialchars($result['taishobutu_tel'])."</td>";
             echo "<td class='owner_name-top'>".htmlspecialchars($result['owners_name'])."</td>";
             echo "<td class='owner_tel-top'>".htmlspecialchars($result['owners_tel'])."</td>";
             echo "<td class='total_area-top'>".htmlspecialchars($result['total_area'])."㎡"."</td>";
-            echo "<td class='edit'><a href='taishobutu_edit.php?code=".htmlspecialchars($result['code'])."'>修正</a></td>";
+            echo "<td class='edit'><a href='" . BASE_URL . "taishobutu/taishobutu_edit.php?code=".htmlspecialchars($result['code'])."'>修正</a></td>";
             echo "</tr>";
         }
 

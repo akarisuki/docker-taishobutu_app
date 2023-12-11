@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php
+    require_once '../common/config.php';
     if (isset($_SESSION['flash'])) {
         $flash = $_SESSION['flash'];
         echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
@@ -41,8 +42,7 @@
                 </select>
             </div>
             <div class="link">
-                <a class="pass_reset"href="./password_reset.php">パスワードを忘れた場合</a><br>
-                <a class="sign_up"href="../sign_up/sign_up.php">登録していない場合はこちら</a>
+                <a class="sign_up" href="<?php echo BASE_URL; ?>sign_up/sign_up.php">登録していない場合はこちら</a>
             </div>
             <div class="rememberme">
                 <input type="checkbox" name="rememberme">ログイン情報を保持する。

@@ -52,7 +52,7 @@ if (intval($total_area) === $total_area) {
         <label for="code">番号<?php echo $edit_data['code']; ?></label>
         <input type="hidden" name= "code" value="<?= $edit_data['code'] ?>">
 
-        <?php include ('/var/www/html/taishobutu_app/common/bettpiyo/bettpiyo_select_edit.php'); ?>
+        <?php include ('../common/bettpiyo/bettpiyo_select_edit.php'); ?>
         <a href="http://www.chikuta119.jp/info/ihan_kohyo/pdf/beppyo01.pdf" target="_blank">用途区分ガイド</a><br/>
     
         <label for="taishobutu_name" class="required">対象物名</label>    

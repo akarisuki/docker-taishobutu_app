@@ -2,9 +2,9 @@
     try{
         
             
-            
+            require_once '../common/config.php';
             //データベースに接続するファイルを呼び出す。
-            require_once '../common/db_connect.php';
+            require_once '../common/db_operation/db_connect.php';
             //登録フォームから入力したデータを$postに格納する
             $post = $_POST;
 
@@ -25,7 +25,7 @@
                 'message' => '登録が完了しました。'
             ];
 
-            header('Location: ../taishobutu/taishobutu_index.php');
+            header('Location: ' .BASE_URL. 'taishobutu/taishobutu_index.php');
             exit;
             
 

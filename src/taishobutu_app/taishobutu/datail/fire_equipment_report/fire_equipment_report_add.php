@@ -3,9 +3,10 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
-include("/var/www/html/taishobutu_app/common/header.php");
-require_once '/var/www/html/taishobutu_app/common/db_operation/db_connect.php';
-require_once '/var/www/html/taishobutu_app/common/function.php';
+require_once '../../../common/config.php';
+include("../../../common/header.php");
+require_once '../../../common/db_operation/db_connect.php';
+require_once '../../../common/function.php';
 
 $allFieldsFilled = true;
 
@@ -59,7 +60,7 @@ if (!$allFieldsFilled) {
   ];
   var_dump($_SESSION['flash']);
   $_SESSION['code'] = $code;
-  header('Location: http://localhost:50080/taishobutu_app/taishobutu/datail/fire_equipment_report/fire_equipment_report_datail.php?code=' . urlencode($code));
+  header('Location: fire_equipment_report_datail.php?code=' . urlencode($code));
   exit();
 
 
