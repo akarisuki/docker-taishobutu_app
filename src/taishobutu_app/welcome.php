@@ -61,7 +61,7 @@ require_once 'common/config.php';
 <div class="bg-image">
     <div class="content">
         <h1>ようこそ、予防119へ</h1>
-        <a href="<?php echo BASE_URL;?>login/login.php">ログイン画面へ</a>
+        <a href="<?php echo BASE_URL;?>/login/login.php">ログイン画面へ</a>
     </div>
 </div>
 

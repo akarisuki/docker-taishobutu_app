@@ -25,7 +25,7 @@
                 'message' => '登録が完了しました。'
             ];
 
-            header('Location: ' .BASE_URL. 'taishobutu/taishobutu_index.php');
+            header('Location: ' .BASE_URL. 'welcome.php');
             exit;
             
 

@@ -2,6 +2,7 @@
 session_start();
 session_regenerate_id(true);
 $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザーIDが保存されている場合をログイン済みとみなす
+require_once '../common/config.php';
 include("../common/header.php");
 
 //政令別表の配列 $appendix_arrayを読み込む

@@ -81,7 +81,7 @@ if(empty($result_firefighting_equipment_list)) {
   <div class="FireEquipmentLimitedQuantity">
     
     <div class="equipment_edit_button">
-        <form id="form9" action="../firefighting_equipment_list_edit.php" method="post">
+        <form id="form9" action="firefighting_equipment_list_edit.php" method="post">
             <input type="hidden" name="code" value="<?php echo $code; ?>">
             <a href="#" onclick="submitForm('form9');" class="button" id="equipment_edit_button">消防用設備変更</a>
         </form>

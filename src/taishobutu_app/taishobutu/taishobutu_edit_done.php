@@ -11,9 +11,7 @@ $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザ�
 
 try{
     
-        
-
-    //ヘッダーを読み込み
+    require_once '../common/config.php';
     include("../common/header.php");
     //データベースに接続するファイルを呼び出す。
     require_once '../common/db_operation/db_connect.php';

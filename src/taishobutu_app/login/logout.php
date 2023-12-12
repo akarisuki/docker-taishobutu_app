@@ -11,6 +11,6 @@ $_SESSION['flash'] = [
     'type' => 'success',
     'message' => 'ログアウトしました。'
 ];
-header('Location: ' .BASE_URL. 'login/login.php');
+header('Location: ' .BASE_URL. '/welcome.php');
 ?>
 /
