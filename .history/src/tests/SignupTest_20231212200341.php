@@ -7,7 +7,6 @@ class SignUpTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        require '/var/www/html/taishobutu_app/common/config.php';
         // login.phpを実行
         require  '/var/www/html/taishobutu_app/sign_up/sign_up.php';
         // sign_up_check.phpを実行
