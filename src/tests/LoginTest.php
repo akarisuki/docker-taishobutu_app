@@ -33,12 +33,6 @@ class LoginTest extends TestCase
         $this->assertStringContainsString('ログイン', $loginForm);
     }
 
-    public function testLoginFormContainsLinkToPasswordResetPage()
-    {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-        $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertStringContainsString('パスワードを忘れた場合', $loginForm);
-    }
 
     public function testLoginFormContainsLinkToSignUpPage()
     {

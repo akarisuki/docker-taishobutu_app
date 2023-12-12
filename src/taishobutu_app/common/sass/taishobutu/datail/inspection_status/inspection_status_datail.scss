@@ -4,9 +4,8 @@ body {
 }
 
 .table-container {
-  margin: 20px;
   position: relative;
-  top: 200px;
+  top: 250px;
 }
 
 table {
@@ -28,7 +27,7 @@ tr:nth-child(even) {
 
 form.existingDataForm {
   width: 100%;
-  max-width: 1179px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f2f2f2;
