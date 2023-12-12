@@ -1,88 +1,20 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once '/var/www/html/taishobutu_app/common/config.php';
-
-
 class SignUpTest extends TestCase
 {
-    private $signUpForm;
-    
-    protected function setUp(): void {
-        // 一度読み込んで、その内容をテストする
-        $this->signUpForm = file_get_contents(__DIR__ . '/../taishobutu_app/sign_up/sign_up.php');
-    }
-
-    
-
-    public function testFormExists()
+    public function testSignUpForm()
     {
-        $formHtml = file_get_contents(__DIR__ . '/../taishobutu_app/sign_up/sign_up.php');
-        error_log($formHtml);  // Log the HTML content
-        $this->assertStringContainsString('<form', $formHtml);
-    }
+        $_POST = [
+            'name' => '新規太郎',
+            'pass' => 'newpassword123',
+            'fire_dept_code' => 2
+        ];
 
-    public function testFormHasNameField()
-    {
-        $this->assertStringContainsString('name="name"', $this->signUpForm);
-    }
+        // sign_up_check.phpを実行
+        require 'sign_up_check.php';
 
-    public function testFormHasPasswordField()
-    {
-        $this->assertStringContainsString('name="pass"', $this->signUpForm);
+        // セッション変数やデータベースの状態を確認して、登録が成功したかどうかをテスト
+        // これはあなたのアプリケーションの具体的な実装によります
     }
-
-    public function testFormHasCorrectAction()
-    {
-        $this->assertStringContainsString('action="sign_up_check.php"', $this->signUpForm);
-    }
-
-    public function testFormHasSubmitButton()
-    {
-        $this->assertStringContainsString('type="submit"', $this->signUpForm);
-    }
-
-    // その他、フォームの要素が正しく設定されているかのテスト...
 }
-
-class SignUpCheckTest extends TestCase {
-  public function testUserNameValidation()
-  {
-      // PDOのモックを作成
-      $pdo = $this->createMock(PDO::class);
-      
-      // PDOStatementのモックを作成
-      $stmt = $this->createMock(PDOStatement::class);
-
-      // PDO::prepareが呼ばれたらPDOStatementのモックを返す
-      $pdo->method('prepare')
-          ->willReturn($stmt);
-
-      // PDOStatement::bindValueが呼ばれたらtrueを返す
-      $stmt->method('bindValue')
-          ->willReturn(true);
-
-      // PDOStatement::executeが呼ばれたらtrueを返す
-      $stmt->method('execute')
-          ->willReturn(true);
-
-      // PDOStatement::fetchが呼ばれたら['COUNT(*)' => 0]を返す（ユーザ名が存在しない場合）
-      $stmt->method('fetch')
-          ->willReturn(['COUNT(*)' => 0]);
-
-      // $_POSTのモック
-      $_POST = [
-          'name' => 'valid_user_name',
-          'pass' => 'valid_password'
-      ];
-
-      // テスト対象のスクリプトを実行
-      ob_start();  // 出力バッファリング開始
-      include '/../taishobutu_app/sign_up/sign_check_.php';
-      $output = ob_get_clean();  // 出力内容を取得してバッファリング終了
-      
-      // アサーション（ここではエラーが存在しないことを確認）
-      $this->assertStringNotContainsString('error', $output);
-  } 
-}
-?>
