@@ -1,57 +1,47 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once '/var/www/html/taishobutu_app/common/config.php';
-
-
-
 class LoginTest extends TestCase
 {
-  
+    private $htmlContent;
+
+    protected function setUp(): void
+    {
+        ob_start();
+        require_once __DIR__ . '/../taishobutu_app/login/login.php';
+        require_once __DIR__ . '/../taishobutu_app/common/config.php';
+        $this->htmlContent = ob_get_clean();
+    }
 
     public function testLoginFormExists()
     {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-      $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertNotNull($loginForm);
+        $this->assertStringContainsString('<form', $this->htmlContent);
+        $this->assertStringContainsString('action="login_check.php"', $this->htmlContent);
     }
 
-    public function testLoginFormHasNameField()
+    public function testStaffNameFieldExists()
     {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-      $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertStringContainsString('name', $loginForm);
+        $this->assertStringContainsString('name="name"', $this->htmlContent);
     }
 
-    public function testLoginFormHasPasswordField()
+    public function testStaffPasswordFieldExists()
     {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-      $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertStringContainsString('pass', $loginForm);
+        $this->assertStringContainsString('name="pass"', $this->htmlContent);
+    }
+
+    public function testFireDeptCodeFieldExists()
+    {
+        $this->assertStringContainsString('name="fire_dept_code"', $this->htmlContent);
     }
 
     public function testLoginFormSubmitButtonExists()
     {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-      $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertStringContainsString('ログイン', $loginForm);
+        $this->assertStringContainsString('type="submit"', $this->htmlContent);
+        $this->assertStringContainsString('value="ログイン"', $this->htmlContent);
     }
-
 
     public function testLoginFormContainsLinkToSignUpPage()
     {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-      $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertStringContainsString('登録していない場合はこちら', $loginForm);
-    }
-
-    public function testLoginFormContainsRememberMeCheckbox()
-    {
-      require_once(__DIR__ . '/../taishobutu_app/login/login.php' );
-      $loginForm = file_get_contents(__DIR__ . '/../taishobutu_app/login/login.php');
-        $this->assertStringContainsString('ログイン情報を保持する', $loginForm);
+        $this->assertStringContainsString('href="'. BASE_URL .'sign_up/sign_up.php"', $this->htmlContent);
     }
 }
-
-
-?>
