@@ -2,15 +2,10 @@
 use PHPUnit\Framework\TestCase;
 
 
-
+// sign_up_check.phpを実行
+require __DIR__ . '/../src/taishobutu_app/sign_up/sign_up_check.php';
 class SignUpTest extends TestCase
 {
-    public static function setUpBeforeClass(): void
-    {
-        // sign_up_check.phpを実行
-        require __DIR__ . '/../src/taishobutu_app/sign_up/sign_up_check.php';
-    }
-    
     public function testSignUpForm()
     {
         $_POST = [

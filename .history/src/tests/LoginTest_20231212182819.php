@@ -1,16 +1,11 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-
+// login_check.phpを実行
+require __DIR__ . '/../src/taishobutu_app/login/login_check.php';
 
 class LoginTest extends TestCase
 {
-    public static function setUpBeforeClass(): void
-    {
-        // login_check.phpを実行
-        require __DIR__ . '/../src/taishobutu_app/login/login_check.php';
-    }
-
     public function testLoginForm()
     {
         $_POST = [
