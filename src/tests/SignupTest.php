@@ -1,6 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
+require_once '../taishobutu_app/common/config.php';
+
 class SignUpTest extends TestCase
 {
     private $signUpForm;

@@ -1,9 +1,11 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
+require_once '../taishobutu_app/common/config.php';
+
 class LoginTest extends TestCase
 {
-    
+  
 
     public function testLoginFormExists()
     {
