@@ -1,7 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once (__DIR__ . '/../taishobutu_app/common/config.php');
+require_once '/var/www/html/taishobutu_app/common/config.php';
+
 
 
 class LoginTest extends TestCase
