@@ -1,8 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once '/var/www/html/taishobutu_app/common/config.php';
-
+require_once '../taishobutu_app/common/config.php';
 
 class SignUpTest extends TestCase
 {
