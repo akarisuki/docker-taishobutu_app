@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-    require_once __DIR__ . '../common/config.php';
+    require_once '../common/config.php';
     if (isset($_SESSION['flash'])) {
         $flash = $_SESSION['flash'];
         echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";

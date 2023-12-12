@@ -2,7 +2,7 @@
 
 use PHP_CodeSniffer\Tokenizers\PHP;
 
-require_once __DIR__ . '../common/db_operation/db_connect.php';
+require_once '../common/db_operation/db_connect.php';
 
 
     $post = $_POST;
