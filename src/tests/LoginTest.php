@@ -8,8 +8,8 @@ class LoginTest extends TestCase
     protected function setUp(): void
     {
         ob_start();
-        require_once '/var/www/html/taishobutu_app/login/login.php';
-        require_once '/var/www/html/taishobutu_app/common/config.php';
+        require_once __DIR__ . '/../taishobutu_app/common/config.php';
+        require_once __DIR__ . '/../taishobutu_app/login/login.php';
         $this->htmlContent = ob_get_clean();
     }
 
