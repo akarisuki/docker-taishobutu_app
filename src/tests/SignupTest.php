@@ -8,9 +8,9 @@ class SignUpTest extends TestCase
     public static function setUpBeforeClass(): void
     {
         // login.phpを実行
-        require __DIR__ . '/var/www/html/src/taishobutu_app/sign_up/sign_up.php';
+        require __DIR__ . '/var/www/html/taishobutu_app/sign_up/sign_up.php';
         // sign_up_check.phpを実行
-        require __DIR__ . '/var/www/html/src/taishobutu_app/sign_up/sign_up_check.php';
+        require __DIR__ . '/var/www/html/taishobutu_app/sign_up/sign_up_check.php';
     }
 
     public function testSignUpForm()

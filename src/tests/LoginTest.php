@@ -8,9 +8,9 @@ class LoginTest extends TestCase
     public static function setUpBeforeClass(): void
     {
         // login.phpを実行
-        require '/var/www/html/src/taishobutu_app/login/login.php';
+        require '/var/www/html/taishobutu_app/login/login.php';
         // login_check.phpを実行
-        require '/var/www/html/src/taishobutu_app/login/login_check.php';
+        require '/var/www/html/taishobutu_app/login/login_check.php';
     }
 
     public function testLoginForm()
