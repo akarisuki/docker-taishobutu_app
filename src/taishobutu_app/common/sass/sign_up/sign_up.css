@@ -7,7 +7,7 @@ body {
 
 .title {
   position: relative;
-  top: 92px;
+  top: 30px;
   font-size: 40px;
   height: 100%;
   width: 100%;
@@ -16,13 +16,13 @@ body {
 }
 
 .form-wrapper {
-  top: 146px;
+  top: 60px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 20px;
   width: 450px;
-  height: 511px;
+  height: 750px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -42,20 +42,37 @@ label.required:after {
 
 .staff_name {
   position: absolute;
-  top: 21px;
+  top: 20px;
   left: 92px;
 }
 
 .staff_pass {
   position: absolute;
-  top: 149px;
+  top: 160px;
+  left: 92px;
+}
+
+.staff_pass_confirm {
+  position: absolute;
+  top: 300px;
   left: 92px;
 }
 
 .fire_dept_code {
   position: absolute;
-  top: 285px;
+  top: 440px;
   left: 92px;
+}
+
+.security_question {
+  position: absolute;
+  top: 580px;
+  left: 92px;
+}
+
+select[name=security_question] {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
 }
 
 input[type=text],
@@ -135,9 +152,24 @@ input[type=submit]:hover {
   font-size: 10px;
 }
 
+.error-message-pass-confirm {
+  color: red;
+  position: absolute;
+  left: -26px;
+  bottom: -9px;
+  font-size: 14px;
+}
+
 .error-fire-dept-code {
   color: red;
   position: absolute;
   left: 14px;
   bottom: 22px;
+}
+
+.error-message-security {
+  color: red;
+  position: absolute;
+  left: -26px;
+  bottom: -33px;
 }/*# sourceMappingURL=sign_up.css.map */
