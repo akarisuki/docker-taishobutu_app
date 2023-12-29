@@ -12,7 +12,7 @@ $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザ�
 try{
     
     require_once '../common/config.php';
-    include("../common/header.php");
+    //include("../common/header.php");
     //データベースに接続するファイルを呼び出す。
     require_once '../common/db_operation/db_connect.php';
     include("../common/cookie_user.php");
@@ -62,13 +62,14 @@ try{
     $stmt->bindValue(':total_area', $display_total_area, PDO::PARAM_STR);
     $stmt->execute();
 
-    $redirectUrl = '../taishobutu/taishobutu_index.php';
-    echo '<script>window.location.href = "' . $redirectUrl . '";</script>';
+    
     $_SESSION['flash'] = [
         'type' => 'success',
-        'message' => '追加が完了しました。'
+        'message' => '修正が完了しました。'
     ];
-    exit;
+
+    header('Location: taishobutu_index.php');
+    exit();
 
 } catch (PDOException $e){
   print'ただいま障害により大変ご迷惑をおかけしております。';

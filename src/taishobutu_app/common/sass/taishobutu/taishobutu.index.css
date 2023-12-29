@@ -129,6 +129,18 @@ table {
   text-align: center;
 }
 
+.no-records {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px; /* Adjust as needed */
+  background-color: #f2f2f2; /* Adjust color as needed */
+}
+
+.no-records p {
+  font-size: 1.5em; /* Adjust as needed */
+}
+
 .edit {
   width: 3px;
 }

@@ -82,7 +82,7 @@ if(!preg_match('/^\d+$/',$taishobutu_tel)){
   $error_taishobutu_tel[] = '対象物連絡先は半角数字のみで入力してください';
 }
 
-if(!preg_match('/^\d+$/',$owners_tel)){
+if($owners_tel !== '' && !preg_match('/^\d+$/',$owners_tel)){
   $error_owners_tel[] = '所有者連絡先は半角数字のみで入力してください';
 }
 

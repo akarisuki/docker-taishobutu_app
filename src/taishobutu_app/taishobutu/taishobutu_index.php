@@ -142,60 +142,59 @@ $db_host = null;
 </div>
 
 <form action="taishobutu_delete.php" method="post">
-  <table class="excel-style">
-    <thead>
-      <tr>
-          <th class="checkbox-top">□</th>
-          <th class="code-top">番号</th>
-          <th class="appendix-top">用途区分</th>
-          <th class="taishobutu_name-top">防火対象物名</th>
-          <th class="taishobutu_address-top">防火対象物所在地</th>
-          <th class="taishobutu_tel-top">対象物連絡先</th>
-          <th class="owner_name-top">所有者名</th>
-          <th class="owner_tel-top">所有者連絡先</th>
-          <th class="total_area-top">延べ面積</th>
-          <th class="edit"></th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      <?php
-        $result_count = 0; 
-        while(true) {
-          $result = $stmt -> fetch(PDO::FETCH_ASSOC);
-          if($result === false) {
-              break;
-          }
-            $result_count++;
+<?php
+$result_count = 0; 
+$results = [];
+while(true) {
+    $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+    if($result === false) {
+        break;
+    }
+    $results[] = $result;
+    $result_count++;
+}
 
-            echo "<tr>";
-            echo "<td class='checkbox-top'><input type='checkbox' name='codes[]' value='".htmlspecialchars($result['code'])."'></td>";
-            echo "<td class='code-top'>".htmlspecialchars($result['code'])."</td>";
-            echo "<td class='appendix-top'>".htmlspecialchars($appendix_array[$result['appendix']])."</td>";
-            echo "<td class='taishobutu_name-top'><a href='" . BASE_URL . "/taishobutu/datail/taishobutu_show_datail.php?code=" . htmlspecialchars($result['code']) . "'>" . htmlspecialchars($result['taishobutu_name']) . "</a></td>";
-            echo "<td class='taishobutu_address-top'>".htmlspecialchars($result['taishobutu_address'])."</td>";
-            echo "<td class='taishobutu_tel-top'>".htmlspecialchars($result['taishobutu_tel'])."</td>";
-            echo "<td class='owner_name-top'>".htmlspecialchars($result['owners_name'])."</td>";
-            echo "<td class='owner_tel-top'>".htmlspecialchars($result['owners_tel'])."</td>";
-            echo "<td class='total_area-top'>".htmlspecialchars($result['total_area'])."㎡"."</td>";
-            echo "<td class='edit'><a href='" . BASE_URL . "taishobutu/taishobutu_edit.php?code=".htmlspecialchars($result['code'])."'>修正</a></td>";
-            echo "</tr>";
-        }
-
-        if ($result_count === 0) {
-          echo "<tr><td colspan='9'>レコードがありません</td></tr>";
-        }
-        
-      
-      ?>
-    </tbody>
-  </table>
-  <input type="submit" name="delete" value="選択したレコードを削除" onclick="return confirmDelete();">
+if ($result_count === 0) {
+    echo "<div class='no-records'><p>登録防火対象物がありません</p></div>";
+} else {
+    echo "<table class='excel-style'>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th class='checkbox-top'>□</th>";
+    echo "<th class='code-top'>番号</th>";
+    echo "<th class='appendix-top'>用途区分</th>";
+    echo "<th class='taishobutu_name-top'>防火対象物名</th>";
+    echo "<th class='taishobutu_address-top'>防火対象物所在地</th>";
+    echo "<th class='taishobutu_tel-top'>対象物連絡先</th>";
+    echo "<th class='owner_name-top'>所有者名</th>";
+    echo "<th class='owner_tel-top'>所有者連絡先</th>";
+    echo "<th class='total_area-top'>延べ面積</th>";
+    echo "<th class='edit'></th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+    foreach ($results as $result) {
+        echo "<tr>";
+        echo "<td class='checkbox-top'><input type='checkbox' name='codes[]' value='".htmlspecialchars($result['code'])."'></td>";
+        echo "<td class='code-top'>".htmlspecialchars($result['code'])."</td>";
+        echo "<td class='appendix-top'>".htmlspecialchars($appendix_array[$result['appendix']])."</td>";
+        echo "<td class='taishobutu_name-top'><a href='" . BASE_URL . "/taishobutu/datail/taishobutu_show_datail.php?code=" . htmlspecialchars($result['code']) . "'>" . htmlspecialchars($result['taishobutu_name']) . "</a></td>";
+        echo "<td class='taishobutu_address-top'>".htmlspecialchars($result['taishobutu_address'])."</td>";
+        echo "<td class='taishobutu_tel-top'>".htmlspecialchars($result['taishobutu_tel'])."</td>";
+        echo "<td class='owner_name-top'>".htmlspecialchars($result['owners_name'])."</td>";
+        echo "<td class='owner_tel-top'>".htmlspecialchars($result['owners_tel'])."</td>";
+        echo "<td class='total_area-top'>".htmlspecialchars($result['total_area'])."㎡"."</td>";
+        echo "<td class='edit'><a href='" . BASE_URL . "taishobutu/taishobutu_edit.php?code=".htmlspecialchars($result['code'])."'>修正</a></td>";
+        echo "</tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+}
+?>
+    <input type="submit" name="delete" value="選択したレコードを削除" onclick="return confirmDelete();">
 </form>
 <button type="button" name="delete-all" onclick="handleDeleteAll()">全削除</button>
 
 <?php $db_host = null; ?>
-
-
 </body>
 </html>

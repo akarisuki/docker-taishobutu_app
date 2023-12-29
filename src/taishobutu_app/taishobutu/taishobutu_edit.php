@@ -69,7 +69,7 @@ if (intval($total_area) === $total_area) {
         <input type="text" name="owners_name" value="<?= htmlspecialchars($edit_data['owners_name'], ENT_QUOTES, 'UTF-8') ?>"><br/>
     
         <label for="owners_tel"class="optional">所有者連絡先</label>
-        <input type="text" name="owners_tel" maxlength="14" value=" <?= htmlspecialchars($edit_data['owners_tel'], ENT_QUOTES, 'UTF-8') ?>"><br/>
+        <input type="text" name="owners_tel" maxlength="14" value="<?= htmlspecialchars($edit_data['owners_tel'], ENT_QUOTES, 'UTF-8')?>"><br/>
     
         <label for="total_area"class="required">延べ面積</label>
         <input type="number" name="total_area" step="0.01" value="<?= $display_total_area ?>">㎡<br/>

@@ -76,12 +76,12 @@ if(empty($taishobutu_tel)){
 }
 
 if(!preg_match('/^\d+$/',$taishobutu_tel)){
-  $error_taishobutu_tel[] = '対象物連絡先は半角数字に-を含むようにしてください';
+  $error_taishobutu_tel[] = '対象物連絡先は半角整数のみにしてください';
 }
 
 
 if(!preg_match('/^\d+$/',$owners_tel)){
-  $error_owners_tel[] = '所有者連絡先は半角数字に-を含むようにしてください';
+  $error_owners_tel[] = '所有者連絡先は半角整数のみしてください';
 }
 
 if(empty($raw_total_area)){

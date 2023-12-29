@@ -10,7 +10,7 @@ $isLoggedIn = isset($_SESSION['name']);  // 例: $_SESSION['name'] にユーザ�
 
 try{
     require_once '../common/config.php';
-    include("../common/header.php");
+    //include("../common/header.php");
     //データベースに接続するファイルを呼び出す。
     require_once '../common/db_operation/db_connect.php';
     include("../common/cookie_user.php");
