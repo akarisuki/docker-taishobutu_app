@@ -17,5 +17,8 @@
     "psr-4": {
        "Html\\": "src/" 
     } 
+  },
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
   }
 }

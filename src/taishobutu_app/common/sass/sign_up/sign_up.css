@@ -64,7 +64,7 @@ label.required:after {
   left: 92px;
 }
 
-.security_question {
+.mail_address {
   position: absolute;
   top: 580px;
   left: 92px;
@@ -167,9 +167,9 @@ input[type=submit]:hover {
   bottom: 22px;
 }
 
-.error-message-security {
+.error-mail-address {
   color: red;
   position: absolute;
   left: -26px;
-  bottom: -33px;
+  bottom: -12px;
 }/*# sourceMappingURL=sign_up.css.map */
