@@ -150,7 +150,7 @@ $sql = <<<EOD
   HalideFireExtinguishingEquipmentGR = :HalideFireExtinguishingEquipmentGR, HalideFireExtinguishingEquipmentAI = :HalideFireExtinguishingEquipmentAI, HalideFireExtinguishingEquipmentNOI = :HalideFireExtinguishingEquipmentNOI,
   OutdoorFireHydrantGR = :OutdoorFireHydrantGR, OutdoorFireHydrantAI = :OutdoorFireHydrantAI, OutdoorFireHydrantNOI = :OutdoorFireHydrantNOI,
   IndoorFireHydrantGR = :IndoorFireHydrantGR, IndoorFireHydrantAI = :IndoorFireHydrantAI, IndoorFireHydrantNOI = :IndoorFireHydrantNOI,
-  FireExtinguisherGR = :FireExtinguisherGR, FireExtinguisherAI = :FireExtinguisherAI, FireExtinguisherNOI = :FireExtinguisherNOI
+  FireExtinguisherGR = :FireExtinguisherGR, FireExtinguisherAI = :FireExtinguisherAI, FireExtinguisherNOI = :FireExtinguisherNOI ,updated_at = :updated_at
 EOD;
 
 
@@ -264,6 +264,8 @@ $stmt->bindValue(':IndoorFireHydrantNOI',$IndoorFireHydrantNOI, PDO::PARAM_STR);
 $stmt->bindValue(':FireExtinguisherGR',$FireExtinguisherGR, PDO::PARAM_STR);
 $stmt->bindValue(':FireExtinguisherAI',$FireExtinguisherAI, PDO::PARAM_STR);
 $stmt->bindValue(':FireExtinguisherNOI',$FireExtinguisherNOI, PDO::PARAM_STR);
+
+$stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
 
 $stmt->execute();
 

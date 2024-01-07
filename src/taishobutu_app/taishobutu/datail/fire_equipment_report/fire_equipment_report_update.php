@@ -15,13 +15,14 @@ $deficiency = $_POST['deficiency'];
 $inspector = $_POST['inspector'];
 $remarks = $_POST['remarks'];
 
-$sql = "UPDATE fire_equipment_report SET report_date = :report_date, deficiency = :deficiency, inspector = :inspector, remarks = :remarks WHERE fire_equipment_report_code = :fire_equipment_report_code";
+$sql = "UPDATE fire_equipment_report SET report_date = :report_date, deficiency = :deficiency, inspector = :inspector, remarks = :remarks, updated_at = :updated_at WHERE fire_equipment_report_code = :fire_equipment_report_code";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':fire_equipment_report_code', $fire_equipment_report_code, PDO::PARAM_INT);
 $stmt->bindValue(':report_date', $report_date, PDO::PARAM_STR);
 $stmt->bindValue(':deficiency', $deficiency, PDO::PARAM_STR);
 $stmt->bindValue(':inspector', $inspector, PDO::PARAM_STR);
 $stmt->bindValue(':remarks', $remarks, PDO::PARAM_STR);
+$stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
 $stmt->execute();
 
 $_SESSION['flash'] = [

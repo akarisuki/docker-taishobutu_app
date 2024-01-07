@@ -46,7 +46,8 @@ try{
     INSERT INTO taishobutu_main SET  fire_dept_code = :fire_dept_code,
     appendix = :appendix ,taishobutu_name = :taishobutu_name,
     taishobutu_address = :taishobutu_address , taishobutu_tel = :taishobutu_tel,
-    owners_name = :owners_name ,owners_tel = :owners_tel ,total_area = :total_area;
+    owners_name = :owners_name ,owners_tel = :owners_tel ,total_area = :total_area , 
+    created_at = :created_at, updated_at = :updated_at;
     EOD;
 
     $stmt = $db_host->prepare($sql);
@@ -58,6 +59,8 @@ try{
     $stmt->bindValue(':owners_name', $owners_name, PDO::PARAM_STR);
     $stmt->bindValue(':owners_tel', $owners_tel, PDO::PARAM_STR);
     $stmt->bindValue(':total_area', $display_total_area, PDO::PARAM_STR);
+    $stmt->bindValue(':created_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+    $stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
     $stmt->execute();
 
 

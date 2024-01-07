@@ -39,7 +39,7 @@ if (!$allFieldsFilled) {
   $sql = <<<EOD
     INSERT INTO fire_safety_manager SET code = :code ,fire_safety_manager_code = :fire_safety_manager_code,
     fire_safety_manager_director = :fire_safety_manager_director , fire_safety_manager_name = :fire_safety_manager_name,
-    appointment_date = :appointment_date,fire_plan_date = :fire_plan_date
+    appointment_date = :appointment_date,fire_plan_date = :fire_plan_date, created_at = :created_at, updated_at = :updated_at
   EOD;
 
   $stmt = $db_host->prepare($sql);
@@ -49,6 +49,8 @@ if (!$allFieldsFilled) {
   $stmt->bindValue(':fire_safety_manager_name', $fire_safety_manager_name, PDO::PARAM_STR);
   $stmt->bindValue(':appointment_date', $appointment_date, PDO::PARAM_STR); // 追加: appointment_dateのバインド
   $stmt->bindValue(':fire_plan_date', $fire_plan_date, PDO::PARAM_STR);
+  $stmt->bindValue(':created_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+  $stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
   $stmt->execute();
 
   $_SESSION['flash'] = [

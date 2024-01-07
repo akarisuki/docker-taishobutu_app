@@ -44,7 +44,8 @@ if (!$allFieldsFilled) {
   $sql = <<<EOD
     INSERT INTO fire_fighting_training SET code = :code ,fire_fighting_training_code = :fire_fighting_training_code,
     implementation_date = :implementation_date , training_content = :training_content,
-    participation_of_fire_depts = :participation_of_fire_depts,instructor_name = :instructor_name,remarks = :remarks
+    participation_of_fire_depts = :participation_of_fire_depts,instructor_name = :instructor_name,remarks = :remarks,
+    created_at = :created_at, updated_at = :updated_at
   EOD;
 
   $stmt = $db_host->prepare($sql);
@@ -55,6 +56,8 @@ if (!$allFieldsFilled) {
   $stmt->bindValue(':participation_of_fire_depts', $participation_of_fire_depts, PDO::PARAM_STR); // 追加: appointment_dateのバインド
   $stmt->bindValue(':instructor_name',$instructor_name,PDO::PARAM_STR);
   $stmt->bindValue(':remarks', $remarks, PDO::PARAM_STR);
+  $stmt->bindValue(':created_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+  $stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
   $stmt->execute();
   
   $_SESSION['flash'] = [

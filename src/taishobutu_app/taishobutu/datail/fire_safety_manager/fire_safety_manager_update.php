@@ -13,14 +13,14 @@ $fire_safety_manager_name = $_POST['fire_safety_manager_name'];
 $appointment_date = $_POST['appointment_date'];
 $fire_plan_date = $_POST['fire_plan_date'];
 
-$sql = "UPDATE fire_safety_manager SET fire_safety_manager_director = :director, fire_safety_manager_name = :fire_safety_manager_name, appointment_date = :appointment_date, fire_plan_date = :fire_plan_date WHERE fire_safety_manager_code = :fire_safety_manager_code";
+$sql = "UPDATE fire_safety_manager SET fire_safety_manager_director = :director, fire_safety_manager_name = :fire_safety_manager_name, appointment_date = :appointment_date, fire_plan_date = :fire_plan_date,updated_at = :updated_at WHERE fire_safety_manager_code = :fire_safety_manager_code";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':fire_safety_manager_code', $fire_safety_manager_code, PDO::PARAM_INT);
 $stmt->bindValue(':director', $fire_safety_manager_director, PDO::PARAM_STR);
 $stmt->bindValue(':fire_safety_manager_name', $fire_safety_manager_name, PDO::PARAM_STR);
 $stmt->bindValue(':appointment_date', $appointment_date, PDO::PARAM_STR);
 $stmt->bindValue(':fire_plan_date', $fire_plan_date, PDO::PARAM_STR);
-
+$stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
 $stmt->execute();
 $_SESSION['flash'] = [
   'type' => 'success',

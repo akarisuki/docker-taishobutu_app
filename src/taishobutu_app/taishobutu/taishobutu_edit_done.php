@@ -48,7 +48,8 @@ try{
     $sql = <<<EOD
     UPDATE taishobutu_main SET appendix = :appendix ,taishobutu_name = :taishobutu_name,
     taishobutu_address = :taishobutu_address , taishobutu_tel = :taishobutu_tel,
-    owners_name = :owners_name ,owners_tel = :owners_tel ,total_area = :total_area WHERE code= :code;
+    owners_name = :owners_name ,owners_tel = :owners_tel ,total_area = :total_area,
+    updated_at = :updated_at WHERE code= :code;
     EOD;
 
     $stmt = $db_host->prepare($sql);
@@ -60,6 +61,7 @@ try{
     $stmt->bindValue(':owners_name', $owners_name, PDO::PARAM_STR);
     $stmt->bindValue(':owners_tel', $owners_tel, PDO::PARAM_STR);
     $stmt->bindValue(':total_area', $display_total_area, PDO::PARAM_STR);
+    $stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
     $stmt->execute();
 
     

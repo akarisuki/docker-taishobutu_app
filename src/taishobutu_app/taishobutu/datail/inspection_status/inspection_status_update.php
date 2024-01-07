@@ -14,13 +14,14 @@ $inspection_name = $_POST['inspection_name'];
 $instructions = $_POST['instructions'];
 $remarks	= $_POST['remarks'];
 
-$sql = "UPDATE inspection_status SET inspection_date = :inspection_date, inspection_name = :inspection_name, instructions = :instructions, remarks = :remarks WHERE inspection_status_code = :inspection_status_code";
+$sql = "UPDATE inspection_status SET inspection_date = :inspection_date, inspection_name = :inspection_name, instructions = :instructions, remarks = :remarks, updated_at = :updated_at WHERE inspection_status_code = :inspection_status_code";
 $stmt = $db_host->prepare($sql);
 $stmt->bindValue(':inspection_status_code', $inspection_status_code, PDO::PARAM_INT);
 $stmt->bindValue(':inspection_date', $inspection_date, PDO::PARAM_STR);
 $stmt->bindValue(':inspection_name', $inspection_name, PDO::PARAM_STR);
 $stmt->bindValue(':instructions', $instructions, PDO::PARAM_STR);
 $stmt->bindValue(':remarks', $remarks, PDO::PARAM_STR);
+$stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
 
 
 $stmt->execute();

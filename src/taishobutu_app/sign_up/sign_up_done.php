@@ -15,12 +15,14 @@
             //パスワードの暗号化
             $hash_pass = password_hash($staff_pass, PASSWORD_DEFAULT);
 
-            $sql = 'INSERT INTO firedept_staff SET staff_name = :staff_name,staff_pass = :staff_pass ,fire_dept_code = :fire_dept_code,mail_address = :mail_address';
+            $sql = 'INSERT INTO firedept_staff SET staff_name = :staff_name,staff_pass = :staff_pass ,fire_dept_code = :fire_dept_code,mail_address = :mail_address , created_at = :created_at, updated_at = :updated_at';
             $stmt = $db_host->prepare($sql);
             $stmt->bindValue(':staff_name', $staff_name, PDO::PARAM_STR);
             $stmt->bindValue(':staff_pass', $hash_pass, PDO::PARAM_STR);
             $stmt->bindValue(':fire_dept_code', $fire_dept_code, PDO::PARAM_INT);
             $stmt->bindValue(':mail_address', $mail_address,PDO::PARAM_STR);
+            $stmt->bindValue(':created_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+            $stmt->bindValue(':updated_at', (new \DateTime())->format('Y-m-d H:i:s'), PDO::PARAM_STR);
             $stmt->execute();
             $_SESSION['flash'] = [
                 'type' => 'success',
