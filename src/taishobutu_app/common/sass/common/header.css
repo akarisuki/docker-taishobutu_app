@@ -9,6 +9,51 @@ header {
   z-index: 999;
 }
 
+.hamburger-menu {
+  position: absolute;
+  top: 10px;
+  left: 356px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+.hamburger-menu div {
+  width: 2rem;
+  height: 0.25rem;
+  background: #333;
+}
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.mobile-nav.open {
+  display: flex;
+}
+
 .d-flex {
   display: flex;
 }
@@ -23,6 +68,11 @@ header {
 
 .title {
   font-size: large;
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 10px;
+  }
 }
 
 .button {
@@ -46,10 +96,24 @@ header {
   font-size: 16px;
 }
 
+/* デスクトップサイズでのスタイル */
 .user-info p {
-  margin-right: 10px;
+  display: block;
 }
 
+/* スマホサイズでのスタイル */
+@media (max-width: 768px) {
+  .user-info p::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .user-info .login-text {
+    display: none;
+  }
+}
 .user-info form {
   margin: 0;
   padding: 0;
@@ -75,4 +139,8 @@ header {
 .button:active {
   background-color: #005cbf;
   box-shadow: none;
+}
+
+.mobile-button {
+  display: none;
 }/*# sourceMappingURL=header.css.map */

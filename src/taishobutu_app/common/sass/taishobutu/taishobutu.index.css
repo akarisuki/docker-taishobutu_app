@@ -145,6 +145,15 @@ table {
   width: 3px;
 }
 
+@media (max-width: 600px) {
+  .taishobutu_address-top,
+  .taishobutu_tel-top,
+  .owner_name-top,
+  .owner_tel-top,
+  .total_area-top {
+    display: none;
+  }
+}
 input[name=delete] {
   background-color: #4CAF50;
   color: #fff;

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>レスポンシブ対応ヘッダーメニュー</title>
+<script>
+  $(function(){
+  $('#switch').on('change', function(){
+    var st = $(window).scrollTop();
+    if($(this).prop("checked") == true) {
+      $('html').addClass('scroll-prevent');
+      $('html').css('top', -(st) + 'px');
+      $('#switch').on('change', function(){
+        if($(this).prop("checked") !== true) {
+          $('html').removeClass('scroll-prevent');
+          $(window).scrollTop(st);
+        }
+      });
+    }
+  });
+  $('.header_menu a[href]').on('click', function(event) {
+	$('#switch').prop('checked', false);
+  });
+  $('.header_menu a').on('click', function(){
+    var st = $(window).scrollTop();
+      $('html').removeClass('scroll-prevent');
+      $('html').css('top', -(st) + 'px');
+      $('.header_menu a').on('change', function(){
+      });
+    
+  });
+});
+</script>
+<style>
+  
+</style>
+</head>
+<body>
+<header class="fix_menu">
+<div id="home" class="rogo">
+<a href="#">
+<img src="https://parlor-gimp.com/img/rogo__image.png" alt="">
+</a>
+</div>
+<input type="checkbox" id="switch">
+<label for="switch">
+<p><span></span></p>
+</label>
+<nav id="navwrap">
+<ul class="header_menu">
+<li><a href="#home">HOME</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#news">NEWS</a></li>
+<li><a href="#access">ACCESS</a></li>
+<li><a href="#contact">CONTACT</a></li>
+<li><a href="#recruit">RECRUIT</a></li>
+</ul>
+</nav>
+</header>
+<div class="main">
+<p id="about">ABOUT</p>
+<p id="news">NEWS</p>
+<p id="access">ACCESS</p>
+<p id="contact">CONTACT</p>
+<p id="recruit">RECRUIT</p>
+</div>
+</body>

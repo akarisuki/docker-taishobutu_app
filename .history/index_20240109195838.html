@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          color: white;
+      }
+
+      .navbar {
+          display: flex;
+          justify-content: space-around;
+          padding: 12px 0;
+          background-color: black;
+      }
+
+      .nav-item {
+          padding: 8px 16px;
+          margin: 0 4px;
+          border: 2px solid white;
+          text-align: center;
+      }
+
+      .nav-item:hover {
+          background-color: #555;
+          cursor: pointer;
+      }
+
+      .active {
+          background-color: white;
+          color: black;
+      }
+
+      .hamburger-menu {
+          display: none;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 2rem;
+          height: 2rem;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          z-index: 10;
+
+          div {
+              width: 2rem;
+              height: 0.25rem;
+              background: #fff;
+          }
+      }
+
+      .desktop-nav {
+          @media (max-width: 768px) {
+              display: none;
+          }
+      }
+
+      .mobile-nav {
+          display: none;
+
+          @media (max-width: 768px) {
+              display: flex;
+              flex-direction: column;
+          }
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="nav-item active desktop-nav">ダイアル</div>
+    <div class="nav-item desktop-nav">リンク</div>
+    <div class="nav-item desktop-nav">リンク</div>
+    <div class="nav-item desktop-nav">ユーザー名</div>
+    <div class="nav-item desktop-nav">リンク</div>
+    <div class="mobile-nav">
+        <div class="nav-item active">ダイアル</div>
+        <div class="nav-item">リンク</div>
+        <div class="nav-item">リンク</div>
+        <div class="nav-item">ユーザー名</div>
+        <div class="nav-item">リンク</div>
+    </div>
+</nav>
+<script>
+  document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('.mobile-nav').classList.toggle('open');
+});
+</script>
+</body>
+</html>
