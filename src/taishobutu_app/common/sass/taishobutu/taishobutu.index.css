@@ -5,8 +5,87 @@ body {
   padding-top: 223px;
 }
 
+.modal-btn {
+  display: none;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: bold;
+  background-color: #00a5a0;
+  box-shadow: 0 5px 0 #008480;
+  text-align: center;
+  text-decoration: none;
+  width: 129px;
+  height: 41px;
+  line-height: 50px;
+  border-radius: 60px;
+  border: none;
+}
+@media screen and (max-width: 768px) {
+  .modal-btn {
+    display: block;
+  }
+}
+
+.modal-btn.js-modal-close {
+  position: absolute;
+  left: 109px;
+  top: 440px;
+}
+
+.modal-btn:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+  cursor: pointer;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 561px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.section {
+  position: absolute;
+  left: 124px;
+  top: 70px;
+  width: 359px;
+  padding: 21px;
+}
+.section:nth-of-type(2n) {
+  background-color: #d9e8e7;
+}
+
+.section-title,
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
 .form-search {
   box-sizing: border-box;
+  display: block;
   position: absolute;
   width: 1920px;
   height: 58px;
@@ -15,7 +94,15 @@ body {
   border: 1px solid #000000;
 }
 
-input[type=submit] {
+@media screen and (max-width: 768px) {
+  .form-search {
+    display: none; /* スマホサイズでは通常の検索フォームを非表示 */
+  }
+  .modal-overlay {
+    display: block; /* スマホサイズではモーダルウィンドウを表示 */
+  }
+}
+.search_submit {
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -27,11 +114,7 @@ input[type=submit] {
   margin: 50px;
 }
 
-input[type=submit]:hover {
-  background-color: #9b9b9b;
-}
-
-input[type=button] {
+.crear_button {
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -39,11 +122,79 @@ input[type=button] {
   font-size: 12px;
   position: absolute;
   top: -27px;
-  right: 781px;
+  right: 775px;
   margin: 50px;
 }
 
-input[type=button]:hover {
+.form-search-mobile {
+  position: relative;
+}
+
+.search-modal {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  top: 279px;
+  right: 197px;
+  position: absolute;
+}
+
+.crear-modal {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  top: 279px;
+  right: 38px;
+  position: absolute;
+}
+
+.delete {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: 92px;
+  right: 946px;
+  margin: 50px;
+}
+@media screen and (max-width: 768px) {
+  .delete {
+    width: 152px;
+    top: 51px;
+    left: 39px;
+  }
+}
+
+:hover {
+  background-color: #9b9b9b;
+}
+
+.delete-all {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: 92px;
+  right: 866px;
+  margin: 50px;
+}
+@media screen and (max-width: 768px) {
+  .delete-all {
+    width: 60px;
+    top: 51px;
+    left: -31px;
+  }
+}
+
+:hover {
   background-color: #9b9b9b;
 }
 

@@ -1,146 +1,152 @@
-@charset "UTF-8";
-header {
-  background-color: #FA9F18;
+.rogo {
+  position: absolute;
+  top: 22px;
+  left: -13px;
+  padding: 2px 0 15px 30px;
+  width: 157px;
+  font-size: 20px;
+}
+
+.login_text {
+  position: absolute;
+  top: 26px;
+  left: 137px;
+}
+
+.fix_menu {
   position: fixed;
   width: 100%;
-  height: 70px;
-  left: 0px;
-  top: 0px;
+  height: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 999;
+  padding: 30px 0;
+  background-color: #FA9F18;
 }
 
-.hamburger-menu {
+#navwrap {
   position: absolute;
   top: 10px;
-  left: 356px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
+  right: 0;
+  padding: 16px 10px 15px 0;
+}
+
+.header_menu {
+  display: flex;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+}
+
+.header_menu li a {
   cursor: pointer;
-  padding: 0;
-  z-index: 10;
-}
-.hamburger-menu div {
-  width: 2rem;
-  height: 0.25rem;
-  background: #333;
-}
-@media (max-width: 768px) {
-  .hamburger-menu {
-    display: flex;
-  }
+  padding: 0 10px;
+  text-decoration: none;
+  color: #333;
 }
 
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
+.header_menu li button {
+  cursor: pointer;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #333;
+  background: none;
+  border: none;
+  font: inherit;
+  outline: none;
 }
 
-.mobile-nav {
+@media screen and (max-width: 768px) {
+  .header_menu li button {
+    color: #fff;
+  }
+}
+#switch {
   display: none;
 }
-@media (max-width: 768px) {
-  .mobile-nav {
+
+.main p {
+  padding: 500px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #switch ~ label {
+    padding: 12px 12px;
+    width: 60px;
+    height: 60px;
+    background: #333;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+  }
+  #switch ~ label span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    position: absolute;
+    transition: 0.2s transform;
+  }
+  #switch ~ label span:before,
+  #switch ~ label span:after {
+    content: "";
+    display: block;
+    background: #fff;
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  #switch ~ label span:before {
+    top: -9px;
+  }
+  #switch ~ label span:after {
+    top: 9px;
+  }
+  #navwrap {
+    padding-top: 0;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: calc(100% - 60px);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.4s;
+    padding: 60px;
+    box-sizing: border-box;
+  }
+  #switch:checked ~ #navwrap {
+    display: block;
+    top: 0;
+  }
+  .header_menu {
     display: flex;
     flex-direction: column;
   }
-}
-.mobile-nav.open {
-  display: flex;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.title {
-  font-size: large;
-}
-@media (max-width: 768px) {
-  .title {
-    font-size: 10px;
+  .header_menu li {
+    margin: 0 auto 30px;
   }
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #3F69FC;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  margin-left: 20px; /* ボタン間の間隔を設定 */
-}
-
-.user-info {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-}
-
-/* デスクトップサイズでのスタイル */
-.user-info p {
-  display: block;
-}
-
-/* スマホサイズでのスタイル */
-@media (max-width: 768px) {
-  .user-info p::after {
-    content: "";
-    display: block;
-    visibility: hidden;
+  .header_menu li a {
+    color: #fff;
   }
-}
-@media (max-width: 768px) {
-  .user-info .login-text {
-    display: none;
+  .scroll-prevent {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
   }
-}
-.user-info form {
-  margin: 0;
-  padding: 0;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #0062cc;
-}
-
-.button:active {
-  background-color: #005cbf;
-  box-shadow: none;
-}
-
-.mobile-button {
-  display: none;
 }/*# sourceMappingURL=header.css.map */
