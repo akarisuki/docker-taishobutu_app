@@ -1,6 +1,6 @@
 .rogo {
-  position: absolute;
-  top: 22px;
+  position: fixed;
+  top: 1px;
   left: -13px;
   padding: 2px 0 15px 30px;
   width: 157px;
@@ -8,8 +8,8 @@
 }
 
 .login_text {
-  position: absolute;
-  top: 26px;
+  position: fixed;
+  top: 11px;
   left: 137px;
 }
 

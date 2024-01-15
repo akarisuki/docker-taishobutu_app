@@ -49,7 +49,6 @@ tr:nth-child(even) {
 @media (max-width: 480px) {
   .existingDataForm {
     position: relative;
-    overflow-x: auto;
   }
 }
 form.existingDataForm {
