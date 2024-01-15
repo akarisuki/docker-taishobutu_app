@@ -1,11 +1,12 @@
-@charset "UTF-8";
 body {
   background-color: #6f6f6f;
   font-family: Arial, sans-serif;
   padding-top: 223px;
 }
-
 .modal-btn {
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
   display: none;
   margin: 0 auto;
   color: #fff;
@@ -19,11 +20,7 @@ body {
   line-height: 50px;
   border-radius: 60px;
   border: none;
-}
-@media screen and (max-width: 768px) {
-  .modal-btn {
-    display: block;
-  }
+  
 }
 
 .modal-btn.js-modal-close {
@@ -38,8 +35,9 @@ body {
   cursor: pointer;
 }
 
+
 .modal-overlay {
-  display: none;
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;
@@ -55,7 +53,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
-  height: 469px;
+  height: 481px;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -67,9 +65,9 @@ body {
   top: 70px;
   width: 359px;
   padding: 21px;
-}
-.section:nth-of-type(2n) {
-  background-color: #d9e8e7;
+  &:nth-of-type(2n) {
+    background-color: #d9e8e7;
+  }
 }
 
 .section-title,
@@ -82,7 +80,7 @@ body {
 p {
   margin: 0 0 10px;
 }
-
+// 検索フォーム
 .form-search {
   box-sizing: border-box;
   display: block;
@@ -97,11 +95,14 @@ p {
 @media screen and (max-width: 768px) {
   .form-search {
     display: none; /* スマホサイズでは通常の検索フォームを非表示 */
+    
   }
+
   .modal-overlay {
     display: block; /* スマホサイズではモーダルウィンドウを表示 */
   }
 }
+
 .search_submit {
   border: none;
   padding: 5px 10px;
@@ -109,9 +110,9 @@ p {
   cursor: pointer;
   font-size: 12px;
   position: absolute;
-  top: -27px;
-  right: 845px;
-  margin: 50px;
+  top:  -27px; 
+  right: 845px ;
+  margin: 50px;  
 }
 
 .crear_button {
@@ -121,9 +122,9 @@ p {
   cursor: pointer;
   font-size: 12px;
   position: absolute;
-  top: -27px;
-  right: 775px;
-  margin: 50px;
+  top:  -27px; 
+  right: 775px ;
+  margin: 50px;  
 }
 
 .form-search-mobile {
@@ -136,8 +137,8 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  top: 279px;
-  right: 197px;
+  top:  279px; 
+  right: 197px ;
   position: absolute;
 }
 
@@ -147,8 +148,8 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  top: 279px;
-  right: 38px;
+  top:  279px; 
+  right: 38px ;
   position: absolute;
 }
 
@@ -158,21 +159,17 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 12px;
-  position: absolute;
-  top: 92px;
-  right: 946px;
-  margin: 50px;
-}
-@media screen and (max-width: 768px) {
-  .delete {
+  position: absolute; 
+  top:  92px; 
+  right: 946px ;
+  @media screen and (max-width: 768px) {
     width: 152px;
     top: 51px;
     left: 39px;
-  }
-}
-
-:hover {
-  background-color: #9b9b9b;
+  } 
+  margin: 50px;  
+} :hover {
+  background-color: #9b9b9b; 
 }
 
 .delete-all {
@@ -181,27 +178,55 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 12px;
-  position: absolute;
-  top: 92px;
-  right: 866px;
-  margin: 50px;
-}
-@media screen and (max-width: 768px) {
-  .delete-all {
+  position: absolute; 
+  top:  92px; 
+  right: 866px ;
+  margin: 50px;  
+  @media screen and (max-width: 768px) {
     width: 60px;
     top: 51px;
     left: -31px;
-  }
-}
+  } 
+} :hover {
+  background-color: #9b9b9b; 
+} 
 
-:hover {
-  background-color: #9b9b9b;
-}
+
+// input[type="submit"] {
+//   border: none;
+//   padding: 5px 10px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   font-size: 12px;
+//   position: absolute; 
+//   top:  -27px; 
+//   right: 845px ;
+//   margin: 50px; 
+// }
+// input[type="submit"]:hover {
+//   background-color: #9b9b9b;
+// }
+
+// input[type="button"] {
+//   border: none;
+//   padding: 5px 10px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   font-size: 12px;
+//   position: absolute; 
+//   top:  -27px; 
+//   right: 781px ;
+//   margin: 50px;
+// }
+// input[type="button"]:hover {
+//     background-color: #9b9b9b;
+// }
 
 table {
   padding-top: 200px; /* 適宜調整してください */
 }
 
+// レコード一覧
 .excel-style {
   border-collapse: collapse;
   margin-left: auto;
@@ -209,22 +234,18 @@ table {
   width: 90%;
   table-layout: fixed;
 }
-
 .excel-style th, .excel-style td {
   border: 1px solid #000;
   padding: 8px;
   text-align: center;
 }
-
 .excel-style th {
   background-color: #f2f2f2;
   font-weight: bold;
 }
-
 .excel-style tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
 /* 以下のセレクタを追加して検索フォームには適用されないようにします */
 .form-search .excel-style th, .form-search .excel-style td {
   border: none;
@@ -287,7 +308,6 @@ table {
   height: 30px; /* Adjust as needed */
   background-color: #f2f2f2; /* Adjust color as needed */
 }
-
 .no-records p {
   font-size: 1.5em; /* Adjust as needed */
 }
@@ -305,37 +325,42 @@ table {
     display: none;
   }
 }
-input[name=delete] {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 6px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  position: absolute;
-  top: -286px;
-  right: 780px;
-  margin: 455px;
-}
-input[name=delete]:hover {
-  background-color: #3e8e41;
-}
 
-button[name=delete-all] {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 6px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  position: absolute;
-  top: 169px;
-  right: 1120px;
-}
-button[name=delete-all]:hover {
-  background-color: #3e8e41;
+input{
+  &[name="delete"]{
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; 
+    top: -286px; 
+    right:  780px; 
+    margin: 455px;
+      &:hover {
+        background-color: #3e8e41;
+      } 
+  }
+} 
+
+button {
+  &[name="delete-all"]{
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; 
+    top: 169px; 
+    right: 1120px; 
+      &:hover {
+        background-color: #3e8e41;
+      } 
+  }
 }
 
 .alert-success, .alert-error {
@@ -358,4 +383,6 @@ button[name=delete-all]:hover {
 .alert-error {
   color: #ff0000;
   background-color: #ed8b8b;
-}/*# sourceMappingURL=taishobutu.index.css.map */
+}
+
+

@@ -113,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 
 <body>
-    <!-- <div class="taishobutu_show_datail_button">
+    <div class="taishobutu_show_datail_button">
         <form id="form11" action="../taishobutu_show_datail.php" method="post">
             <input type="hidden" name="code" value="<?php echo $code; ?>">
             <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">戻る</a>
         </form>
-    </div> -->
+    </div>
     <?php
       // セッション変数からメッセージを取得し、表示
       
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <th class="hide-on-mobile">職務上の地位</th>
                 <th>防火管理者名</th>
                 <th>選任年月日</th>
-                <th class="hide-on-mobile">消防計画届年月日</th>
+                <th class="hide-on-mobile">消防計画作成・変更届年月日</th>
                 <th>編集・削除</th>
               </tr>
             </thead>
@@ -160,10 +160,10 @@ document.addEventListener("DOMContentLoaded", function() {
               <?php while ($i <= 20): ?>
                 <tr>
                   <td><?php echo $i++; ?></td>
-                  <td class="hide-on-mobile"><span class="display-value"></span></td>
                   <td><span class="display-value"></span></td>
                   <td><span class="display-value"></span></td>
-                  <td class="hide-on-mobile"><span class="display-value"></span></td>
+                  <td><span class="display-value"></span></td>
+                  <td><span class="display-value"></span></td>
                   <td>
                     <button class="edit-btn" disabled>編集</button>
                     <button class="delete-btn" disabled>削除</button>
@@ -173,32 +173,32 @@ document.addEventListener("DOMContentLoaded", function() {
             </tbody>
       </table>
     </div>
-  <div class="form-wrapper">
+    
     <form class="existingDataForm" method="post" action="fire_safety_manager_add.php">
       <input type="hidden" name="code" value="<?php echo $code; ?>">
       <input type="hidden" name="fire_safety_manager_code" value="<?php echo $last_fire_safety_manager_code + 1; ?>">
       <div class="input-form-container">
-        <label  class="form-field">
+        <label>
           職務上の地位:
           <input type="text" name="fire_safety_manager_director" >
         </label>
-        <label  class="form-field">
+        <label>
           防火管理者名:
           <input type="text" name="fire_safety_manager_name">
         </label>
-        <label  class="form-field">
+        <label>
           選任年月日:
           <input type="text" name="appointment_date" >
         </label>
-        <label  class="form-field">
-          消防計画届年月日:
+        <label>
+          消防計画作成・変更届年月日:
           <input type="text" name="fire_plan_date">
         </label>
-        <input type="submit" class="submit-button" value="追加">
+        <input type="submit" value="追加">
       
       </div>
     </form>
-  </div>
+
   
   
 </body>

@@ -113,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 
 <body>
-    <!-- <div class="taishobutu_show_datail_button">
+    <div class="taishobutu_show_datail_button">
         <form id="form11" action="../taishobutu_show_datail.php" method="post">
             <input type="hidden" name="code" value="<?php echo $code; ?>">
             <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">戻る</a>
         </form>
-    </div> -->
+    </div>
     <?php
       // セッション変数からメッセージを取得し、表示
       
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <th class="hide-on-mobile">職務上の地位</th>
                 <th>防火管理者名</th>
                 <th>選任年月日</th>
-                <th class="hide-on-mobile">消防計画届年月日</th>
+                <th class="hide-on-mobile">消防計画作成・変更届年月日</th>
                 <th>編集・削除</th>
               </tr>
             </thead>
@@ -191,10 +191,10 @@ document.addEventListener("DOMContentLoaded", function() {
           <input type="text" name="appointment_date" >
         </label>
         <label  class="form-field">
-          消防計画届年月日:
+          消防計画作成・変更届年月日:
           <input type="text" name="fire_plan_date">
         </label>
-        <input type="submit" class="submit-button" value="追加">
+        <input type="submit" value="追加">
       
       </div>
     </form>

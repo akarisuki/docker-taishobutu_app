@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   background-color: #6f6f6f;
   font-family: Arial, sans-serif;
@@ -7,11 +6,6 @@ body {
 .table-container {
   position: relative;
   top: 250px;
-}
-@media (max-width: 480px) {
-  .table-container {
-    top: 280px;
-  }
 }
 
 table {
@@ -36,6 +30,7 @@ tr:nth-child(even) {
     display: none;
   }
 }
+
 .input-form-container {
   display: flex;
   flex-direction: row;
@@ -48,6 +43,7 @@ tr:nth-child(even) {
 }
 @media (max-width: 480px) {
   .existingDataForm {
+    min-width: 600px; /* 必要な最小幅を設定します */
     position: relative;
     overflow-x: auto;
   }
@@ -62,16 +58,15 @@ form.existingDataForm {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
   bottom: 781px;
-}
-@media (max-width: 480px) {
-  form.existingDataForm {
-    width: 327px;
+  @media (max-width: 480px) {
     bottom: 1380px;
-  }
-  form.existingDataForm .submit-button {
-    width: 60px; /* 必要な幅に設定します */
+    .submit-button {
+      width: 100px;  /* 必要な幅に設定します */
+    }
   }
 }
+
+
 
 #taishobutu_show_datail_button {
   position: fixed;
@@ -119,4 +114,4 @@ form.existingDataForm {
 .alert-error {
   color: #ff0000;
   background-color: #ed8b8b;
-}/*# sourceMappingURL=fire_safety_manager_datail.css.map */
+}

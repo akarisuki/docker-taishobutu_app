@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <input type="text" name="appointment_date" >
         </label>
         <label  class="form-field">
-          消防計画届年月日:
+          消防計画作成・変更届年月日:
           <input type="text" name="fire_plan_date">
         </label>
         <input type="submit" class="submit-button" value="追加">
