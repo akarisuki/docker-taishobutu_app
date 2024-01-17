@@ -43,6 +43,12 @@ body {
   align-items: center;
   position: relative;
 }
+@media (max-width: 480px) {
+  .form-wrapper {
+    width: 397px;
+    height: 548px;
+  }
+}
 
 label {
   display: block;
@@ -59,6 +65,13 @@ label.required:after {
   top: 60px;
   left: 83px;
 }
+@media (max-width: 480px) {
+  .staff_name {
+    position: absolute;
+    top: 60px;
+    left: 58px;
+  }
+}
 .staff_name .error-message-name {
   color: red;
   position: absolute;
@@ -70,6 +83,13 @@ label.required:after {
   position: absolute;
   top: 190px;
   left: 83px;
+}
+@media (max-width: 480px) {
+  .staff_pass {
+    position: absolute;
+    top: 190px;
+    left: 58px;
+  }
 }
 .staff_pass .error-message-pass {
   color: red;
@@ -88,6 +108,13 @@ label.required:after {
   position: absolute;
   top: 322px;
   left: 83px;
+}
+@media (max-width: 480px) {
+  .fire_dept_code {
+    position: absolute;
+    top: 322px;
+    left: 58px;
+  }
 }
 .fire_dept_code #fire_dept_code {
   width: 308px;
@@ -110,11 +137,25 @@ label.required:after {
   top: 429px;
   left: 81px;
 }
+@media (max-width: 480px) {
+  .link {
+    position: absolute;
+    top: 429px;
+    left: 76px;
+  }
+}
 
 .rememberme {
   position: absolute;
   bottom: 61px;
   left: 87px;
+}
+@media (max-width: 480px) {
+  .rememberme {
+    position: absolute;
+    bottom: 61px;
+    left: 53px;
+  }
 }
 
 input[type=text],

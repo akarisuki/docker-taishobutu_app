@@ -13,13 +13,19 @@ body {
   padding: 20px;
   top: 154px;
   width: 863px;
-  height: 922px;
+  height: 1000px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   overflow: auto;
+}
+@media (max-width: 480px) {
+  .form-wrapper {
+    width: 333px;
+    height: 760px;
+  }
 }
 
 label {
@@ -102,67 +108,355 @@ select {
   margin-bottom: 25px;
 }
 
-.error-message-appendix {
+.error-alert {
+  display: none;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-alert {
+    display: block;
+    position: absolute;
+    top: 63px;
+    left: 34px;
+  }
+}
+
+.appendix_group {
+  position: absolute;
+  top: 10px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .appendix_group {
+    left: 34px;
+  }
+}
+
+.taishobutu_name_group {
+  position: absolute;
+  top: 140px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .taishobutu_name_group {
+    top: 110px;
+    left: 34px;
+  }
+}
+
+.taishobutu_address_group {
+  position: absolute;
+  top: 270px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .taishobutu_address_group {
+    top: 200px;
+    left: 34px;
+  }
+}
+
+.taishobutu_tel_group {
+  position: absolute;
+  top: 400px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .taishobutu_tel_group {
+    top: 290px;
+    left: 34px;
+  }
+}
+
+.owners_name_group {
+  position: absolute;
+  top: 530px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .owners_name_group {
+    top: 380px;
+    left: 34px;
+  }
+}
+
+.owners_tel_group {
+  position: absolute;
+  top: 660px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .owners_tel_group {
+    top: 470px;
+    left: 34px;
+  }
+}
+
+.total_area_group {
+  position: absolute;
+  top: 790px;
+  left: 360px;
+}
+@media (max-width: 480px) {
+  .total_area_group {
+    top: 560px;
+    left: 34px;
+  }
+}
+
+.modal-btn {
+  display: none;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: bold;
+  background-color: #00a5a0;
+  box-shadow: 0 5px 0 #008480;
+  text-align: center;
+  text-decoration: none;
+  width: 129px;
+  height: 41px;
+  line-height: 50px;
+  border-radius: 60px;
+  border: none;
+}
+@media screen and (max-width: 768px) {
+  .modal-btn {
+    display: block;
+  }
+}
+
+.modal-btn.js-modal-close {
+  position: absolute;
+  left: 109px;
+  top: 689px;
+}
+
+.modal-btn:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+  cursor: pointer;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 716px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.section {
+  position: absolute;
+  left: 124px;
+  top: 70px;
+  width: 359px;
+  padding: 21px;
+}
+.section:nth-of-type(2n) {
+  background-color: #d9e8e7;
+}
+
+.error-message-appendix-modal {
+  display: none;
   color: red;
   position: absolute;
-  bottom: 825px;
-  left: 277px;
+  bottom: 640px;
+}
+@media (max-width: 480px) {
+  .error-message-appendix-modal {
+    display: block;
+  }
+}
+
+.error-message-tai-name-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 580px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-name-modal {
+    display: block;
+  }
+}
+
+.error-message-tai-address-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 520px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-address-modal {
+    display: block;
+  }
+}
+
+.error-message-tai-tel-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 411px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-tel-modal {
+    display: block;
+  }
+}
+
+.error-message-owners-tel-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 310px;
+}
+@media (max-width: 480px) {
+  .error-message-owners-tel-modal {
+    display: block;
+  }
+}
+
+.error-message-total-area-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 188px;
+}
+@media (max-width: 480px) {
+  .error-message-total-area-modal {
+    display: block;
+  }
+}
+
+.section-title,
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.error-message-appendix {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-message-appendix {
+    display: none;
+  }
 }
 
 .error-message-appendix-check {
+  display: block;
   color: red;
-  position: absolute;
-  bottom: 795px;
-  left: 277px;
+}
+@media (max-width: 480px) {
+  .error-message-appendix-check {
+    display: none;
+  }
 }
 
 .error-message-tai-name {
-  color: red;
   position: absolute;
-  bottom: 732px;
-  left: 277px;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-tai-name {
+    display: none;
+  }
 }
 
 .error-message-tai-name-check {
+  display: block;
   color: red;
-  position: absolute;
-  bottom: 699px;
-  left: 277px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-name-check {
+    display: none;
+  }
 }
 
 .error-message-tai-address {
-  color: red;
   position: absolute;
-  bottom: 639px;
-  left: 277px;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-tai-address {
+    display: none;
+  }
 }
 
 .error-message-tai-address-check {
+  display: block;
   color: red;
-  position: absolute;
-  bottom: 607px;
-  left: 277px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-address-check {
+    display: none;
+  }
 }
 
 .error-message-tai-tel {
-  color: red;
   position: absolute;
-  bottom: 548px;
-  left: 277px;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-tai-tel {
+    display: none;
+  }
 }
 
 .error-message-tai-tel-check {
+  display: block;
   color: red;
-  position: absolute;
-  bottom: 514px;
-  left: 277px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-tel-check {
+    display: none;
+  }
 }
 
 .error-message-owners-tel {
-  color: red;
   position: absolute;
-  bottom: 364px;
-  left: 277px;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-owners-tel {
+    display: none;
+  }
 }
 
 .error-message-owners-tel-check {
@@ -173,10 +467,17 @@ select {
 }
 
 .error-message-total-area {
-  color: red;
   position: absolute;
-  bottom: 243px;
-  left: 277px;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-total-area {
+    display: none;
+  }
 }
 
 .error-message-total-area-check {
