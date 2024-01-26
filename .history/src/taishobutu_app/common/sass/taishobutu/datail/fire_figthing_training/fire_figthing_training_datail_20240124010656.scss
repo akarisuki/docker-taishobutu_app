@@ -1,0 +1,236 @@
+body {
+  background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+}
+
+.table-container {
+  position: relative;
+  top: 250px;
+  @media (max-width: 480px) {
+    top: 280px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto; 
+  table-layout: fixed;
+}
+
+table th.code_area, table td.code_area {
+  width: 1px; /* あなたが望む幅に調整してください */
+  max-width: 50px; /* あなたが望む最大幅に調整してください */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+table th.one_area, table td.one_area {
+  width: 175px; /* あなたが望む幅に調整してください */
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+table th.two_area, table td.two_area {
+  width: 177px; /* あなたが望む幅に調整してください */
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+table th#three_area, table td#three_area {
+  width: 191px; /* あなたが望む幅に調整してください */
+ 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+table th#four_area, table td#four_area {
+  width: 180px; /* あなたが望む幅に調整してください */
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+table th#five_area, table td#five_area {
+  width: 117px; /* あなたが望む幅に調整してください */
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+table th.six_area, table td.six_area {
+  width: 117px; /* あなたが望む幅に調整してください */
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+.table-container.scrollable {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table-container.scrollable table {
+  min-width: 1000px; // テーブルの最小幅を1000pxに設定
+}
+@media (max-width: 480px) {
+
+  .table-container.scrollable .hide-on-mobile {
+    display: table-cell !important;
+  }
+}
+
+.input-form-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 480px) {
+  .input-form-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .existingDataForm {
+    position: relative;
+    //overflow-x: auto;
+  }
+}
+
+form.existingDataForm {
+  width: 1198px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  bottom: 795px;
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    height: 153px;
+    width: 325px;
+    top: 81px;
+    left: 50%; // ビューポートの中央に位置を設定
+    transform: translateX(-50%); // 要素自身の幅の半分だけ左にずらす
+    // ... その他のスタイル
+  }
+  .input-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; // 入力フィールド間にスペースを追加
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+  
+  .form-field-container {
+    // flex: 1; // 入力フィールドが均等にスペースを占有するように
+    width: 100%; // 入力フィールドが親要素の全幅を占有するように
+    margin-right: 10px; // 右側にマージンを追加
+    @media (max-width: 480px) {
+      margin-right: 0; // モバイルビューではマージンを削除
+      margin-bottom: 10px; // フィールド間に垂直マージンを追加
+    }
+  }
+
+  .form-field {
+    display: flex;
+    align-items: center; // ラベルと入力欄を垂直方向に揃える
+  
+    label {
+      min-width: 200px; // ラベルの最小幅を200pxに設定
+      display: inline-block;// ラベルの最小幅を設定
+      margin-right: 10px; // ラベルと入力欄の間にマージンを追加
+      @media (max-width: 480px) {
+        margin-right: 5px; // スマホサイズではマージンを5pxに調整
+      }
+    }
+  }
+  
+  .submit-button-container {
+    display: flex;
+    justify-content: flex-end; // 送信ボタンを右寄せに
+    @media (max-width: 480px) {
+      justify-content: center; // モバイルビューではボタンを中央寄せに
+    }
+  }
+}
+#taishobutu_show_datail_button {
+  position: fixed;
+  top: 9px;
+  left: 389px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#taishobutu_show_datail_button:hover {
+  background-color: #0062cc;
+}
+
+#taishobutu_show_datail_buttonn:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}
+
+.alert-success, .alert-error {
+  top: -103px;
+  left: 0; /* 左端からの位置を0に設定 */
+  width: 100%; /* 幅を100%に設定 */
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+  text-align: center;
+  transition: opacity 1s ease-out;
+}
+
+.alert-success {
+  color: #35cb07;
+  background-color: #b9e8be;
+}
+
+.alert-error {
+  color: #ff0000;
+  background-color: #ed8b8b;
+}

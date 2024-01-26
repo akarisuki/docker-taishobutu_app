@@ -1362,7 +1362,7 @@ body {
 }
 
 #datail_add_button {
-  position: fixed;
+  position: absolute;
   top: 9px;
   left: 372px;
   display: inline-block;
@@ -1377,6 +1377,14 @@ body {
   cursor: pointer;
   z-index: 1000;
 }
+@media screen and (max-width: 768px) {
+  #datail_add_button {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 #datail_add_button:hover {
   background-color: #0062cc;
@@ -1388,7 +1396,7 @@ body {
 }
 
 #datail_edit_button {
-  position: fixed;
+  position: absolute;
   top: 9px;
   left: 561px;
   display: inline-block;
@@ -1403,6 +1411,14 @@ body {
   cursor: pointer;
   z-index: 1000;
 }
+@media screen and (max-width: 768px) {
+  #datail_edit_button {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 #datail_edit_button:hover {
   background-color: #0062cc;
@@ -1414,9 +1430,10 @@ body {
 }
 
 #add_submit {
-  position: fixed;
-  top: 9px;
-  left: 390px;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -1428,6 +1445,14 @@ body {
   border-radius: 10px;
   cursor: pointer;
   z-index: 1000;
+}
+@media screen and (max-width: 768px) {
+  #add_submit {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .alert-success, .alert-error {
