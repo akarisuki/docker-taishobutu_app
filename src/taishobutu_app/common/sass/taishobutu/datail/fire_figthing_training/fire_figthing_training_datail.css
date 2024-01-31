@@ -10,7 +10,7 @@ body {
 }
 @media (max-width: 480px) {
   .table-container {
-    top: 350px;
+    top: 370px;
   }
 }
 
@@ -107,24 +107,9 @@ tr:nth-child(even) {
     display: table-cell !important;
   }
 }
-.input-form-container {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 480px) {
-  .input-form-container {
-    flex-direction: column;
-  }
-}
-@media (max-width: 480px) {
-  .existingDataForm {
-    position: relative;
-  }
-}
 form.existingDataForm {
-  width: 1198px;
-  max-width: 1300px;
+  width: 1481px;
+  max-width: 1407px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f2f2f2;
@@ -143,54 +128,103 @@ form.existingDataForm {
     transform: translateX(-50%);
   }
 }
-form.existingDataForm .input-form-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 @media (max-width: 480px) {
-  form.existingDataForm .input-form-container {
-    flex-direction: column;
+  form.existingDataForm .implementation_date-area {
+    margin-bottom: 7px;
   }
 }
-form.existingDataForm .form-field-container {
-  width: 100%;
-  margin-right: 10px;
+@media screen and (min-width: 768px) {
+  form.existingDataForm .training_content-area {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+  }
 }
 @media (max-width: 480px) {
-  form.existingDataForm .form-field-container {
-    margin-right: 0;
+  form.existingDataForm .training_content-area {
+    margin-bottom: 7px;
+  }
+}
+@media screen and (min-width: 768px) {
+  form.existingDataForm .participation_of_fire_depts-area {
+    position: absolute;
+    top: 20px;
+    left: 550px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .participation_of_fire_depts-area {
+    margin-bottom: 7px;
+  }
+}
+@media screen and (min-width: 768px) {
+  form.existingDataForm .instructor_name-area {
+    position: absolute;
+    top: 20px;
+    left: 850px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .instructor_name-area {
+    margin-bottom: 7px;
+  }
+}
+@media screen and (min-width: 768px) {
+  form.existingDataForm .remarks-area {
+    position: absolute;
+    top: 20px;
+    left: 1120px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .remarks-area {
+    margin-bottom: 7px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .implementation_date-area label {
+    margin-right: 81px;
     margin-bottom: 10px;
   }
 }
-form.existingDataForm .form-field {
-  display: flex;
-  align-items: center;
-}
-form.existingDataForm .form-field label {
-  min-width: 200px;
-  display: inline-block;
-  margin-right: 10px;
+@media (max-width: 480px) {
+  form.existingDataForm .training_content-area label {
+    margin-right: 97px;
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 480px) {
-  form.existingDataForm .form-field label {
-    margin-right: 5px;
+  form.existingDataForm .participation_of_fire_depts-area label {
+    margin-right: 49px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .instructor_name-area label {
+    margin-right: 81px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .remarks-area label {
+    margin-right: 125px;
   }
 }
 form.existingDataForm .submit-button-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: -22px;
 }
 @media (max-width: 480px) {
   form.existingDataForm .submit-button-container {
-    justify-content: center;
+    margin-top: 20px;
   }
 }
 
 #taishobutu_show_datail_button {
   position: fixed;
-  top: 9px;
-  left: 389px;
+  top: 200px;
+  left: 10%;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -202,6 +236,12 @@ form.existingDataForm .submit-button-container {
   border-radius: 10px;
   cursor: pointer;
   z-index: 1000;
+}
+@media (max-width: 480px) {
+  #taishobutu_show_datail_button {
+    top: 322px;
+    left: 10%;
+  }
 }
 
 #taishobutu_show_datail_button:hover {

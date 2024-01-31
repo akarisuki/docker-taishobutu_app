@@ -5,82 +5,160 @@ body {
   padding-top: 223px;
 }
 
-.modal-btn {
+#modalView {
   display: none;
-  margin: 0 auto;
-  color: #fff;
-  font-weight: bold;
-  background-color: #00a5a0;
-  box-shadow: 0 5px 0 #008480;
-  text-align: center;
-  text-decoration: none;
-  width: 129px;
-  height: 41px;
-  line-height: 50px;
-  border-radius: 60px;
   border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
 }
 @media screen and (max-width: 768px) {
-  .modal-btn {
+  #modalView {
     display: block;
+    position: absolute;
+    width: 101px;
+    top: 102px;
+    left: 289px;
   }
 }
 
-.modal-btn.js-modal-close {
-  position: absolute;
-  left: 109px;
-  top: 440px;
-}
-
-.modal-btn:hover {
-  box-shadow: none;
-  transform: translateY(5px);
-  cursor: pointer;
-}
-
-.modal-overlay {
-  display: none;
+.popup {
   position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s;
+}
+
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 3px;
+  max-width: 320px;
+  width: 100%;
+  height: 50%;
+}
+
+.popup-inner img {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+}
+
+.popup-inner form div {
+  margin-top: 40px;
+  margin-bottom: 56px; /* ここで間隔の大きさを調整できます */
+}
+
+.input_appendix {
+  width: 153px; /* ここで入力欄の大きさを調整できます */
+}
+
+.mdoal_appendix label {
+  margin-right: 71px;
+  margin-left: 18px;
+}
+
+.modal_taishobutu_name label {
+  margin-right: 39px;
+  margin-left: 18px;
+}
+
+.modal_taishobutu_address label {
+  margin-right: 7px;
+  margin-left: 18px;
+}
+
+.modal_search_total_area label {
+  margin-right: 71px;
+  margin-left: 18px;
+}
+
+.crear-modal {
+  margin-right: 175px; /* ここで間隔の大きさを調整できます */
+}
+
+.modal_button {
+  margin-left: 20px;
+}
+
+div#modalCloseCloss:hover {
+  opacity: 0.7;
+}
+
+.modalCloseButton {
+  position: absolute;
+  left: 50%;
+  bottom: -55px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  transform: translateX(-50%);
+  background: #FFF;
+  border-radius: 9999px;
+}
+
+.lineClose {
+  display: inline-block;
+  vertical-align: middle;
+  color: #707070;
+  line-height: 1;
+  width: 1.6rem;
+  height: 0.2rem;
+  background: currentColor;
+  border-radius: 0.1rem;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.lineClose::before {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
 }
 
-.modal-content {
+.black-background {
   position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%;
-  height: 469px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  cursor: pointer;
 }
 
-.section {
-  position: absolute;
-  left: 124px;
-  top: 70px;
-  width: 359px;
-  padding: 21px;
-}
-.section:nth-of-type(2n) {
-  background-color: #d9e8e7;
+.modalBottom {
+  padding: 22px 30px;
 }
 
-.section-title,
-.modal-title {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+.modalBottom p {
+  margin: 0;
 }
 
-p {
-  margin: 0 0 10px;
+.popup-inner input.searchform__input {
+  margin: 0;
 }
 
 .form-search {
@@ -124,32 +202,6 @@ p {
   top: -27px;
   right: 775px;
   margin: 50px;
-}
-
-.form-search-mobile {
-  position: relative;
-}
-
-.search-modal {
-  border: none;
-  padding: 8px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  top: 279px;
-  right: 197px;
-  position: absolute;
-}
-
-.crear-modal {
-  border: none;
-  padding: 8px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  top: 279px;
-  right: 38px;
-  position: absolute;
 }
 
 .delete {
@@ -196,6 +248,10 @@ p {
 
 :hover {
   background-color: #9b9b9b;
+}
+
+.table-container {
+  overflow-x: auto; /* 横スクロールを有効にする */
 }
 
 table {
@@ -249,35 +305,70 @@ table {
   width: 14px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .appendix-top {
+    width: 24px;
+  }
+}
 
 .taishobutu_name-top {
   width: 60px;
   text-align: center;
+}
+@media (max-width: 480px) {
+  .taishobutu_name-top {
+    width: 50px;
+  }
 }
 
 .taishobutu_address-top {
   width: 100px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .taishobutu_address-top {
+    width: 100px;
+  }
+}
 
 .taishobutu_tel-top {
   width: 26px;
   text-align: center;
+}
+@media (max-width: 480px) {
+  .taishobutu_tel-top {
+    width: 40px;
+  }
 }
 
 .owner_name-top {
   width: 15px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .owner_name-top {
+    width: 30px;
+  }
+}
 
 .owner_tel-top {
   width: 26px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .owner_tel-top {
+    width: 40px;
+  }
+}
 
 .total_area-top {
   width: 21px;
   text-align: center;
+}
+@media (max-width: 480px) {
+  .total_area-top {
+    width: 30px;
+  }
 }
 
 .no-records {
@@ -296,13 +387,18 @@ table {
   width: 3px;
 }
 
-@media (max-width: 600px) {
-  .taishobutu_address-top,
-  .taishobutu_tel-top,
-  .owner_name-top,
-  .owner_tel-top,
-  .total_area-top {
+@media (max-width: 480px) {
+  .hide-on-mobile {
     display: none;
+  }
+}
+.table-container.scrollable table {
+  min-width: 1000px;
+}
+
+@media (max-width: 480px) {
+  .table-container.scrollable .hide-on-mobile {
+    display: table-cell !important;
   }
 }
 input[name=delete] {
@@ -336,26 +432,4 @@ button[name=delete-all] {
 }
 button[name=delete-all]:hover {
   background-color: #3e8e41;
-}
-
-.alert-success, .alert-error {
-  top: -103px;
-  left: -5px; /* 左端からの位置を0に設定 */
-  width: 100%; /* 幅を100%に設定 */
-  padding: 5px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  position: relative;
-  text-align: center;
-  transition: opacity 1s ease-out;
-}
-
-.alert-success {
-  color: #35cb07;
-  background-color: #b9e8be;
-}
-
-.alert-error {
-  color: #ff0000;
-  background-color: #ed8b8b;
 }/*# sourceMappingURL=taishobutu.index.css.map */

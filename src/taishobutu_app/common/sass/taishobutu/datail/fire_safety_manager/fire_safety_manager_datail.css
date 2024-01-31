@@ -10,7 +10,7 @@ body {
 }
 @media (max-width: 480px) {
   .table-container {
-    top: 280px;
+    top: 320px;
   }
 }
 
@@ -99,21 +99,6 @@ tr:nth-child(even) {
     display: table-cell !important;
   }
 }
-.input-form-container {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 480px) {
-  .input-form-container {
-    flex-direction: column;
-  }
-}
-@media (max-width: 480px) {
-  .existingDataForm {
-    position: relative;
-  }
-}
 form.existingDataForm {
   width: 1198px;
   max-width: 1300px;
@@ -124,7 +109,7 @@ form.existingDataForm {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 180px;
-  bottom: 537px;
+  bottom: 570px;
 }
 @media screen and (max-width: 768px) {
   form.existingDataForm {
@@ -136,48 +121,69 @@ form.existingDataForm {
     transform: translateX(-50%);
   }
 }
-form.existingDataForm .input-form-container {
+form.existingDataForm .form-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
-@media (max-width: 480px) {
-  form.existingDataForm .input-form-container {
-    flex-direction: column;
+@media screen and (min-width: 768px) {
+  form.existingDataForm .fire_safety_manager_name-area {
+    position: absolute;
+    top: 20px;
+    left: 290px;
   }
 }
-form.existingDataForm .form-field-container {
-  flex: 1;
-  margin-right: 10px;
+@media screen and (min-width: 768px) {
+  form.existingDataForm .appointment_date-area {
+    position: absolute;
+    top: 20px;
+    left: 560px;
+  }
+}
+@media screen and (min-width: 768px) {
+  form.existingDataForm .fire_plan_date-area {
+    position: absolute;
+    top: 20px;
+    left: 815px;
+  }
 }
 @media (max-width: 480px) {
-  form.existingDataForm .form-field-container {
-    margin-right: 0;
+  form.existingDataForm .fire_safety_manager_director-area label {
+    margin-right: 33px;
     margin-bottom: 10px;
   }
 }
-form.existingDataForm .form-field {
-  display: flex;
-  align-items: center;
+@media (max-width: 480px) {
+  form.existingDataForm .fire_safety_manager_name-area label {
+    margin-right: 33px;
+    margin-bottom: 10px;
+  }
 }
-form.existingDataForm .form-field label {
-  min-width: 200px;
-  display: inline-block;
+@media (max-width: 480px) {
+  form.existingDataForm .appointment_date-area label {
+    margin-right: 49px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  form.existingDataForm .fire_plan_date-area label {
+    margin-right: 1px;
+  }
 }
 form.existingDataForm .submit-button-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: -22px;
 }
 @media (max-width: 480px) {
   form.existingDataForm .submit-button-container {
-    justify-content: center;
+    margin-top: 28px;
   }
 }
 
 #taishobutu_show_datail_button {
   position: fixed;
-  top: 9px;
-  left: 371px;
+  top: 200px;
+  left: 10%;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -189,6 +195,12 @@ form.existingDataForm .submit-button-container {
   border-radius: 10px;
   cursor: pointer;
   z-index: 1000;
+}
+@media (max-width: 480px) {
+  #taishobutu_show_datail_button {
+    top: 280px;
+    left: 10%;
+  }
 }
 
 #taishobutu_show_datail_button:hover {

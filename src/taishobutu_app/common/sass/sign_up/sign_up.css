@@ -31,7 +31,7 @@ body {
 }
 @media (max-width: 480px) {
   .form-wrapper {
-    width: 406px;
+    width: 333px;
   }
 }
 
@@ -54,7 +54,7 @@ label.required:after {
   .staff_name {
     position: absolute;
     bottom: 61px;
-    left: 67px;
+    left: 22px;
   }
 }
 .staff_name .error-message-name {
@@ -73,7 +73,7 @@ label.required:after {
   .staff_pass {
     position: absolute;
     bottom: 160px;
-    left: 67px;
+    left: 22px;
   }
 }
 .staff_pass .error-message-pass {
@@ -100,7 +100,7 @@ label.required:after {
   .staff_pass_confirm {
     position: absolute;
     bottom: 300px;
-    left: 67px;
+    left: 22px;
   }
 }
 .staff_pass_confirm .error-message-pass-confirm {
@@ -127,7 +127,7 @@ label.required:after {
   .fire_dept_code {
     position: absolute;
     bottom: 440px;
-    left: 67px;
+    left: 22px;
   }
 }
 .fire_dept_code .error-fire-dept-code {
@@ -153,7 +153,7 @@ label.required:after {
   .mail_address {
     position: absolute;
     bottom: 580px;
-    left: 67px;
+    left: 22px;
   }
 }
 .mail_address .error-mail-address {
@@ -208,12 +208,12 @@ input[type=button] {
   font-size: 16px;
   position: absolute;
   bottom: 0;
-  left: 220px;
+  left: 4px;
   margin: 50px;
 }
 @media (max-width: 480px) {
   input[type=button] {
-    left: 172px;
+    left: 4px;
   }
 }
 

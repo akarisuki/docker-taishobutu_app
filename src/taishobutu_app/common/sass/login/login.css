@@ -45,7 +45,7 @@ body {
 }
 @media (max-width: 480px) {
   .form-wrapper {
-    width: 397px;
+    width: 333px;
     height: 548px;
   }
 }
@@ -69,7 +69,7 @@ label.required:after {
   .staff_name {
     position: absolute;
     top: 60px;
-    left: 58px;
+    left: 22px;
   }
 }
 .staff_name .error-message-name {
@@ -88,7 +88,7 @@ label.required:after {
   .staff_pass {
     position: absolute;
     top: 190px;
-    left: 58px;
+    left: 22px;
   }
 }
 .staff_pass .error-message-pass {
@@ -113,7 +113,7 @@ label.required:after {
   .fire_dept_code {
     position: absolute;
     top: 322px;
-    left: 58px;
+    left: 22px;
   }
 }
 .fire_dept_code #fire_dept_code {
@@ -141,7 +141,7 @@ label.required:after {
   .link {
     position: absolute;
     top: 429px;
-    left: 76px;
+    left: 45px;
   }
 }
 
@@ -181,6 +181,11 @@ input[type=submit] {
   bottom: 0;
   right: 0;
   margin: 50px;
+}
+@media (max-width: 480px) {
+  input[type=submit] {
+    margin: 10px;
+  }
 }
 
 input[type=submit]:hover {
