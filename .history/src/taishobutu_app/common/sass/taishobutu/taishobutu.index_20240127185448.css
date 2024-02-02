@@ -1,0 +1,231 @@
+@charset "UTF-8";
+body {
+  background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+  padding-top: 223px;
+}
+
+.form-search {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 1920px;
+  height: 58px;
+  left: 0px;
+  top: 70px;
+  border: 1px solid #000000;
+}
+
+.search_submit {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: -27px;
+  right: 845px;
+  margin: 50px;
+}
+
+.crear_button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: -27px;
+  right: 775px;
+  margin: 50px;
+}
+
+.delete {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: 92px;
+  right: 946px;
+  margin: 50px;
+}
+@media screen and (max-width: 768px) {
+  .delete {
+    width: 152px;
+    top: 51px;
+    left: 39px;
+  }
+}
+
+:hover {
+  background-color: #9b9b9b;
+}
+
+.delete-all {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: 92px;
+  right: 866px;
+  margin: 50px;
+}
+@media screen and (max-width: 768px) {
+  .delete-all {
+    width: 60px;
+    top: 51px;
+    left: -31px;
+  }
+}
+
+:hover {
+  background-color: #9b9b9b;
+}
+
+table {
+  padding-top: 200px; /* 適宜調整してください */
+}
+
+.excel-style {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  table-layout: fixed;
+}
+
+.excel-style th, .excel-style td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+
+.excel-style th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.excel-style tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* 以下のセレクタを追加して検索フォームには適用されないようにします */
+.form-search .excel-style th, .form-search .excel-style td {
+  border: none;
+}
+
+.excel-style th {
+  background-color: aqua;
+}
+
+.checkbox-top {
+  font-size: 30px;
+  width: 2px;
+  text-align: center;
+}
+
+.code-top {
+  width: 5px;
+  text-align: center;
+}
+
+.appendix-top {
+  width: 14px;
+  text-align: center;
+}
+
+.taishobutu_name-top {
+  width: 60px;
+  text-align: center;
+}
+
+.taishobutu_address-top {
+  width: 100px;
+  text-align: center;
+}
+
+.taishobutu_tel-top {
+  width: 26px;
+  text-align: center;
+}
+
+.owner_name-top {
+  width: 15px;
+  text-align: center;
+}
+
+.owner_tel-top {
+  width: 26px;
+  text-align: center;
+}
+
+.total_area-top {
+  width: 21px;
+  text-align: center;
+}
+
+.no-records {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px; /* Adjust as needed */
+  background-color: #f2f2f2; /* Adjust color as needed */
+}
+
+.no-records p {
+  font-size: 1.5em; /* Adjust as needed */
+}
+
+.edit {
+  width: 3px;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+.show-on-mobile {
+  display: table-cell !important;
+}
+
+@media (max-width: 480px) {
+  .table-container.scrollable .hide-on-mobile {
+    display: table-cell !important;
+  }
+}
+input[name=delete] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: -286px;
+  right: 780px;
+  margin: 455px;
+}
+input[name=delete]:hover {
+  background-color: #3e8e41;
+}
+
+button[name=delete-all] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: 169px;
+  right: 1120px;
+}
+button[name=delete-all]:hover {
+  background-color: #3e8e41;
+}/*# sourceMappingURL=taishobutu.index_20240127185448.css.map */
