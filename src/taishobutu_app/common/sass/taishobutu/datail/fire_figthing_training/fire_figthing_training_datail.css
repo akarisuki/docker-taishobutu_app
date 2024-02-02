@@ -207,7 +207,7 @@ form.existingDataForm {
 }
 @media (max-width: 480px) {
   form.existingDataForm .remarks-area label {
-    margin-right: 125px;
+    margin-right: 124px;
   }
 }
 form.existingDataForm .submit-button-container {

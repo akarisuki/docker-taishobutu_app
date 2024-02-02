@@ -2108,6 +2108,14 @@ body {
   cursor: pointer;
   z-index: 1000;
 }
+@media screen and (max-width: 768px) {
+  #equipment_edit_button {
+    position: fixed;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 #equipment_edit_button:hover {
   background-color: #0062cc;

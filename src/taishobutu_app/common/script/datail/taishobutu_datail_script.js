@@ -21,23 +21,10 @@ $(function(){
   $('#switch').on('change', function(){
     if($(this).is(':checked')) {
       // メニューが開いているときはボタンを非表示にする
-      $('#datail_edit_button').css('display', 'none');
+      $('#datail_edit_button, #datail_add_button').css('display', 'none');
     } else {
       // メニューが閉じているときはボタンを表示する
-      $('#datail_edit_button').css('display', 'inline-block');
-    }
-  });
-});
-
-$(function(){
-  // ハンバーガーメニューのチェックボックスの状態を監視
-  $('#switch').on('change', function(){
-    if($(this).is(':checked')) {
-      // メニューが開いているときはボタンを非表示にする
-      $('#add_submit').css('display', 'none');
-    } else {
-      // メニューが閉じているときはボタンを表示する
-      $('#add_submit').css('display', 'inline-block');
+      $('#datail_edit_button, #datail_add_button').css('display', 'inline-block');
     }
   });
 });

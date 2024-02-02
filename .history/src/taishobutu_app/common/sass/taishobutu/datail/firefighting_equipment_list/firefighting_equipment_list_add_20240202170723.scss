@@ -1,0 +1,117 @@
+#StorageBatteryEquipmentGR,
+#InHousePowerGenerationEquipmentGR,
+#ThePowerReceivingFacilityDedicatedToAStandByPowerSourceGR,
+#ConnectingWaterPipeGR,
+#LinkedSprinklerSystemGR,
+#SmokeExhaustEquipmentGR,
+#EmergencyOutletFacilityGR,
+#RadioCommunicationAuxiliaryEquipmentGR,
+#FireTankGR,
+#GuideLightsGuideSignsGR,
+#SlideEscapeLadderRescueBagGR,
+#EmergencyAlarmDeviceGR,
+#GasLeakFireAlarmGR,
+#EarthLeakageFireAlarmGR,
+#FireAlarmEquipmentThatNotifiesTheFireDepartmentGR,
+#AutomaticFireAlarmSystemGR,
+#SimpleFireExtinguisherGR,
+#PowerFirePumpEquipmentGR,
+#SprinklerEquipmentGR,
+#FoamFireExtinguisherGR,
+#PowderFireExtinguishingEquipmentGR,
+#WaterSprayFireExtinguishingEquipmentGR,
+#InertGasFireExtinguishingEquipmentGR,
+#HalideFireExtinguishingEquipmentGR,
+#OutdoorFireHydrantGR,
+#IndoorFireHydrantGR,
+#FireExtinguisherGR
+
+{
+  width: 672px;
+  height: 34px;
+  margin-top: 0px;
+  margin-left: 1px;
+  color: black; 
+  font-size: 15px; 
+  font-family: Inter;  
+  background-color: #f2f2f2;
+}
+
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  left: 40px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "×";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  text-align: center;
+  line-height: 26px;
+  transition: 0.4s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #f2f2f2;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+  content: "◯";
+}
+
+#equipment_add_done_button {
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    top: 85px;
+    left: 50%; // ビューポートの中央に位置を設定
+    transform: translateX(-50%); 
+  }
+  position: fixed;
+  top: 9px;
+  left: 390px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#equipment_add_button:hover {
+  background-color: #0062cc;
+}
+
+#equipment_add_button:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}

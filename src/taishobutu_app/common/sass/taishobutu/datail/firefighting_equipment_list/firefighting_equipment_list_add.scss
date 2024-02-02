@@ -85,6 +85,12 @@
 }
 
 #equipment_add_done_button {
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    top: 85px;
+    left: 50%; // ビューポートの中央に位置を設定
+    transform: translateX(-50%); 
+  }
   position: fixed;
   top: 9px;
   left: 390px;

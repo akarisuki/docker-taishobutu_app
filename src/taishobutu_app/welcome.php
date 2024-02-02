@@ -40,7 +40,7 @@ require_once 'common/config.php';
         .content h1 {
             @media (max-width: 480px) {
                 
-                font-size: 22px; 
+                font-size: 20px; 
             }
             font-size: 50px;
             margin-bottom: 175px;
