@@ -200,7 +200,7 @@ input[name=taishobutu_tel], input[name=owners_tel], input[name=total_area] {
 
 input[type=button] {
   border: none;
-  padding: 10px 20px;
+  padding: 10px 13px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
