@@ -286,11 +286,12 @@ table {
   width: 100%;
   max-width: 100%;
   text-align: center;
+  font-size: 14px;
 }
 
 .appendix-top {
   width: 14px;
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
 }
 @media (max-width: 480px) {
@@ -363,7 +364,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px; /* Adjust as needed */
+  height: 133px; /* Adjust as needed */
   background-color: #f2f2f2; /* Adjust color as needed */
 }
 
@@ -373,6 +374,7 @@ table {
 
 .edit {
   width: 3px;
+  text-align: center;
 }
 
 @media (max-width: 480px) {

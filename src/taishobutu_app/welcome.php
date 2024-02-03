@@ -30,6 +30,7 @@ require_once 'common/config.php';
         }
 
         .content {
+            width: 60%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -39,12 +40,13 @@ require_once 'common/config.php';
         }
 
         .content h1 {
+            font-size: 50px;
+            margin-bottom: 175px;
             @media (max-width: 480px) {
                 
                 font-size: 19px; 
             }
-            font-size: 50px;
-            margin-bottom: 175px;
+            
         }
 
         .content a {
@@ -64,8 +66,14 @@ require_once 'common/config.php';
             position: absolute;
             font-size: 40px;
             top: 142px;
-            left: 50px;
+            left: 244px;
             color: #35cb07;
+            @media (max-width: 480px) {
+                position: absolute;
+                font-size: 20px;
+                left:25px;
+                top: 40px;
+            } 
         }
     </style>
 </head>
