@@ -252,7 +252,6 @@ table {
 .excel-style th, .excel-style td {
   border: 1px solid #000;
   padding: 8px;
-  text-align: center;
 }
 
 .excel-style th {
