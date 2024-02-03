@@ -281,7 +281,7 @@ table {
 }
 
 #toggle-table-view {
-  margin-left: 4px;
+  margin-left: -4px;
 }
 
 .appendix-top {
