@@ -1,0 +1,225 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #6f6f6f;
+  color: #444;
+}
+
+.title {
+  position: relative;
+  top: 30px;
+  font-size: 40px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.form-wrapper {
+  top: 60px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: 20px;
+  @media (max-width: 480px) {
+    width: 333px;
+  }
+  width: 452px;
+  height: 750px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+label.required:after {
+  content: "(必須)";
+  color: red;
+}
+.staff_name {
+  @media (max-width: 480px) {
+    position: absolute;
+    bottom: 61px;
+    left: 22px;
+  }
+  position: absolute;
+  top: 20px;
+  left: 92px;
+  .error-message-name {
+    color: red;
+    position: absolute;
+    top:  59px;
+    left: -26px;
+  }
+}
+
+.staff_pass {
+  @media (max-width: 480px) {
+    position: absolute;
+    bottom: 160px;
+    left: 22px;
+  }
+  position: absolute;
+  top: 160px;
+  left: 92px;
+  .error-message-pass {
+    color: red;
+    position: absolute;
+    left: -26px;
+    bottom: -26px;
+    font-size: 10px;
+    @media (max-width: 480px) {
+      position: absolute;
+      bottom: 339px;
+      left: -26px;
+    }
+  }
+  
+}
+
+.staff_pass_confirm {
+  @media (max-width: 480px) {
+    position: absolute;
+    bottom: 300px;
+    left: 22px;
+  }
+  position: absolute;
+  top: 300px;
+  left: 92px;
+  .error-message-pass-confirm {
+    color: red;
+    position: absolute;
+    left: -26px;
+    bottom: -9px;
+    font-size: 14px;
+    @media (max-width: 480px) {
+      position: absolute;
+      bottom: 77px;
+      left: -26px;
+    }
+  } 
+}
+
+.fire_dept_code {
+  @media (max-width: 480px) {
+    position: absolute;
+    bottom: 440px;
+    left: 22px;
+  }
+  position: absolute;
+  top: 440px;
+  left: 92px;
+  .error-fire-dept-code {
+    color: red;
+    position: absolute;
+    left: 14px;
+    bottom: 22px; 
+    @media (max-width: 480px) {
+      position: absolute;
+      bottom: -98px;
+      left: 14px;
+    }
+  }
+}
+
+
+.mail_address {
+  @media (max-width: 480px) {
+    position: absolute;
+    bottom: 580px;
+    left: 22px;
+  }
+  position: absolute;
+  top: 580px;
+  left: 92px;
+
+  .error-mail-address {
+    color: red;
+    position: absolute;
+    left: -26px;
+    bottom: -12px;  
+    @media (max-width: 480px) {
+      position: absolute;
+      bottom: -112px;
+      left: -26px;
+    }
+  }
+}
+
+select[name="security_question"] {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+input[type="text"],
+input[type="password"] {
+    width: 308px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    font-size: 16px;
+    background-color: #D9D9D9;
+    
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+input[type="button"] {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute; 
+  bottom: 0; 
+  @media (max-width: 480px) {
+    left: 4px;
+  }
+
+  left: 4px;
+  margin: 50px;  
+}
+input[type="button"]:hover {
+    background-color: #9b9b9b;
+}
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+#fire_dept_code {
+  width: 308px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  font-size: 16px;
+  background-color: #D9D9D9;
+}
+
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+
+
+

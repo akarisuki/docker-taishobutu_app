@@ -68,12 +68,12 @@ body {
 }
 
 .mdoal_appendix label {
-  margin-right: 71px;
+  margin-right: 51px;
   margin-left: 18px;
 }
 
 .modal_taishobutu_name label {
-  margin-right: 39px;
+  margin-right: 7px;
   margin-left: 18px;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 .modal_search_total_area label {
-  margin-right: 71px;
+  margin-right: 38px;
   margin-left: 18px;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .modal_button {
-  margin-left: 20px;
+  margin-left: 16px;
 }
 
 div#modalCloseCloss:hover {
@@ -147,7 +147,7 @@ div#modalCloseCloss:hover {
   width: 1920px;
   height: 58px;
   left: 0px;
-  top: 70px;
+  top: 61px;
   border: 1px solid #000000;
 }
 
@@ -237,11 +237,15 @@ table {
   padding-top: 200px; /* 適宜調整してください */
 }
 
+.code-top {
+  text-align: center;
+}
+
 .excel-style {
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 100%;
   table-layout: fixed;
 }
 
@@ -278,10 +282,6 @@ table {
 .code-top {
   width: 5px;
   text-align: center;
-}
-
-#toggle-table-view {
-  margin-left: -4px;
 }
 
 .appendix-top {

@@ -36,7 +36,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 20px;
   width: 450px;
-  height: 548px;
+  height: 590px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -63,13 +63,13 @@ label.required:after {
 .staff_name {
   position: absolute;
   top: 60px;
-  left: 83px;
+  left: 77px;
 }
 @media (max-width: 480px) {
   .staff_name {
     position: absolute;
     top: 60px;
-    left: 22px;
+    left: 13px;
   }
 }
 .staff_name .error-message-name {
@@ -82,13 +82,13 @@ label.required:after {
 .staff_pass {
   position: absolute;
   top: 190px;
-  left: 83px;
+  left: 77px;
 }
 @media (max-width: 480px) {
   .staff_pass {
     position: absolute;
     top: 190px;
-    left: 22px;
+    left: 13px;
   }
 }
 .staff_pass .error-message-pass {
@@ -107,13 +107,13 @@ label.required:after {
 .fire_dept_code {
   position: absolute;
   top: 322px;
-  left: 83px;
+  left: 77px;
 }
 @media (max-width: 480px) {
   .fire_dept_code {
     position: absolute;
     top: 322px;
-    left: 22px;
+    left: 13px;
   }
 }
 .fire_dept_code #fire_dept_code {
@@ -140,21 +140,21 @@ label.required:after {
 @media (max-width: 480px) {
   .link {
     position: absolute;
-    top: 429px;
-    left: 45px;
+    top: 415px;
+    left: 20px;
   }
 }
 
 .rememberme {
   position: absolute;
-  bottom: 61px;
-  left: 87px;
+  bottom: 80px;
+  left: 75px;
 }
 @media (max-width: 480px) {
   .rememberme {
     position: absolute;
     bottom: 61px;
-    left: 53px;
+    left: 13px;
   }
 }
 
@@ -180,7 +180,8 @@ input[type=submit] {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 50px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 @media (max-width: 480px) {
   input[type=submit] {

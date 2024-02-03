@@ -22,7 +22,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 20px;
   width: 452px;
-  height: 750px;
+  height: 770px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -48,13 +48,13 @@ label.required:after {
 .staff_name {
   position: absolute;
   top: 20px;
-  left: 92px;
+  left: 73px;
 }
 @media (max-width: 480px) {
   .staff_name {
     position: absolute;
     bottom: 61px;
-    left: 22px;
+    left: 13px;
   }
 }
 .staff_name .error-message-name {
@@ -67,13 +67,13 @@ label.required:after {
 .staff_pass {
   position: absolute;
   top: 160px;
-  left: 92px;
+  left: 73px;
 }
 @media (max-width: 480px) {
   .staff_pass {
     position: absolute;
     bottom: 160px;
-    left: 22px;
+    left: 13px;
   }
 }
 .staff_pass .error-message-pass {
@@ -86,7 +86,7 @@ label.required:after {
 @media (max-width: 480px) {
   .staff_pass .error-message-pass {
     position: absolute;
-    bottom: 339px;
+    bottom: 321px;
     left: -26px;
   }
 }
@@ -94,13 +94,13 @@ label.required:after {
 .staff_pass_confirm {
   position: absolute;
   top: 300px;
-  left: 92px;
+  left: 73px;
 }
 @media (max-width: 480px) {
   .staff_pass_confirm {
     position: absolute;
     bottom: 300px;
-    left: 22px;
+    left: 13px;
   }
 }
 .staff_pass_confirm .error-message-pass-confirm {
@@ -113,7 +113,7 @@ label.required:after {
 @media (max-width: 480px) {
   .staff_pass_confirm .error-message-pass-confirm {
     position: absolute;
-    bottom: 77px;
+    bottom: 60px;
     left: -26px;
   }
 }
@@ -121,13 +121,13 @@ label.required:after {
 .fire_dept_code {
   position: absolute;
   top: 440px;
-  left: 92px;
+  left: 73px;
 }
 @media (max-width: 480px) {
   .fire_dept_code {
     position: absolute;
     bottom: 440px;
-    left: 22px;
+    left: 13px;
   }
 }
 .fire_dept_code .error-fire-dept-code {
@@ -147,13 +147,13 @@ label.required:after {
 .mail_address {
   position: absolute;
   top: 580px;
-  left: 92px;
+  left: 73px;
 }
 @media (max-width: 480px) {
   .mail_address {
     position: absolute;
     bottom: 580px;
-    left: 22px;
+    left: 13px;
   }
 }
 .mail_address .error-mail-address {
@@ -197,7 +197,8 @@ input[type=submit] {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 50px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 input[type=button] {
@@ -208,12 +209,12 @@ input[type=button] {
   font-size: 16px;
   position: absolute;
   bottom: 0;
-  left: 4px;
-  margin: 50px;
+  margin-bottom: 20px;
+  margin-left: -205px;
 }
 @media (max-width: 480px) {
   input[type=button] {
-    left: 4px;
+    margin-left: -143px;
   }
 }
 

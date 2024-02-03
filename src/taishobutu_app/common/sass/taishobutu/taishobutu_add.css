@@ -5,6 +5,141 @@ body {
   color: #444;
 }
 
+#modalView {
+  display: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+  #modalView {
+    display: block;
+    position: absolute;
+    width: 101px;
+    top: 102px;
+    right: 10%;
+  }
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s;
+}
+
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 3px;
+  max-width: 320px;
+  width: 100%;
+  height: 80%;
+}
+
+.popup-inner img {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+}
+
+.popup-inner form div {
+  margin-top: 40px;
+  margin-bottom: 56px; /* ここで間隔の大きさを調整できます */
+}
+
+.input_appendix {
+  width: 153px; /* ここで入力欄の大きさを調整できます */
+}
+
+.mdoal_appendix label {
+  margin-right: 71px;
+  margin-left: 18px;
+}
+
+.modal_taishobutu_name label {
+  margin-right: 39px;
+  margin-left: 18px;
+}
+
+.modal_taishobutu_address label {
+  margin-right: 7px;
+  margin-left: 18px;
+}
+
+.modal_search_total_area label {
+  margin-right: 71px;
+  margin-left: 18px;
+}
+
+.crear-modal {
+  margin-right: 175px; /* ここで間隔の大きさを調整できます */
+}
+
+.modal_button {
+  margin-left: 20px;
+}
+
+div#modalCloseCloss:hover {
+  opacity: 0.7;
+}
+
+.modalCloseButton {
+  position: absolute;
+  left: 50%;
+  bottom: -55px; /* ボタンの位置を調整 */
+  width: auto; /* ボタンの幅をテキストの内容に合わせる */
+  height: auto; /* ボタンの高さをテキストの内容に合わせる */
+  padding: 5px 10px; /* テキストの周りに適切な余白を設定 */
+  line-height: normal; /* line-heightを初期値に戻す */
+  text-align: center;
+  cursor: pointer;
+  transform: translateX(-50%); /* ボタンを中央に配置 */
+  background: #FFF;
+  border-radius: 5px; /* 軽く丸みを帯びたボタンにする */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* オプションで影を追加 */
+  font-size: 14px; /* テキストのサイズを調整 */
+  color: #707070; /* テキストの色を調整 */
+}
+
+.black-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.modalBottom {
+  padding: 22px 30px;
+}
+
+.modalBottom p {
+  margin: 0;
+}
+
+.popup-inner input.searchform__input {
+  margin: 0;
+}
+
 .form-wrapper {
   top: 260px;
   background-color: #fff;
@@ -70,9 +205,15 @@ input[type=button] {
   cursor: pointer;
   font-size: 16px;
   position: absolute;
-  bottom: 0;
-  right: 120px;
-  margin: 50px;
+  bottom: 20px;
+  left: 40px;
+}
+@media (max-width: 480px) {
+  input[type=button] {
+    position: absolute;
+    bottom: 26px;
+    right: 240px;
+  }
 }
 
 input[type=button]:hover {
@@ -88,9 +229,15 @@ input[type=submit] {
   cursor: pointer;
   font-size: 16px;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 50px;
+  bottom: 20px;
+  right: 40px;
+}
+@media (max-width: 480px) {
+  input[type=submit] {
+    position: absolute;
+    bottom: 26px;
+    right: 20px;
+  }
 }
 
 input[type=submit]:hover {
@@ -124,151 +271,84 @@ select {
 .appendix_group {
   position: absolute;
   top: 10px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .appendix_group {
-    left: 34px;
+    left: 12px;
   }
 }
 
 .taishobutu_name_group {
   position: absolute;
   top: 140px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .taishobutu_name_group {
     top: 110px;
-    left: 34px;
+    left: 12px;
   }
 }
 
 .taishobutu_address_group {
   position: absolute;
   top: 270px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .taishobutu_address_group {
     top: 200px;
-    left: 34px;
+    left: 12px;
   }
 }
 
 .taishobutu_tel_group {
   position: absolute;
   top: 400px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .taishobutu_tel_group {
     top: 290px;
-    left: 34px;
+    left: 12px;
   }
 }
 
 .owners_name_group {
   position: absolute;
   top: 530px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .owners_name_group {
     top: 380px;
-    left: 34px;
+    left: 12px;
   }
 }
 
 .owners_tel_group {
   position: absolute;
   top: 660px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .owners_tel_group {
     top: 470px;
-    left: 34px;
+    left: 12px;
   }
 }
 
 .total_area_group {
   position: absolute;
   top: 790px;
-  left: 360px;
+  left: 290px;
 }
 @media (max-width: 480px) {
   .total_area_group {
     top: 560px;
-    left: 34px;
+    left: 12px;
   }
-}
-
-.modal-btn {
-  display: none;
-  margin: 0 auto;
-  color: #fff;
-  font-weight: bold;
-  background-color: #00a5a0;
-  box-shadow: 0 5px 0 #008480;
-  text-align: center;
-  text-decoration: none;
-  width: 129px;
-  height: 41px;
-  line-height: 50px;
-  border-radius: 60px;
-  border: none;
-}
-@media screen and (max-width: 768px) {
-  .modal-btn {
-    display: block;
-  }
-}
-
-.modal-btn.js-modal-close {
-  position: absolute;
-  left: 109px;
-  top: 689px;
-}
-
-.modal-btn:hover {
-  box-shadow: none;
-  transform: translateY(5px);
-  cursor: pointer;
-}
-
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-}
-
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%;
-  height: 716px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.section {
-  position: absolute;
-  left: 124px;
-  top: 70px;
-  width: 359px;
-  padding: 21px;
-}
-.section:nth-of-type(2n) {
-  background-color: #d9e8e7;
 }
 
 .error-message-appendix-modal {
@@ -341,13 +421,6 @@ select {
   .error-message-total-area-modal {
     display: block;
   }
-}
-
-.section-title,
-.modal-title {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .error-message-appendix {

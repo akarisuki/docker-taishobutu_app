@@ -1,0 +1,413 @@
+body {
+  background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+  padding-top: 223px;
+}
+
+#modalView {
+  display: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    width: 101px;
+    top: 102px;
+    right: 10%;
+  }  
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: .6s;
+}
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 3px;
+    max-width: 320px;
+    width: 100%;
+    height: 60%;
+}
+.popup-inner img {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+}
+.popup-inner form div {
+  margin-top: 40px;
+  margin-bottom: 56px;  /* ここで間隔の大きさを調整できます */
+}
+.input_appendix {
+  width: 153px;  /* ここで入力欄の大きさを調整できます */
+}
+.mdoal_appendix label {
+  margin-right: 51px;
+  margin-left: 18px;
+}
+.modal_taishobutu_name label{
+  margin-right: 7px;
+  margin-left: 18px;
+}
+.modal_taishobutu_address label{
+  margin-right: 7px;
+  margin-left: 18px;
+ }
+.modal_search_total_area label{
+  margin-right: 38px;
+  margin-left: 18px;
+}
+
+.crear-modal {
+  margin-right: 175px;  /* ここで間隔の大きさを調整できます */
+}
+
+.modal_button {
+  margin-left: 20px;
+}
+
+div#modalCloseCloss:hover {
+    opacity: 0.7;
+}
+.modalCloseButton {
+  position: absolute;
+  left: 50%;
+  bottom: -55px; /* ボタンの位置を調整 */
+  width: auto; /* ボタンの幅をテキストの内容に合わせる */
+  height: auto; /* ボタンの高さをテキストの内容に合わせる */
+  padding: 5px 10px; /* テキストの周りに適切な余白を設定 */
+  line-height: normal; /* line-heightを初期値に戻す */
+  text-align: center;
+  cursor: pointer;
+  transform: translateX(-50%); /* ボタンを中央に配置 */
+  background: #FFF;
+  border-radius: 5px; /* 軽く丸みを帯びたボタンにする */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* オプションで影を追加 */
+  font-size: 14px; /* テキストのサイズを調整 */
+  color: #707070; /* テキストの色を調整 */
+}
+
+.black-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  z-index: 1;
+  cursor: pointer;
+}
+.modalBottom {
+    padding: 22px 30px;
+}
+.modalBottom p {
+    margin: 0;
+}
+
+.popup-inner input.searchform__input {
+    margin: 0;
+}
+// 検索フォーム
+.form-search {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 1920px;
+  height: 58px;
+  left: 0px;
+  top: 61px;
+  border: 1px solid #000000;
+}@media screen and (max-width: 768px) {
+  .form-search {
+    display: none; /* スマホサイズでは通常の検索フォームを非表示 */
+    
+  }
+
+  .modal-overlay {
+    display: block; /* スマホサイズではモーダルウィンドウを表示 */
+  }
+}
+
+
+
+.search_submit {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top:  -27px; 
+  right: 660px ;
+  margin: 50px;  
+}
+
+.crear_button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top:  -27px; 
+  right: 740px ;
+  margin: 50px;  
+}
+
+
+
+.delete {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute; 
+  top:  92px; 
+  right: 946px ;
+  @media screen and (max-width: 768px) {
+    width: 152px;
+    top: 51px;
+    left: 39px;
+  } 
+  margin: 50px;  
+} :hover {
+  background-color: #9b9b9b; 
+}
+
+.delete-all {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute; 
+  top:  92px; 
+  right: 866px ;
+  margin: 50px;  
+  @media screen and (max-width: 768px) {
+    width: 60px;
+    top: 51px;
+    left: -31px;
+  } 
+} :hover {
+  background-color: #9b9b9b; 
+} 
+
+
+
+.table-container {
+  overflow-x: auto; /* 横スクロールを有効にする */
+}
+
+
+table {
+  padding-top: 200px; /* 適宜調整してください */
+}
+
+// レコード一覧
+.excel-style {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  table-layout: fixed;
+}
+.excel-style th, .excel-style td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+.excel-style th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.excel-style tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+/* 以下のセレクタを追加して検索フォームには適用されないようにします */
+.form-search .excel-style th, .form-search .excel-style td {
+  border: none;
+}
+
+.excel-style th {
+  background-color: aqua;
+}
+
+.checkbox-top {
+  font-size: 30px;
+  width: 2px;
+  text-align: center;
+}
+
+.code-top {
+  width: 5px;
+  text-align: center;
+}
+#toggle-table-view {
+  margin-left: -4px;
+}
+.appendix-top {
+  width: 14px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 24px;
+  }
+}
+
+.taishobutu_name-top {
+  width: 60px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 50px;
+  }
+}
+
+.taishobutu_address-top {
+  width: 100px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 100px;
+  }
+}
+
+.taishobutu_tel-top {
+  width: 26px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 40px;
+  }
+}
+
+.owner_name-top {
+  width: 15px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 30px;
+  }
+}
+
+.owner_tel-top {
+  width: 26px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 40px;
+  }
+}
+
+.total_area-top {
+  width: 21px;
+  text-align: center;
+  @media (max-width: 480px) {
+    width: 30px;
+  }
+}
+
+.no-records {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px; /* Adjust as needed */
+  background-color: #f2f2f2; /* Adjust color as needed */
+}
+.no-records p {
+  font-size: 1.5em; /* Adjust as needed */
+}
+
+.edit {
+  width: 3px;
+}
+
+@media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+.table-container.scrollable table {
+  min-width: 1000px; // テーブルの最小幅を1000pxに設定
+}
+@media (max-width: 480px) {
+
+  .table-container.scrollable .hide-on-mobile {
+    display: table-cell !important;
+  }
+}
+
+input{
+  &[name="delete"]{
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; 
+    top: -286px; 
+    right:  780px; 
+    margin: 455px;
+      &:hover {
+        background-color: #3e8e41;
+      } 
+  }
+} 
+
+button {
+  &[name="delete-all"]{
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; 
+    top: 169px; 
+    right: 1120px; 
+      &:hover {
+        background-color: #3e8e41;
+      } 
+  }
+}
+
+// .alert-success, .alert-error {
+//   top: -103px;
+//   left: -5px; /* 左端からの位置を0に設定 */
+//   width: 100%; /* 幅を100%に設定 */
+//   padding: 5px;
+//   border: 1px solid transparent;
+//   border-radius: 4px;
+//   position: relative;
+//   text-align: center;
+//   transition: opacity 1s ease-out;
+// }
+
+// .alert-success {
+//   color: #35cb07;
+//   background-color: #b9e8be;
+// }
+
+// .alert-error {
+//   color: #ff0000;
+//   background-color: #ed8b8b;
+// }
+
+
