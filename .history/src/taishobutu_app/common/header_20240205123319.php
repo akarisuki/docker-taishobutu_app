@@ -3,7 +3,7 @@
 if (!isset($_SESSION['name'])) {
     echo "<script>
     alert('ログインが必要です。');
-    window.location.href = '" . BASE_URL . "login/login.php'; // ログインページのURLに適宜変更してください
+    window.location.href = '/login.php'; // ログインページのURLに適宜変更してください
     </script>";
     exit; // JavaScriptによるリダイレクト後、PHPスクリプトの実行を停止
 }
