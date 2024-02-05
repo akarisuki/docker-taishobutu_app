@@ -54,16 +54,9 @@ $last_fire_safety_manager_code = isset($last_code_row['fire_safety_manager_code'
       <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">戻る</a>
     </form>
   </div>
-  <?php
-  // セッション変数からメッセージを取得し、表示
+  
+  <h1>防火管理者一覧</h1>
 
-
-  if (isset($_SESSION['flash'])) {
-    $flash = $_SESSION['flash'];
-    echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
-    $_SESSION['flash'] = null;
-  }
-  ?>
   <div class="table-container js-scrollable">
     <table>
       <thead>

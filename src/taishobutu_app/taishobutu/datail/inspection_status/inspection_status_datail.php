@@ -53,14 +53,9 @@ $last_inspection_status_code = isset($last_code_row['inspection_status_code']) ?
             <a href="#" onclick="document.getElementById('form11').submit();" class="button" id="taishobutu_show_datail_button">戻る</a>
         </form>
     </div>
-    <?php
-    // セッション変数からメッセージを取得し、表示
-    if (isset($_SESSION['flash'])) {
-      $flash = $_SESSION['flash'];
-      echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
-      $_SESSION['flash'] = null;
-    }
-    ?>
+
+    <h1>立入検査状況</h1>
+   
     <div class="table-container js-scrollable">
         <table>
             <thead>

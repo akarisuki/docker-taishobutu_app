@@ -14,7 +14,7 @@ if (!isset($_SESSION['name'])) {
 </div>
 <div class="login_text">
   <p>
-    <?= $_SESSION['name'] ?>さんログイン中
+  <?= htmlspecialchars($_SESSION['name'], ENT_QUOTES, 'UTF-8') ?>さんログイン中
   </p>
 </div>
 <input type="checkbox" id="switch">

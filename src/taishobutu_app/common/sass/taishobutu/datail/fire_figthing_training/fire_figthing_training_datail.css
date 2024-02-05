@@ -4,13 +4,24 @@ body {
   font-family: Arial, sans-serif;
 }
 
+h1 {
+  position: absolute;
+  top: 57px;
+  left: 45%;
+}
+@media (max-width: 480px) {
+  h1 {
+    left: 27%;
+  }
+}
+
 .table-container {
   position: relative;
-  top: 250px;
+  top: 280px;
 }
 @media (max-width: 480px) {
   .table-container {
-    top: 370px;
+    top: 400px;
   }
 }
 
@@ -116,14 +127,14 @@ form.existingDataForm {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
-  bottom: 795px;
+  bottom: 750px;
 }
 @media screen and (max-width: 768px) {
   form.existingDataForm {
     position: fixed;
     height: 190px;
     width: 325px;
-    top: 81px;
+    top: 125px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -223,7 +234,7 @@ form.existingDataForm .submit-button-container {
 
 #taishobutu_show_datail_button {
   position: fixed;
-  top: 200px;
+  top: 230px;
   left: 10%;
   display: inline-block;
   padding: 10px 20px;
@@ -239,7 +250,7 @@ form.existingDataForm .submit-button-container {
 }
 @media (max-width: 480px) {
   #taishobutu_show_datail_button {
-    top: 322px;
+    top: 359px;
     left: 10%;
   }
 }
