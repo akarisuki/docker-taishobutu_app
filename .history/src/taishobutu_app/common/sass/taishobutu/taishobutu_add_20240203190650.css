@@ -1,0 +1,559 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+  background-color: #6f6f6f;
+  color: #444;
+}
+
+#modalView {
+  display: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+  #modalView {
+    display: block;
+    position: absolute;
+    width: 101px;
+    top: 102px;
+    right: 10%;
+  }
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s;
+}
+
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 3px;
+  max-width: 320px;
+  width: 100%;
+  height: 80%;
+}
+
+.popup-inner img {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+}
+
+.popup-inner form div {
+  margin-top: 40px;
+  margin-bottom: 56px; /* ここで間隔の大きさを調整できます */
+}
+
+.input_appendix {
+  width: 153px; /* ここで入力欄の大きさを調整できます */
+}
+
+.mdoal_appendix label {
+  margin-right: 71px;
+  margin-left: 18px;
+}
+
+.modal_taishobutu_name label {
+  margin-right: 39px;
+  margin-left: 18px;
+}
+
+.modal_taishobutu_address label {
+  margin-right: 7px;
+  margin-left: 18px;
+}
+
+.modal_search_total_area label {
+  margin-right: 71px;
+  margin-left: 18px;
+}
+
+.crear-modal {
+  margin-right: 175px; /* ここで間隔の大きさを調整できます */
+}
+
+.modal_button {
+  margin-left: 20px;
+}
+
+div#modalCloseCloss:hover {
+  opacity: 0.7;
+}
+
+.modalCloseButton {
+  position: absolute;
+  left: 50%;
+  bottom: -55px; /* ボタンの位置を調整 */
+  width: auto; /* ボタンの幅をテキストの内容に合わせる */
+  height: auto; /* ボタンの高さをテキストの内容に合わせる */
+  padding: 5px 10px; /* テキストの周りに適切な余白を設定 */
+  line-height: normal; /* line-heightを初期値に戻す */
+  text-align: center;
+  cursor: pointer;
+  transform: translateX(-50%); /* ボタンを中央に配置 */
+  background: #FFF;
+  border-radius: 5px; /* 軽く丸みを帯びたボタンにする */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* オプションで影を追加 */
+  font-size: 14px; /* テキストのサイズを調整 */
+  color: #707070; /* テキストの色を調整 */
+}
+
+.black-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.modalBottom {
+  padding: 22px 30px;
+}
+
+.modalBottom p {
+  margin: 0;
+}
+
+.popup-inner input.searchform__input {
+  margin: 0;
+}
+
+.form-wrapper {
+  top: 260px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  top: 154px;
+  width: 863px;
+  height: 1000px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: auto;
+}
+@media (max-width: 480px) {
+  .form-wrapper {
+    width: 333px;
+    height: 760px;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.required:after {
+  content: "(必須)";
+  color: red;
+}
+
+label.optional:after {
+  content: "(任意)";
+  color: red;
+}
+
+input[name=taishobutu_name], input[name=taishobutu_address], input[name=owners_name] {
+  width: 308px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 16px;
+  background-color: #D9D9D9;
+}
+
+input[name=taishobutu_tel], input[name=owners_tel], input[name=total_area] {
+  width: 155px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 16px;
+  background-color: #D9D9D9;
+}
+
+input[type=button] {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 120px;
+}
+@media (max-width: 480px) {
+  input[type=button] {
+    position: absolute;
+    bottom: 26px;
+    right: 240px;
+  }
+}
+
+input[type=button]:hover {
+  background-color: #9b9b9b;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+}
+@media (max-width: 480px) {
+  input[type=submit] {
+    position: absolute;
+    bottom: 26px;
+    right: 20px;
+  }
+}
+
+input[type=submit]:hover {
+  background-color: #3e8e41;
+}
+
+select {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 130px;
+  box-sizing: border-box;
+  background-color: #D9D9D9;
+  margin-bottom: 25px;
+}
+
+.error-alert {
+  display: none;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-alert {
+    display: block;
+    position: absolute;
+    top: 63px;
+    left: 34px;
+  }
+}
+
+.appendix_group {
+  position: absolute;
+  top: 10px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .appendix_group {
+    left: 12px;
+  }
+}
+
+.taishobutu_name_group {
+  position: absolute;
+  top: 140px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .taishobutu_name_group {
+    top: 110px;
+    left: 12px;
+  }
+}
+
+.taishobutu_address_group {
+  position: absolute;
+  top: 270px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .taishobutu_address_group {
+    top: 200px;
+    left: 12px;
+  }
+}
+
+.taishobutu_tel_group {
+  position: absolute;
+  top: 400px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .taishobutu_tel_group {
+    top: 290px;
+    left: 12px;
+  }
+}
+
+.owners_name_group {
+  position: absolute;
+  top: 530px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .owners_name_group {
+    top: 380px;
+    left: 12px;
+  }
+}
+
+.owners_tel_group {
+  position: absolute;
+  top: 660px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .owners_tel_group {
+    top: 470px;
+    left: 12px;
+  }
+}
+
+.total_area_group {
+  position: absolute;
+  top: 790px;
+  left: 290px;
+}
+@media (max-width: 480px) {
+  .total_area_group {
+    top: 560px;
+    left: 12px;
+  }
+}
+
+.error-message-appendix-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 640px;
+}
+@media (max-width: 480px) {
+  .error-message-appendix-modal {
+    display: block;
+  }
+}
+
+.error-message-tai-name-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 580px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-name-modal {
+    display: block;
+  }
+}
+
+.error-message-tai-address-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 520px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-address-modal {
+    display: block;
+  }
+}
+
+.error-message-tai-tel-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 411px;
+}
+@media (max-width: 480px) {
+  .error-message-tai-tel-modal {
+    display: block;
+  }
+}
+
+.error-message-owners-tel-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 310px;
+}
+@media (max-width: 480px) {
+  .error-message-owners-tel-modal {
+    display: block;
+  }
+}
+
+.error-message-total-area-modal {
+  display: none;
+  color: red;
+  position: absolute;
+  bottom: 188px;
+}
+@media (max-width: 480px) {
+  .error-message-total-area-modal {
+    display: block;
+  }
+}
+
+.error-message-appendix {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-message-appendix {
+    display: none;
+  }
+}
+
+.error-message-appendix-check {
+  display: block;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-message-appendix-check {
+    display: none;
+  }
+}
+
+.error-message-tai-name {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-tai-name {
+    display: none;
+  }
+}
+
+.error-message-tai-name-check {
+  display: block;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-message-tai-name-check {
+    display: none;
+  }
+}
+
+.error-message-tai-address {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-tai-address {
+    display: none;
+  }
+}
+
+.error-message-tai-address-check {
+  display: block;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-message-tai-address-check {
+    display: none;
+  }
+}
+
+.error-message-tai-tel {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-tai-tel {
+    display: none;
+  }
+}
+
+.error-message-tai-tel-check {
+  display: block;
+  color: red;
+}
+@media (max-width: 480px) {
+  .error-message-tai-tel-check {
+    display: none;
+  }
+}
+
+.error-message-owners-tel {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-owners-tel {
+    display: none;
+  }
+}
+
+.error-message-owners-tel-check {
+  color: red;
+  position: absolute;
+  bottom: 331px;
+  left: 277px;
+}
+
+.error-message-total-area {
+  position: absolute;
+  top: 80px;
+  left: -39px;
+  display: block;
+  color: red;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .error-message-total-area {
+    display: none;
+  }
+}
+
+.error-message-total-area-check {
+  color: red;
+  position: absolute;
+  bottom: 212px;
+  left: 277px;
+}/*# sourceMappingURL=taishobutu_add_20240203190650.css.map */

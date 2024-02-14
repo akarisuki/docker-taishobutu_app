@@ -1,0 +1,2159 @@
+@charset "UTF-8";
+@media print {
+  @page {
+    size: A3;
+    margin: 20mm;
+  }
+}
+body {
+  background-color: #6f6f6f;
+  font-family: Arial, sans-serif;
+  padding-top: 138px;
+}
+
+.FireEquipmentLimitedQuantity {
+  width: 1588px;
+  height: 1123px;
+  position: relative;
+  background: white;
+}
+
+.page_title {
+  position: absolute;
+  top: -15px;
+  left: 533px;
+  font-family: Inter;
+  font-size: 41px;
+  font-weight: 400;
+  color: black;
+  word-wrap: break-word;
+}
+
+.EmergencyPowerSupplyCellset {
+  width: 1454px;
+  height: 105px;
+  left: 67px;
+  top: 962px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 70px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment .StorageBatteryEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment .StorageBatteryEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment .StorageBatteryEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment .StorageBatteryEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment .StorageBatteryEquipmentNameCellset .StorageBatteryEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .StorageBatteryEquipment .StorageBatteryEquipmentNameCellset .StorageBatteryEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 35px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment .InHousePowerGenerationEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment .InHousePowerGenerationEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment .InHousePowerGenerationEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment .InHousePowerGenerationEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment .InHousePowerGenerationEquipmentNameCellset .InHousePowerGenerationEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .InHousePowerGenerationEquipment .InHousePowerGenerationEquipmentNameCellset .InHousePowerGenerationEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 0px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceNameCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSource .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceNameCellset .ThePowerReceivingFacilityDedicatedToAStandByPowerSourceName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.EmergencyPowerSupplyCellset .EmergencyPowerSupplyLabel {
+  width: 120px;
+  height: 105px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EmergencyPowerSupplyCellset .EmergencyPowerSupplyLabel .EmergencyPowerSupplyLabelArea {
+  width: 120px;
+  height: 105px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EmergencyPowerSupplyCellset .EmergencyPowerSupplyLabel .EmergencyPowerSupplyLabelArea h1 {
+  left: 14px;
+  top: 19px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.FireFightingFacilityCellset {
+  width: 1454px;
+  height: 175px;
+  left: 67px;
+  top: 787px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 140px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe .ConnectingWaterPipeGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe .ConnectingWaterPipeAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe .ConnectingWaterPipeNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe .ConnectingWaterPipeNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe .ConnectingWaterPipeNameCellset .ConnectingWaterPipeName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .ConnectingWaterPipe .ConnectingWaterPipeNameCellset .ConnectingWaterPipeName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 105px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem .LinkedSprinklerSystemGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem .LinkedSprinklerSystemAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem .LinkedSprinklerSystemNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem .LinkedSprinklerSystemNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem .LinkedSprinklerSystemNameCellset .LinkedSprinklerSystemName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .LinkedSprinklerSystem .LinkedSprinklerSystemNameCellset .LinkedSprinklerSystemName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 70px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment .SmokeExhaustEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment .SmokeExhaustEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment .SmokeExhaustEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment .SmokeExhaustEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment .SmokeExhaustEquipmentNameCellset .SmokeExhaustEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .SmokeExhaustEquipment .SmokeExhaustEquipmentNameCellset .SmokeExhaustEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 35px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility .EmergencyOutletFacilityGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility .EmergencyOutletFacilityAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility .EmergencyOutletFacilityNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility .EmergencyOutletFacilityNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility .EmergencyOutletFacilityNameCellset .EmergencyOutletFacilityName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .EmergencyOutletFacility .EmergencyOutletFacilityNameCellset .EmergencyOutletFacilityName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment .RadioCommunicationAuxiliaryEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment .RadioCommunicationAuxiliaryEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment .RadioCommunicationAuxiliaryEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment .RadioCommunicationAuxiliaryEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment .RadioCommunicationAuxiliaryEquipmentNameCellset .RadioCommunicationAuxiliaryEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .RadioCommunicationAuxiliaryEquipment .RadioCommunicationAuxiliaryEquipmentNameCellset .RadioCommunicationAuxiliaryEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireFightingFacilityCellset .FireFightingFacilityLabel {
+  width: 120px;
+  height: 175px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireFightingFacilityCellset .FireFightingFacilityLabel .FireFightingFacilityLabelArea {
+  width: 120px;
+  height: 175px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireFightingFacilityCellset .FireFightingFacilityLabel .FireFightingFacilityLabelArea h1 {
+  left: 14px;
+  top: 22px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.FirefightingWaterCellset {
+  width: 1454px;
+  height: 35px;
+  left: 67px;
+  top: 752px;
+  position: absolute;
+}
+.FirefightingWaterCellset .FireTank {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 0px;
+  position: absolute;
+}
+.FirefightingWaterCellset .FireTank .FireTankGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FirefightingWaterCellset .FireTank .FireTankAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FirefightingWaterCellset .FireTank .FireTankNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FirefightingWaterCellset .FireTank .FireTankNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FirefightingWaterCellset .FireTank .FireTankNameCellset .FireTankName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FirefightingWaterCellset .FireTank .FireTankNameCellset .FireTankName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FirefightingWaterCellset .FirefightingWaterLabel {
+  width: 120px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FirefightingWaterCellset .FirefightingWaterLabel .FirefightingWaterLabelArea {
+  width: 120px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FirefightingWaterCellset .FirefightingWaterLabel .FirefightingWaterLabelArea h1 {
+  left: 14px;
+  top: -15px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.EvacuationEquipmentCellset {
+  width: 1454px;
+  height: 70px;
+  left: 67px;
+  top: 682px;
+  position: absolute;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 35px;
+  position: absolute;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns .GuideLightsGuideSignsGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns .GuideLightsGuideSignsAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns .GuideLightsGuideSignsNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns .GuideLightsGuideSignsNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns .GuideLightsGuideSignsNameCellset .GuideLightsGuideSignsName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .GuideLightsGuideSigns .GuideLightsGuideSignsNameCellset .GuideLightsGuideSignsName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 0px;
+  position: absolute;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag .SlideEscapeLadderRescueBagGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag .SlideEscapeLadderRescueBagAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag .SlideEscapeLadderRescueBagNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag .SlideEscapeLadderRescueBagNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag .SlideEscapeLadderRescueBagNameCellset .SlideEscapeLadderRescueBagName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .SlideEscapeLadderRescueBag .SlideEscapeLadderRescueBagNameCellset .SlideEscapeLadderRescueBagName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.EvacuationEquipmentCellset .EvacuationEquipmentLabel {
+  width: 120px;
+  height: 70px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.EvacuationEquipmentCellset .EvacuationEquipmentLabel .EvacuationEquipmentLabelArea {
+  width: 120px;
+  height: 70px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.EvacuationEquipmentCellset .EvacuationEquipmentLabel .EvacuationEquipmentLabelArea h1 {
+  left: 14px;
+  top: 1px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.AlarmEquipmentCellset {
+  width: 1454px;
+  height: 175px;
+  left: 67px;
+  top: 507px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 140px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice .EmergencyAlarmDeviceGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice .EmergencyAlarmDeviceAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice .EmergencyAlarmDeviceNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice .EmergencyAlarmDeviceNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice .EmergencyAlarmDeviceNameCellset .EmergencyAlarmDeviceName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EmergencyAlarmDevice .EmergencyAlarmDeviceNameCellset .EmergencyAlarmDeviceName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 105px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmNameCellset .GasLeakFireAlarmName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 70px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm .EarthLeakageFireAlarmGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm .EarthLeakageFireAlarmAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm .EarthLeakageFireAlarmNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm .EarthLeakageFireAlarmNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm .EarthLeakageFireAlarmNameCellset .EarthLeakageFireAlarmName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .EarthLeakageFireAlarm .EarthLeakageFireAlarmNameCellset .EarthLeakageFireAlarmName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 35px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment .FireAlarmEquipmentThatNotifiesTheFireDepartmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment .FireAlarmEquipmentThatNotifiesTheFireDepartmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment .FireAlarmEquipmentThatNotifiesTheFireDepartmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment .FireAlarmEquipmentThatNotifiesTheFireDepartmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment .FireAlarmEquipmentThatNotifiesTheFireDepartmentNameCellset .FireAlarmEquipmentThatNotifiesTheFireDepartmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .FireAlarmEquipmentThatNotifiesTheFireDepartment .FireAlarmEquipmentThatNotifiesTheFireDepartmentNameCellset .FireAlarmEquipmentThatNotifiesTheFireDepartmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem .AutomaticFireAlarmSystemGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem .AutomaticFireAlarmSystemAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem .AutomaticFireAlarmSystemNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem .AutomaticFireAlarmSystemNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem .AutomaticFireAlarmSystemNameCellset .AutomaticFireAlarmSystemName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .AutomaticFireAlarmSystem .AutomaticFireAlarmSystemNameCellset .AutomaticFireAlarmSystemName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.AlarmEquipmentCellset .AlarmEquipmentLabel {
+  width: 120px;
+  height: 175px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.AlarmEquipmentCellset .AlarmEquipmentLabel .AlarmEquipmentLabelArea {
+  width: 120px;
+  height: 175px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.AlarmEquipmentCellset .AlarmEquipmentLabel .AlarmEquipmentLabelArea h1 {
+  left: 14px;
+  top: 55px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.FireExtinguishingEquipmentCellset {
+  width: 1454px;
+  height: 385px;
+  left: 67px;
+  top: 122px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 350px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher .SimpleFireExtinguisherGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher .SimpleFireExtinguisherAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher .SimpleFireExtinguisherNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher .SimpleFireExtinguisherNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher .SimpleFireExtinguisherNameCellset .SimpleFireExtinguisherName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SimpleFireExtinguisher .SimpleFireExtinguisherNameCellset .SimpleFireExtinguisherName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 315px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment .PowerFirePumpEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment .PowerFirePumpEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment .PowerFirePumpEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment .PowerFirePumpEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment .PowerFirePumpEquipmentNameCellset .PowerFirePumpEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowerFirePumpEquipment .PowerFirePumpEquipmentNameCellset .PowerFirePumpEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 280px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment .SprinklerEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment .SprinklerEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment .SprinklerEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment .SprinklerEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment .SprinklerEquipmentNameCellset .SprinklerEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .SprinklerEquipment .SprinklerEquipmentNameCellset .SprinklerEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 245px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher .FoamFireExtinguisherGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher .FoamFireExtinguisherAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher .FoamFireExtinguisherNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher .FoamFireExtinguisherNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher .FoamFireExtinguisherNameCellset .FoamFireExtinguisherName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FoamFireExtinguisher .FoamFireExtinguisherNameCellset .FoamFireExtinguisherName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 210px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment .PowderFireExtinguishingEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment .PowderFireExtinguishingEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment .PowderFireExtinguishingEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment .PowderFireExtinguishingEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment .PowderFireExtinguishingEquipmentNameCellset .PowderFireExtinguishingEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .PowderFireExtinguishingEquipment .PowderFireExtinguishingEquipmentNameCellset .PowderFireExtinguishingEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 175px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment .WaterSprayFireExtinguishingEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment .WaterSprayFireExtinguishingEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment .WaterSprayFireExtinguishingEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment .WaterSprayFireExtinguishingEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment .WaterSprayFireExtinguishingEquipmentNameCellset .WaterSprayFireExtinguishingEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .WaterSprayFireExtinguishingEquipment .WaterSprayFireExtinguishingEquipmentNameCellset .WaterSprayFireExtinguishingEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 140px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment .InertGasFireExtinguishingEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment .InertGasFireExtinguishingEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment .InertGasFireExtinguishingEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment .InertGasFireExtinguishingEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment .InertGasFireExtinguishingEquipmentNameCellset .InertGasFireExtinguishingEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .InertGasFireExtinguishingEquipment .InertGasFireExtinguishingEquipmentNameCellset .InertGasFireExtinguishingEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 105px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment .HalideFireExtinguishingEquipmentGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment .HalideFireExtinguishingEquipmentAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment .HalideFireExtinguishingEquipmentNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment .HalideFireExtinguishingEquipmentNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment .HalideFireExtinguishingEquipmentNameCellset .HalideFireExtinguishingEquipmentName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .HalideFireExtinguishingEquipment .HalideFireExtinguishingEquipmentNameCellset .HalideFireExtinguishingEquipmentName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 70px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant .OutdoorFireHydrantGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant .OutdoorFireHydrantAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant .OutdoorFireHydrantNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant .OutdoorFireHydrantNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant .OutdoorFireHydrantNameCellset .OutdoorFireHydrantName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .OutdoorFireHydrant .OutdoorFireHydrantNameCellset .OutdoorFireHydrantName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 35px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant .IndoorFireHydrantGR {
+  width: 673px;
+  height: 35px;
+  left: 661px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant .IndoorFireHydrantAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant .IndoorFireHydrantNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant .IndoorFireHydrantNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant .IndoorFireHydrantNameCellset .IndoorFireHydrantName {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .IndoorFireHydrant .IndoorFireHydrantNameCellset .IndoorFireHydrantName h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher {
+  width: 1334px;
+  height: 35px;
+  left: 120px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher .FireExtinguisherGR {
+  width: 674px;
+  height: 35px;
+  left: 660px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher .FireExtinguisherAI {
+  width: 145px;
+  height: 35px;
+  left: 516px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher .FireExtinguisherNOI {
+  width: 145px;
+  height: 35px;
+  left: 370px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher .FireExtinguisherNameCellset {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher .FireExtinguisherNameCellset .FireExtinguisherNameCell {
+  width: 370px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguisher .FireExtinguisherNameCellset .FireExtinguisherNameCell h1 {
+  left: 7px;
+  top: -14px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguishingEquipmentLabel {
+  width: 120px;
+  height: 385px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguishingEquipmentLabel .FireExtinguishingEquipmentLabelArea {
+  width: 120px;
+  height: 385px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-left: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.FireExtinguishingEquipmentCellset .FireExtinguishingEquipmentLabel .FireExtinguishingEquipmentLabelArea h1 {
+  left: 14px;
+  top: 159px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.Labelcellset {
+  width: 1454px;
+  height: 35px;
+  left: 67px;
+  top: 87px;
+  position: absolute;
+}
+.Labelcellset .GroundsRemarksCell {
+  width: 672.46px;
+  height: 35px;
+  left: 781.54px;
+  top: 0px;
+  position: absolute;
+}
+.Labelcellset .GroundsRemarksCell .GroundsRemarks {
+  width: 672.46px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.Labelcellset .GroundsRemarksCell h1 {
+  left: 272.46px;
+  top: -15px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.Labelcellset .ActualInstallationCell {
+  width: 146.1px;
+  height: 35px;
+  left: 635.44px;
+  top: 0px;
+  position: absolute;
+}
+.Labelcellset .ActualInstallationCell .ActualInstallation {
+  width: 146.1px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.Labelcellset .ActualInstallationCell h1 {
+  left: 14.56px;
+  top: -15px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.Labelcellset .NecessityOfInstallationCell {
+  width: 145.1px;
+  height: 35px;
+  left: 490.34px;
+  top: 0px;
+  position: absolute;
+}
+.Labelcellset .NecessityOfInstallationCell .NecessityOfInstallation {
+  width: 145.1px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border-top: 0.5px black solid;
+  border-right: 0.5px black solid;
+  border-bottom: 0.5px black solid;
+}
+.Labelcellset .NecessityOfInstallationCell h1 {
+  left: 14.66px;
+  top: -15px;
+  position: absolute;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.Labelcellset .FireEquipmentNameCell {
+  width: 490.34px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+.Labelcellset .FireEquipmentNameCell .FireEquipmentName {
+  width: 489.34px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #FFFEFE;
+  border: 0.5px black solid;
+}
+.Labelcellset .FireEquipmentNameCell h1 {
+  left: 120px;
+  top: -15px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  font-size: 23px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+#equipment_edit_button {
+  position: fixed;
+  top: 9px;
+  left: 369px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+@media screen and (max-width: 768px) {
+  #equipment_edit_button {
+    position: fixed;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#equipment_edit_button:hover {
+  background-color: #0062cc;
+}
+
+#equipment_edit_button:active {
+  background-color: #005cbf;
+  box-shadow: none;
+}
+
+.AI_NOI {
+  font-size: 24px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 7px;
+}
+
+.alert-success, .alert-error {
+  top: -103px;
+  left: 0; /* 左端からの位置を0に設定 */
+  width: 100%; /* 幅を100%に設定 */
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+  text-align: center;
+  transition: opacity 1s ease-out;
+}
+
+.alert-success {
+  color: #35cb07;
+  background-color: #b9e8be;
+}
+
+.alert-error {
+  color: #ff0000;
+  background-color: #ed8b8b;
+}/*# sourceMappingURL=firefighting_equipment_list_show_20240202170709.css.map */
