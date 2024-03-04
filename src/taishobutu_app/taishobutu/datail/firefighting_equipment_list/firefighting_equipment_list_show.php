@@ -54,31 +54,11 @@ if(empty($result_firefighting_equipment_list)) {
 
 
     <title>防火対象物管理アプリ</title>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          setTimeout(function() {
-              var flashMessage = document.getElementById('flashMessage');
-              if(flashMessage) {
-                  flashMessage.style.opacity = '0';
-                  setTimeout(function() {
-                      flashMessage.style.display = 'none';
-                  }, 1000); // 1秒後に非表示
-              }
-          }, 5000); // 5秒後に透明度を0に
-      });
-
-    </script>
+    
 </head>
 
 <body>
-  <?php
-   // セッション変数からメッセージを取得し、表示
-  if (isset($_SESSION['flash'])) {
-    $flash = $_SESSION['flash'];
-    echo  "<div id='flashMessage' class='alert alert-{$flash['type']}'>{$flash['message']}</div>";
-    $_SESSION['flash'] = null;
-  }
-  ?>
+  
   <div class="FireEquipmentLimitedQuantity">
     
     <div class="equipment_edit_button">
