@@ -80,9 +80,9 @@ if(!preg_match('/^\d+$/',$taishobutu_tel)){
 }
 
 
-if(!preg_match('/^\d+$/',$owners_tel)){
-  $error_owners_tel[] = '所有者連絡先は半角整数のみしてください';
-}
+// if(!preg_match('/^\d+$/',$owners_tel)){
+//   $error_owners_tel[] = '所有者連絡先は半角整数のみしてください';
+// }
 
 if(empty($raw_total_area)){
   $error_total_area[] = '延べ面積が入力されていません。';
@@ -120,88 +120,140 @@ if (empty($error)) {
           content="width=device-width,initial-scale=1.0,
           maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../common/sass/common/reset.css">
     <link rel="stylesheet" href="../common/sass/taishobutu/taishobutu_add.css">
     <link rel="stylesheet" href="../common/sass/common/header.css">
     
     <title>予防１１９</title>
 </head>
 <body>
-<section class="section">
-  
-  <a href="#" class="modal-btn js-modal-open">検索フォーム</a>
-  <div id="modal" class="modal-overlay">
-    <div class="modal-content">
-      <p class="modal-title">検索フォーム</p>
-        <ul class="error-message-tai-name">
-            <?php foreach($error_taishobutu_name as $err_tai_name) : ?>
-                <li><?= $err_tai_name ?></li>
-            <?php endforeach; ?>
-        </ul>
-      
-      <button class="modal-btn js-modal-close">閉じる</button>
+<?php if(isset($error)) : ?>
+    <div class="error-alert">
+        <p>不備があるため<br>メッセージボタンを<br>押して確認してください</p>
     </div>
-  </div>
-</section>
+<?php endif; ?>
+ <!-- モーダルのボタン -->
+ <button id="modalView">エラーメッセージ</button>
+  <!-- モーダルのボタン -->
 
-<div class="form-wrapper"> 
-    <form method="post" action="taishobutu_check.php">
-
-        <?php include ('../common/bettpiyo/bettpiyo_select_check.php'); ?>
-        <a href="http://www.chikuta119.jp/info/ihan_kohyo/pdf/beppyo01.pdf" target="_blank">用途区分ガイド</a><br/>
-    
-        <label for="taishobutu_name" class="required">対象物名</label>    
-        <input type="text" name="taishobutu_name" value="<?= htmlspecialchars($taishobutu_name, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($taishobutu_name)){ echo 'placeholder="例: ○○消防署"'; } ?>><br/>
-  
+  <div class="popup" id="firstTimeModal">
+    <div class="popup-inner">
+      <div class="modalCloseButton" id="modalCloseCloss">閉じる</div>
+      <!-- ここに -->
+              
         <?php if(!empty($error_taishobutu_name)) : ?>
-            <ul class="error-message-tai-name">
+            <ul class="error-message-tai-name-modal">
                 <?php foreach($error_taishobutu_name as $err_tai_name) : ?>
                     <li><?= $err_tai_name ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-  
-        <label for="taishobutu_address"class="required">対象物所在地</label>
-        <input type="text" name="taishobutu_address" value="<?= htmlspecialchars($taishobutu_address, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($taishobutu_address)){ echo 'placeholder="例: 東京都千代田区1-1-1"'; } ?>><br/>
+        <?php if(!empty($error_appendix)) : ?>
+            <ul class="error-message-appendix-modal">
+                    <li><?= $error_appendix[0] ?></li>
+            </ul>
+        <?php endif; ?>
         <?php if(!empty($error_taishobutu_address)) : ?>
-            <ul class="error-message-tai-address">
+            <ul class="error-message-tai-address-modal">
                 <?php foreach($error_taishobutu_address as $err_tai_add) : ?>
                     <li><?= $err_tai_add ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-    
-        <label for="taishobutu_tel"class="required">対象物連絡先</label>
-        <input type="text" name="taishobutu_tel" maxlength="14" value="<?= htmlspecialchars($taishobutu_tel, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($taishobutu_tel)){ echo 'placeholder="例: 0312345678"'; } ?>><br/>
         <?php if(!empty($error_taishobutu_tel)) : ?>
-            <ul class="error-message-tai-tel">
+            <ul class="error-message-tai-tel-modal">
                 <?php foreach($error_taishobutu_tel as $err_tai_tel) : ?>
                     <li><?= $err_tai_tel ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-    
-        <label for="owners_name"class="optional">所有者名</label>
-        <input type="text" name="owners_name" value="<?= htmlspecialchars($owners_name, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($owners_name)){ echo 'placeholder="例: 消防太郎"'; } ?>><br/>
-    
-        <label for="owners_tel"class="optional">所有者連絡先</label>
-        <input type="text" name="owners_tel" maxlength="13" value="<?= htmlspecialchars($owners_tel, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($owners_tel)){ echo 'placeholder="例: 09012345678"'; } ?>><br/>
         <?php if(!empty($error_owners_tel)) : ?>
-            <ul class="error-message-owners-tel">
+            <ul class="error-message-owners-tel-modal">
                 <?php foreach($error_owners_tel as $err_owners_tel) :?>
                     <li><?= $err_owners_tel ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-    
-        <label for="total_area"class="required">延べ面積</label>
-        <input type="number" name="total_area" step="0.01" value="<?= $display_total_area ?>" <?php if(empty($display_total_area)){ echo 'placeholder="例: 100.50"'; } ?>>㎡<br/>
         <?php if(!empty($error_total_area)) : ?>
-            <ul class="error-message-total-area">
+            <ul class="error-message-total-area-modal">
                 <?php foreach($error_total_area as $err_to_area) : ?>
                     <li><?= $err_to_area ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
+      
+      <!-- ここまで -->
+    </div>
+    <div class="black-background" id="js-black-bg"></div>
+</div>
+         
+      
+
+<div class="form-wrapper"> 
+    <form method="post" action="taishobutu_check.php">
+
+        <?php include ('../common/bettpiyo/bettpiyo_select_check.php'); ?>
+        
+        <div class="taishobutu_name_group">
+            <label for="taishobutu_name" class="required">対象物名</label>    
+            <input type="text" name="taishobutu_name" value="<?= htmlspecialchars($taishobutu_name, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($taishobutu_name)){ echo 'placeholder="例: ○○消防署"'; } ?>><br/>
+    
+            <?php if(!empty($error_taishobutu_name)) : ?>
+                <ul class="error-message-tai-name">
+                    <?php foreach($error_taishobutu_name as $err_tai_name) : ?>
+                        <li><?= $err_tai_name ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+        <div class="taishobutu_address_group">
+            <label for="taishobutu_address"class="required">対象物所在地</label>
+            <input type="text" name="taishobutu_address" value="<?= htmlspecialchars($taishobutu_address, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($taishobutu_address)){ echo 'placeholder="例: 東京都千代田区1-1-1"'; } ?>><br/>
+            <?php if(!empty($error_taishobutu_address)) : ?>
+                <ul class="error-message-tai-address">
+                    <?php foreach($error_taishobutu_address as $err_tai_add) : ?>
+                        <li><?= $err_tai_add ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+        <div class="taishobutu_tel_group">
+            <label for="taishobutu_tel"class="required">対象物連絡先</label>
+            <input type="text" name="taishobutu_tel" maxlength="14" value="<?= htmlspecialchars($taishobutu_tel, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($taishobutu_tel)){ echo 'placeholder="例: 0312345678"'; } ?>><br/>
+            <?php if(!empty($error_taishobutu_tel)) : ?>
+                <ul class="error-message-tai-tel">
+                    <?php foreach($error_taishobutu_tel as $err_tai_tel) : ?>
+                        <li><?= $err_tai_tel ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+        <div class="owners_name_group">
+            <label for="owners_name"class="optional">所有者名</label>
+            <input type="text" name="owners_name" value="<?= htmlspecialchars($owners_name, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($owners_name)){ echo 'placeholder="例: 消防太郎"'; } ?>><br/>
+        </div>
+        <div class="owners_tel_group">
+            <label for="owners_tel"class="optional">所有者連絡先</label>
+            <input type="text" name="owners_tel" maxlength="13" value="<?= htmlspecialchars($owners_tel, ENT_QUOTES, 'UTF-8') ?>" <?php if(empty($owners_tel)){ echo 'placeholder="例: 09012345678"'; } ?>><br/>
+            <?php if(!empty($error_owners_tel)) : ?>
+                <ul class="error-message-owners-tel">
+                    <?php foreach($error_owners_tel as $err_owners_tel) :?>
+                        <li><?= $err_owners_tel ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+            <div class="total_area_group">
+            <label for="total_area"class="required">延べ面積</label>
+            <input type="number" name="total_area" step="0.01" value="<?= $display_total_area ?>" <?php if(empty($display_total_area)){ echo 'placeholder="例: 100.50"'; } ?>>㎡<br/>
+            <?php if(!empty($error_total_area)) : ?>
+                <ul class="error-message-total-area">
+                    <?php foreach($error_total_area as $err_to_area) : ?>
+                        <li><?= $err_to_area ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
     
         <input type="submit" value="追加する">
         <input type="button" onclick="history.back()" value="戻る">
@@ -212,7 +264,8 @@ if (empty($error)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script src="../common/script.js"></script>
+<script src="../common/script/header_script.js"></script>
+<script src="../common/script/taishobutu_check.js"></script>
 </body>
 </html>
 <?php } ?>

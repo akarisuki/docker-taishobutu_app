@@ -80,9 +80,9 @@ if(!preg_match('/^\d+$/',$taishobutu_tel)){
 }
 
 
-if(!preg_match('/^\d+$/',$owners_tel)){
-  $error_owners_tel[] = '所有者連絡先は半角整数のみしてください';
-}
+// if(!preg_match('/^\d+$/',$owners_tel)){
+//   $error_owners_tel[] = '所有者連絡先は半角整数のみしてください';
+// }
 
 if(empty($raw_total_area)){
   $error_total_area[] = '延べ面積が入力されていません。';
